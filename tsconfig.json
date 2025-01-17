@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",               // Use ES Modules
+    "target": "ES2020",               // Modern JavaScript
+    "moduleResolution": "node",       // Node.js module resolution
+    "outDir": "./dist",               // Output directory for compiled JS
+    "rootDir": "./src",               // Root directory for TS files
+    "esModuleInterop": true,          // Enable interoperability with CommonJS
+    "skipLibCheck": true,             // Skip type-checking .d.ts files
+    "resolveJsonModule": true         // Allow importing JSON files
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
