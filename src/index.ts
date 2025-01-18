@@ -1,4 +1,5 @@
 import { Client, IntentsBitField, EmbedBuilder } from "discord.js";
+import { eventHandler } from "./handlers/eventHandler.js";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -12,32 +13,6 @@ const client = new Client({
   ],
 });
 
-console.log(process.env.TOKEN);
-
-client.on("ready", (c) => {
-  console.log(`🤖 Atlus Bot ${c.user?.tag} is rearing and ready to go!`);
-});
-
-client.on("interactionCreate", (interaction) => {
-  if (!interaction.isChatInputCommand()) return;
-
-  if (interaction.commandName === "embedder") {
-    const embed = new EmbedBuilder()
-      .setTitle("Embed Title")
-      .setDescription("This is an embed description")
-      .setColor("Random")
-      .addFields({
-        name: "Field title",
-        value: "some random value",
-        inline: true,
-      }, {
-        name: "2nd Field title",
-        value: "some random value",
-        inline: true,
-      },);
-
-    interaction.reply({ embeds: [embed] });
-  }
-});
+eventHandler(client);
 
 client.login(process.env.TOKEN);
