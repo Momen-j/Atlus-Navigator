@@ -19,7 +19,6 @@ export function eventHandler(client) {
 
     // sort eventFiles so certain files' functions run first
     eventFiles.sort((a, b) => a - b);
-    console.log(eventFiles);
 
     /*
         windows returns file paths with \ (special character) instead of / 
