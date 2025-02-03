@@ -1,7 +1,12 @@
 import { EmbedBuilder, ApplicationCommandOptionType } from "discord.js";
-import {fetchEnemyWeaknesses, fetchEnemyStats} from "../../enemyWeaknessQueries.js";
+import {
+  fetchEnemyWeaknesses,
+} from "../../queries/fetchMetaphorEnemyWeaknesses.js";
 import createWeaknessChart from "../../createWeaknessChart.js";
+import { fetchEnemyStats } from "../../queries/fetchMetaphorEnemyStats.js";
 
+//! Creates slash command that returns a weakness chart image based on the monster
+//! name inputted by the user
 export default {
   name: "metaphor-monster-name",
   description: "Provides info on a monster within Methaphor Refantazio",
@@ -44,7 +49,9 @@ export default {
     // Create an embed and set the image attachment link
     const embed = new EmbedBuilder()
       .setTitle(`**${monsterName}**`)
-      .setDescription(`**Level:** ${enemyStats[0].level} **HP:** ${enemyStats[0].hp}`)
+      .setDescription(
+        `**Level:** ${enemyStats[0].level} **HP:** ${enemyStats[0].hp}`
+      )
       .setColor("Blue")
       .setImage("attachment://elements.png");
 
