@@ -1,5 +1,5 @@
 import { eq } from "drizzle-orm";
-import { db, metaphorEnemyStats } from "../drizzle.config";
+import { db, metaphorEnemyStats } from "../drizzleconfig.js";
 
 //! Returns an object where keys represent the element type
 //! and the values are the enemy's reaction to the element

@@ -1,9 +1,9 @@
 import { fetchEnemyWeaknesses } from "./fetchMetaphorEnemyWeaknesses";
-import { db, metaphorEnemyStats } from "../drizzle.config";
+import { db, metaphorEnemyStats } from "../drizzleconfig.js";
 //TODO: ADD COMMENTS TO THIS FILE + CREATE EXCEPTION HANDLERS IN QUERY FUNCTIONS TO HANDLE NO MONSTER IN DB OR DB CONNECTION ERRORS
 
 // Mock the database
-jest.mock("../drizzle.config", () => {
+jest.mock("../drizzleconfig", () => {
   const mockQueryBuilder = {
     from: jest.fn().mockReturnThis(),
     where: jest.fn().mockResolvedValue([
@@ -31,7 +31,7 @@ jest.mock("../drizzle.config", () => {
         return mockQueryBuilder;
       }),
     },
-    // all column keys are assigned null b/c the 
+    // all column keys are assigned null b/c the
     metaphorEnemyStats: {
       slash: null,
       pierce: null,

@@ -1,5 +1,5 @@
 import { eq } from "drizzle-orm";
-import { db, metaphorEnemyStats } from "../drizzle.config";
+import { db, metaphorEnemyStats } from "../drizzleconfig.js";
 
 //! grabs enemy stats outside of their weaknesses
 export async function fetchEnemyStats(enemyName: string) {
