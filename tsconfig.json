@@ -9,9 +9,6 @@
     "skipLibCheck": true, // Skip type-checking .d.ts files
     "resolveJsonModule": true, // Allow importing JSON files
     "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"]
-    },
     "importHelpers": true
   },
   "include": ["src/**/*"],

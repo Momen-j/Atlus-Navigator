@@ -37,3 +37,24 @@ export const metaphorEnemyStats = pgTable("metaphor_enemy_stats", {
   dark: text("dark"),
   almighty: text("almighty"),
 });
+
+export const p3rEnemyStats = pgTable("p3_enemies", {
+  id: serial("id").primaryKey(), // Auto-incrementing ID remains the same
+  race: text("race").notNull(),
+  level: text("level"), // Text type for level (even if it's numeric data)
+  enemyName: text("name").notNull(), // Enemy name is required
+  hp: text("hp"),
+  mp: text("mp"),
+  slash: text("sword"),
+  strike: text("strike"),
+  pierce: text("gun"),
+  fire: text("fire"),
+  ice: text("ice"),
+  elec: text("elec"),
+  wind: text("wind"),
+  light: text("light"),
+  dark: text("dark"),
+  almighty: text("almighty"),
+  drops: text("drops"),
+  appears: text("appears"),
+});

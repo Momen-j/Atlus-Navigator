@@ -1,18 +1,18 @@
 import { createCanvas, loadImage } from "canvas"; // Canvas package for creating images
 import path from "path";
 
-export default async function createWeaknessChart(data) {
+export default async function createP3WeaknessChart(data) {
   //! BREAK UP INTO HELPER FUNCTIONS FOR DIFFERENT GAMES and make game type a parameter
   // Canvas & context setup to draw on canvas
-  const canvas = createCanvas(2000, 350);
+  const canvas = createCanvas(2000, 300);
   const ctx = canvas.getContext("2d");
 
-  // Fill background with black
-  ctx.fillStyle = "#2f3130";
+  // Fill background with light blue
+  ctx.fillStyle = "#0EB1F4";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  // Fill top row with white
-  ctx.fillStyle = "white";
+  // Fill top row with icon background color
+  ctx.fillStyle = "#07041C";
   ctx.fillRect(0, 0, canvas.width, canvas.height / 2);
 
   // Grid and cell properties
@@ -21,42 +21,43 @@ export default async function createWeaknessChart(data) {
   const cols = 10; // Fixed number of columns
   const rows = 2; // Always 2 rows (top for elements, bottom for weaknesses)
 
-  // Draw grid lines
-  ctx.strokeStyle = "black";
-  ctx.lineWidth = 3;
+  //   // Draw grid lines
+  //   ctx.strokeStyle = "black";
+  //   ctx.lineWidth = 3;
 
-  // Draw vertical lines for columns
-  for (let col = 0; col <= cols; col++) {
-    // pick up pen
-    ctx.beginPath();
+  //   // Draw vertical lines for columns
+  //   for (let col = 0; col <= cols; col++) {
+  //     // pick up pen
+  //     ctx.beginPath();
 
-    // bring pen to the start of whichever column we are drawing
-    ctx.moveTo(col * cellWidth, 0);
+  //     // bring pen to the start of whichever column we are drawing
+  //     // EX. first column begins at = (col = 0 * cellwidth, 0) aka (0,0)
+  //     ctx.moveTo(col * cellWidth, 0);
 
-    // the pen will end drawing at the bottom of the canvas
-    ctx.lineTo(col * cellWidth, rows * cellHeight);
+  //     // the pen will end drawing at the bottom of the canvas
+  //     ctx.lineTo(col * cellWidth, rows * cellHeight);
 
-    // draw the line
-    ctx.stroke();
-  }
+  //     // draw the line
+  //     ctx.stroke();
+  //   }
 
-  // Draw horizontal lines for rows
-  for (let row = 0; row <= rows; row++) {
-    // pick up pen
-    ctx.beginPath();
+  //   // Draw horizontal lines for rows
+  //   for (let row = 0; row <= rows; row++) {
+  //     // pick up pen
+  //     ctx.beginPath();
 
-    // bring pen to the start of whichever row we are drawing
-    ctx.moveTo(0, row * cellHeight);
+  //     // bring pen to the start of whichever row we are drawing
+  //     ctx.moveTo(0, row * cellHeight);
 
-    // the pen will end drawing at the right most side of the canvas
-    ctx.lineTo(cols * cellWidth, row * cellHeight);
+  //     // the pen will end drawing at the right most side of the canvas
+  //     ctx.lineTo(cols * cellWidth, row * cellHeight);
 
-    // draw the line
-    ctx.stroke();
-  }
+  //     // draw the line
+  //     ctx.stroke();
+  //   }
 
   // Explicitly define paths to the elements and reactions folders
-  const elementsFolder = path.resolve("./src/assets/elements");
+  const elementsFolder = path.resolve("./src/assets/p3_elements");
   const reactionsFolder = path.resolve("./src/assets/reactions");
 
   // preload weakness images into an object
@@ -72,6 +73,9 @@ export default async function createWeaknessChart(data) {
   // Draw elements within the top row aka the columns
   const elementKeys = Object.keys(data); // ['fire', 'ice', 'elec']
 
+  // Define a scaling factor
+  const scaleFactor = 2.5; // Increase size by xx%
+
   // for every element within elementKeys
   for (let index = 0; index < elementKeys.length; index++) {
     // grab the element
@@ -80,13 +84,17 @@ export default async function createWeaknessChart(data) {
     // grab the image associated with that element
     const img = await loadImage(path.join(elementsFolder, `${element}.png`));
 
+    // Scale the width & height
+    const newWidth = img.width * scaleFactor;
+    const newHeight = img.height * scaleFactor;
+
     // Center image within the cell
     //! LOOK INTO HOW THIS WORKS + HOW FORMULA DYNAMICALLY CENTERS
-    const x = index * cellWidth + (cellWidth - img.width) / 2;
-    const y = (cellHeight - img.height) / 2;
+    const x = index * cellWidth + (cellWidth - newWidth) / 2;
+    const y = (cellHeight - newHeight) / 2;
 
     // draw the image within the x & y coordinates given
-    ctx.drawImage(img, x, y);
+    ctx.drawImage(img, x, y, newWidth, newHeight);
   }
 
   // Draw reaction images based on data parameter given
@@ -103,22 +111,22 @@ export default async function createWeaknessChart(data) {
 
     // switch statement to determine which image to produce in bottom row
     switch (weakness) {
-      case "Weak":
+      case "wk":
         weaknessImagePath = imagePaths.weak;
         break;
-      case "Resist":
+      case "rs":
         weaknessImagePath = imagePaths.resist;
         break;
-      case "Null":
+      case "nu":
         weaknessImagePath = imagePaths.null;
         break;
-      case "Drain":
+      case "ab":
         weaknessImagePath = imagePaths.drain;
         break;
-      case "Repel":
+      case "rp":
         weaknessImagePath = imagePaths.reflect;
         break;
-      case "Neutral":
+      case "no":
         weaknessImagePath = imagePaths.neutral;
         break;
       default:
@@ -135,6 +143,41 @@ export default async function createWeaknessChart(data) {
 
     // draw the image within the x & y coordinates given
     ctx.drawImage(img, x, y);
+
+    // Draw grid lines
+    ctx.strokeStyle = "black";
+    ctx.lineWidth = 6;
+
+    // Draw vertical lines for columns
+    for (let col = 0; col <= cols; col++) {
+      // pick up pen
+      ctx.beginPath();
+
+      // bring pen to the start of whichever column we are drawing
+      // EX. first column begins at = (col = 0 * cellwidth, 0) aka (0,0)
+      ctx.moveTo(col * cellWidth, 0);
+
+      // the pen will end drawing at the bottom of the canvas
+      ctx.lineTo(col * cellWidth, rows * cellHeight);
+
+      // draw the line
+      ctx.stroke();
+    }
+
+    // Draw horizontal lines for rows
+    for (let row = 0; row <= rows; row++) {
+      // pick up pen
+      ctx.beginPath();
+
+      // bring pen to the start of whichever row we are drawing
+      ctx.moveTo(0, row * cellHeight);
+
+      // the pen will end drawing at the right most side of the canvas
+      ctx.lineTo(cols * cellWidth, row * cellHeight);
+
+      // draw the line
+      ctx.stroke();
+    }
   }
 
   return canvas.toBuffer(); // Convert canvas to buffer
