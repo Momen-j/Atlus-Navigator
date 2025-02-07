@@ -4,7 +4,7 @@ import path from "path";
 export default async function createP5WeaknessChart(data) {
   //! BREAK UP INTO HELPER FUNCTIONS FOR DIFFERENT GAMES and make game type a parameter
   // Canvas & context setup to draw on canvas
-  const canvas = createCanvas(1800, 275);
+  const canvas = createCanvas(1825, 275);
   const ctx = canvas.getContext("2d");
 
   // Define a scaling factor

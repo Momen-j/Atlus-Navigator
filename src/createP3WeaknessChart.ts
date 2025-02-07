@@ -4,11 +4,11 @@ import path from "path";
 export default async function createP3WeaknessChart(data) {
   //! BREAK UP INTO HELPER FUNCTIONS FOR DIFFERENT GAMES and make game type a parameter
   // Canvas & context setup to draw on canvas
-  const canvas = createCanvas(2000, 275);
+  const canvas = createCanvas(2200, 275);
   const ctx = canvas.getContext("2d");
 
   // Define a scaling factor
-  const widthScaleFactor = 2.5; // Increase size by xx% (2.5 IS WIDTH SWEETSPOT for 2000 px length canvas)
+  const widthScaleFactor = 2.65; // Increase size by xx% (2.5 IS WIDTH SWEETSPOT for 2000 px length canvas)
   const heightScaleFactor = 4.5; // Increase size by xx%
 
   // Grid and cell properties
