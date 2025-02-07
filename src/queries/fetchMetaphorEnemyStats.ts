@@ -13,8 +13,13 @@ export async function fetchEnemyStats(enemyName: string) {
       .where(eq(metaphorEnemyStats.enemyName, enemyName));
 
     return enemiesStats;
-  } catch (error) {
-    console.log(`There was an error querying the DB: ${error}`);
-    return [];
+  } catch (error: any) {
+    if (error.message.includes("ECONNREFUSED")) {
+      throw new Error("Database connection failed.");
+    }
+    if (error.message.includes("timeout")) {
+      throw new Error("Database query timed out.");
+    }
+    throw new Error("Unexpected database error.");
   }
 }

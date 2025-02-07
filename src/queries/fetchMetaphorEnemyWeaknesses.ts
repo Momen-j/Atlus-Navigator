@@ -21,9 +21,21 @@ export async function fetchEnemyWeaknesses(enemyName: string) {
       .from(metaphorEnemyStats)
       .where(eq(metaphorEnemyStats.enemyName, enemyName));
 
+    // when no enemies are found in db, return empty array
+    if (enemiesWeaknesses.length === 0) {
+      return [];
+    }
+
+    // otherwise, return array of objects containing enemy weaknesses
     return enemiesWeaknesses;
-  } catch (error) {
-    console.log(`There was an error querying the DB: ${error}`);
-    return [];
+  } catch (error: any) {
+    // set up catch block to throw an error if there is a problem with the DB
+    if (error.message.includes("ECONNREFUSED")) {
+      throw new Error("Database connection failed.");
+    } else if (error.message.includes("timeout")) {
+      throw new Error("Database query timed out.");
+    } else {
+      throw new Error("Unexpected database error.");
+    }
   }
 }
