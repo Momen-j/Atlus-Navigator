@@ -9,7 +9,7 @@ export default async function createP3WeaknessChart(data) {
 
   // Define a scaling factor
   const widthScaleFactor = 2.5; // Increase size by xx% (2.5 IS WIDTH SWEETSPOT for 2000 px length canvas)
-  const heightScaleFactor = 3.5; // Increase size by xx%
+  const heightScaleFactor = 4; // Increase size by xx%
 
   // Grid and cell properties
   const cellWidth = canvas.width / 10; // Width of each cell //! Since we want 10 columns we divide width by 10

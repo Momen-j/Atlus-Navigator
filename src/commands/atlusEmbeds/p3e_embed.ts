@@ -52,7 +52,7 @@ export default {
       .setDescription(
         `**${monsterName}** \n**Level:** ${enemyStats[0].level}\n**HP:** ${enemyStats[0].hp}\n**Located:** ${enemyStats[0].appears}`
       )
-      .setColor("Blue")
+      .setColor("#5354AE")
       .setImage("attachment://elements.png");
 
     // Send the embed with the weaknessChart as an attachment
