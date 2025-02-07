@@ -4,57 +4,27 @@ import path from "path";
 export default async function createP3WeaknessChart(data) {
   //! BREAK UP INTO HELPER FUNCTIONS FOR DIFFERENT GAMES and make game type a parameter
   // Canvas & context setup to draw on canvas
-  const canvas = createCanvas(2000, 300);
+  const canvas = createCanvas(2000, 240);
   const ctx = canvas.getContext("2d");
 
+  // Define a scaling factor
+  const widthScaleFactor = 2.5; // Increase size by xx% (2.5 IS WIDTH SWEETSPOT for 2000 px length canvas)
+  const heightScaleFactor = 3.5; // Increase size by xx%
+
+  // Grid and cell properties
+  const cellWidth = canvas.width / 10; // Width of each cell //! Since we want 10 columns we divide width by 10
+  const iconCellHeight = heightScaleFactor * 27;
+  const cellHeight = canvas.height - iconCellHeight; // Height of each cell //! Since we want 2 rows we divide height by 2
+  const cols = 10; // Fixed number of columns
+  const rows = 2; // Always 2 rows (top for elements, bottom for weaknesses)
+
   // Fill background with light blue
-  ctx.fillStyle = "#0EB1F4";
+  ctx.fillStyle = "#0079EE";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   // Fill top row with icon background color
   ctx.fillStyle = "#07041C";
-  ctx.fillRect(0, 0, canvas.width, canvas.height / 2);
-
-  // Grid and cell properties
-  const cellWidth = canvas.width / 10; // Width of each cell //! Since we want 10 columns we divide width by 10
-  const cellHeight = canvas.height / 2; // Height of each cell //! Since we want 2 rows we divide height by 2
-  const cols = 10; // Fixed number of columns
-  const rows = 2; // Always 2 rows (top for elements, bottom for weaknesses)
-
-  //   // Draw grid lines
-  //   ctx.strokeStyle = "black";
-  //   ctx.lineWidth = 3;
-
-  //   // Draw vertical lines for columns
-  //   for (let col = 0; col <= cols; col++) {
-  //     // pick up pen
-  //     ctx.beginPath();
-
-  //     // bring pen to the start of whichever column we are drawing
-  //     // EX. first column begins at = (col = 0 * cellwidth, 0) aka (0,0)
-  //     ctx.moveTo(col * cellWidth, 0);
-
-  //     // the pen will end drawing at the bottom of the canvas
-  //     ctx.lineTo(col * cellWidth, rows * cellHeight);
-
-  //     // draw the line
-  //     ctx.stroke();
-  //   }
-
-  //   // Draw horizontal lines for rows
-  //   for (let row = 0; row <= rows; row++) {
-  //     // pick up pen
-  //     ctx.beginPath();
-
-  //     // bring pen to the start of whichever row we are drawing
-  //     ctx.moveTo(0, row * cellHeight);
-
-  //     // the pen will end drawing at the right most side of the canvas
-  //     ctx.lineTo(cols * cellWidth, row * cellHeight);
-
-  //     // draw the line
-  //     ctx.stroke();
-  //   }
+  ctx.fillRect(0, 0, canvas.width, iconCellHeight);
 
   // Explicitly define paths to the elements and reactions folders
   const elementsFolder = path.resolve("./src/assets/p3_elements");
@@ -73,9 +43,6 @@ export default async function createP3WeaknessChart(data) {
   // Draw elements within the top row aka the columns
   const elementKeys = Object.keys(data); // ['fire', 'ice', 'elec']
 
-  // Define a scaling factor
-  const scaleFactor = 2.5; // Increase size by xx%
-
   // for every element within elementKeys
   for (let index = 0; index < elementKeys.length; index++) {
     // grab the element
@@ -85,13 +52,13 @@ export default async function createP3WeaknessChart(data) {
     const img = await loadImage(path.join(elementsFolder, `${element}.png`));
 
     // Scale the width & height
-    const newWidth = img.width * scaleFactor;
-    const newHeight = img.height * scaleFactor;
+    const newWidth = img.width * widthScaleFactor;
+    const newHeight = img.height * heightScaleFactor;
 
     // Center image within the cell
     //! LOOK INTO HOW THIS WORKS + HOW FORMULA DYNAMICALLY CENTERS
     const x = index * cellWidth + (cellWidth - newWidth) / 2;
-    const y = (cellHeight - newHeight) / 2;
+    const y = (iconCellHeight - newHeight) / 2;
 
     // draw the image within the x & y coordinates given
     ctx.drawImage(img, x, y, newWidth, newHeight);
@@ -139,7 +106,7 @@ export default async function createP3WeaknessChart(data) {
     // Center image in the cell (bottom row)
     //! LOOK INTO HOW THIS WORKS + HOW FORMULA DYNAMICALLY CENTERS
     const x = index * cellWidth + (cellWidth - img.width) / 2;
-    const y = cellHeight + (cellHeight - img.height) / 2; // Bottom row offset by `cellHeight`
+    const y = iconCellHeight + (cellHeight - img.height) / 2; // Bottom row offset by `cellHeight`
 
     // draw the image within the x & y coordinates given
     ctx.drawImage(img, x, y);
@@ -149,7 +116,7 @@ export default async function createP3WeaknessChart(data) {
     ctx.lineWidth = 6;
 
     // Draw vertical lines for columns
-    for (let col = 0; col <= cols; col++) {
+    for (let col = 1; col < cols; col++) {
       // pick up pen
       ctx.beginPath();
 
@@ -165,15 +132,15 @@ export default async function createP3WeaknessChart(data) {
     }
 
     // Draw horizontal lines for rows
-    for (let row = 0; row <= rows; row++) {
+    for (let row = 1; row < rows; row++) {
       // pick up pen
       ctx.beginPath();
 
       // bring pen to the start of whichever row we are drawing
-      ctx.moveTo(0, row * cellHeight);
+      ctx.moveTo(0, row * iconCellHeight);
 
       // the pen will end drawing at the right most side of the canvas
-      ctx.lineTo(cols * cellWidth, row * cellHeight);
+      ctx.lineTo(cols * cellWidth, row * iconCellHeight);
 
       // draw the line
       ctx.stroke();
