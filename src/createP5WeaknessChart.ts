@@ -1,25 +1,25 @@
 import { createCanvas, loadImage } from "canvas"; // Canvas package for creating images
 import path from "path";
 
-export default async function createP4WeaknessChart(data) {
+export default async function createP5WeaknessChart(data) {
   //! BREAK UP INTO HELPER FUNCTIONS FOR DIFFERENT GAMES and make game type a parameter
   // Canvas & context setup to draw on canvas
-  const canvas = createCanvas(1600, 275);
+  const canvas = createCanvas(1800, 275);
   const ctx = canvas.getContext("2d");
 
   // Define a scaling factor
-  const widthScaleFactor = 1.65; // Increase size by xx% (2.5 IS WIDTH SWEETSPOT for 2000 px length canvas)
+  const widthScaleFactor = 1.35; // Increase size by xx% (2.5 IS WIDTH SWEETSPOT for 2000 px length canvas)
   const heightScaleFactor = 3; // Increase size by xx%
 
   // Grid and cell properties
-  const cellWidth = canvas.width / 8; // Width of each cell 
-  const iconCellHeight = heightScaleFactor * 41;
+  const cellWidth = canvas.width / 11; // Width of each cell 
+  const iconCellHeight = heightScaleFactor * 41; // scale * height of png
   const cellHeight = canvas.height - iconCellHeight; // Height of each cell //! Since we want 2 rows we divide height by 2
-  const cols = 8; // Fixed number of columns
+  const cols = 11; // Fixed number of columns
   const rows = 2; // Always 2 rows (top for elements, bottom for weaknesses)
 
-  // Fill background with light blue
-  ctx.fillStyle = "#FAA828";
+  // Fill background with PERSONA 5 RED
+  ctx.fillStyle = "#ED1B24";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   // Fill top row with icon background color
