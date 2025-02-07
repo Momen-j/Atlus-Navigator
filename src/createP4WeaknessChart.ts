@@ -8,12 +8,12 @@ export default async function createP4WeaknessChart(data) {
   const ctx = canvas.getContext("2d");
 
   // Define a scaling factor
-  const widthScaleFactor = 2; // Increase size by xx% (2.5 IS WIDTH SWEETSPOT for 2000 px length canvas)
-  const heightScaleFactor = 2; // Increase size by xx%
+  const widthScaleFactor = 1.65; // Increase size by xx% (2.5 IS WIDTH SWEETSPOT for 2000 px length canvas)
+  const heightScaleFactor = 2.5; // Increase size by xx%
 
   // Grid and cell properties
   const cellWidth = canvas.width / 8; // Width of each cell 
-  const iconCellHeight = heightScaleFactor * 68;
+  const iconCellHeight = heightScaleFactor * 41;
   const cellHeight = canvas.height - iconCellHeight; // Height of each cell //! Since we want 2 rows we divide height by 2
   const cols = 8; // Fixed number of columns
   const rows = 2; // Always 2 rows (top for elements, bottom for weaknesses)
@@ -23,7 +23,7 @@ export default async function createP4WeaknessChart(data) {
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   // Fill top row with icon background color
-  ctx.fillStyle = "#535353";
+  ctx.fillStyle = "#0B0C0B";
   ctx.fillRect(0, 0, canvas.width, iconCellHeight);
 
   // Explicitly define paths to the elements and reactions folders
