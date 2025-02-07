@@ -1,6 +1,26 @@
 import { createCanvas, loadImage } from "canvas"; // Canvas package for creating images
 import path from "path";
 
+/**
+ * Generates a weakness chart as an image buffer.
+ * The chart visually represents elemental weaknesses for different elements.
+ *
+ * @async
+ * @function createWeaknessChart
+ * @param {Object.<string, string>} data - An object mapping element names to their respective weaknesses.
+ * @param {string} data[element] - The weakness value for a given element (e.g., "Weak", "Resist", "Null").
+ * @returns {Promise<Buffer>} A Promise that resolves to an image buffer containing the generated weakness chart.
+ *
+ * @example
+ * const weaknesses = {
+ *   fire: "Weak",
+ *   ice: "Resist",
+ *   elec: "Null"
+ * };
+ * const buffer = await createWeaknessChart(weaknesses);
+ * Use the buffer to send an image or save it to a file
+ */
+
 export default async function createWeaknessChart(data) {
   //! BREAK UP INTO HELPER FUNCTIONS FOR DIFFERENT GAMES and make game type a parameter
   // Canvas & context setup to draw on canvas

@@ -3,6 +3,14 @@ import { db, metaphorEnemyStats } from "../drizzleconfig.js";
 
 //! Returns an object where keys represent the element type
 //! and the values are the enemy's reaction to the element
+
+/**
+ * Fetches the weaknesses of an enemy from the database.
+ * @async
+ * @param {string} enemyName - The name of the enemy.
+ * @returns {Promise<object[]>} A promise that resolves to an array of objects containing enemy weaknesses.
+ * @throws {Error} If there is an issue with the database connection or query.
+ */
 export async function fetchEnemyWeaknesses(enemyName: string) {
   try {
     const enemiesWeaknesses = await db

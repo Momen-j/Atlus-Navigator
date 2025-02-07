@@ -5,6 +5,7 @@ import { fetchEnemyStats } from "../../queries/fetchMetaphorEnemyStats.js";
 
 //! Creates slash command that returns a weakness chart image based on the monster
 //! name inputted by the user
+/** Represents the embed returning Metaphor: ReFantazio data */
 export default {
   name: "metaphor-monster-name",
   description: "Provides info on a monster within Metaphor: ReFantazio",
