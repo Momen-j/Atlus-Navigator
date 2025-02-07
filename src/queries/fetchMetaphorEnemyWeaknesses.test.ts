@@ -31,7 +31,8 @@ jest.mock("../drizzleconfig", () => {
         return mockQueryBuilder;
       }),
     },
-    // all column keys are assigned null b/c the
+    // all column keys are assigned null b/c the values within the table don't matter as long as we have the same fields
+    // null = we don't care about the values just that the fields exist
     metaphorEnemyStats: {
       slash: null,
       pierce: null,
