@@ -9,7 +9,7 @@ import { fetchEnemyStats } from "../../queries/fetchMetaphorEnemyStats.js";
 //! name inputted by the user
 export default {
   name: "metaphor-monster-name",
-  description: "Provides info on a monster within Methaphor Refantazio",
+  description: "Provides info on a monster within Metaphor: ReFantazio",
   options: [
     {
       name: "monster-name",
@@ -39,7 +39,7 @@ export default {
     if (dbResult.length === 0) {
       interaction.reply({
         content:
-          "This monster does not exist within the world of Metaphor Refantazio",
+          "This monster does not exist within the world of Metaphor: ReFantazio",
       });
     }
 
@@ -48,9 +48,9 @@ export default {
 
     // Create an embed and set the image attachment link
     const embed = new EmbedBuilder()
-      .setTitle(`**Metaphor Refantazio**`)
+      .setTitle(`**${monsterName}**`)
       .setDescription(
-        `**${monsterName}** \n**Level:** ${enemyStats[0].level}\n**HP:** ${enemyStats[0].hp}`
+        `**Metaphor: ReFantazio** \n**Level:** ${enemyStats[0].level}\n**HP:** ${enemyStats[0].hp}`
       )
       .setColor("#908581")
       .setImage("attachment://elements.png");
