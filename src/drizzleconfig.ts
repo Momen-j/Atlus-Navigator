@@ -79,3 +79,22 @@ export const p3eEnemyStats = pgTable("p3e_enemies", {
   drops: text("drops"),
   appears: text("appears"),
 });
+
+export const p4EnemyStats = pgTable("p4_enemies", {
+  id: serial("id").primaryKey(), // Auto-incrementing ID remains the same
+  race: text("race").notNull(),
+  level: text("level"), // Text type for level (even if it's numeric data)
+  enemyName: text("name").notNull(), // Enemy name is required
+  hp: text("hp"),
+  mp: text("mp"),
+  phys: text("phys"),
+  fire: text("fire"),
+  ice: text("ice"),
+  elec: text("elec"),
+  wind: text("wind"),
+  light: text("light"),
+  dark: text("dark"),
+  almighty: text("almighty"),
+  drops: text("drops"),
+  appears: text("appears"),
+});
