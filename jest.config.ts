@@ -12,4 +12,8 @@ export default {
     "!src/**/*.d.ts", // Exclude declaration files
   ],
   coverageDirectory: "coverage", // Directory to output coverage reports,
+  extensionsToTreatAsEsm: [".ts"],
+  moduleNameMapper: {
+    "^(\\.{1,2}/.*)\\.js$": "$1"
+  }
 };
