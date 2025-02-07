@@ -8,11 +8,11 @@ export default async function createWeaknessChart(data) {
   const ctx = canvas.getContext("2d");
 
   // Fill background with black
-  ctx.fillStyle = "#2f3130";
+  ctx.fillStyle = "#C05F68";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   // Fill top row with white
-  ctx.fillStyle = "white";
+  ctx.fillStyle = "#6B9591";
   ctx.fillRect(0, 0, canvas.width, canvas.height / 2);
 
   // Grid and cell properties
@@ -23,7 +23,7 @@ export default async function createWeaknessChart(data) {
 
   // Draw grid lines
   ctx.strokeStyle = "black";
-  ctx.lineWidth = 3;
+  ctx.lineWidth = 6;
 
   // Draw vertical lines for columns
   for (let col = 0; col <= cols; col++) {
@@ -80,13 +80,21 @@ export default async function createWeaknessChart(data) {
     // grab the image associated with that element
     const img = await loadImage(path.join(elementsFolder, `${element}.png`));
 
+    // Define a scaling factor
+    const widthScaleFactor = 1.5; // Increase size by xx% (2.5 IS WIDTH SWEETSPOT for 2000 px length canvas)
+    //const heightScaleFactor = 1; // Increase size by xx%
+
+    // Scale the width & height
+    const newWidth = img.width * widthScaleFactor;
+    const newHeight = img.height * widthScaleFactor;
+
     // Center image within the cell
     //! LOOK INTO HOW THIS WORKS + HOW FORMULA DYNAMICALLY CENTERS
-    const x = index * cellWidth + (cellWidth - img.width) / 2;
-    const y = (cellHeight - img.height) / 2;
+    const x = index * cellWidth + (cellWidth - newWidth) / 2;
+    const y = (cellHeight - newHeight) / 2;
 
     // draw the image within the x & y coordinates given
-    ctx.drawImage(img, x, y);
+    ctx.drawImage(img, x, y, newWidth, newHeight);
   }
 
   // Draw reaction images based on data parameter given

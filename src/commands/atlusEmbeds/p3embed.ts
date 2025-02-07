@@ -48,9 +48,9 @@ export default {
 
     // Create an embed and set the image attachment link
     const embed = new EmbedBuilder()
-      .setTitle(`**${monsterName}**`)
+      .setTitle(`**Persona 3 Reload**`)
       .setDescription(
-        `**Level:** ${enemyStats[0].level} **HP:** ${enemyStats[0].hp} **Located:** ${enemyStats[0].appears}`
+        `**${monsterName}** \n**Level:** ${enemyStats[0].level}\n**HP:** ${enemyStats[0].hp}\n**Located:** ${enemyStats[0].appears}`
       )
       .setColor("Blue")
       .setImage("attachment://elements.png");
