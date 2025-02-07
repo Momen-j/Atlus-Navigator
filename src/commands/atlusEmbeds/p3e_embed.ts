@@ -1,15 +1,15 @@
 import { EmbedBuilder, ApplicationCommandOptionType } from "discord.js";
 import {
-  fetchP3EnemyWeaknesses,
-} from "../../queries/fetchp3EnemyWeaknesses.js";
+  fetchP3E_EnemyWeaknesses,
+} from "../../queries/fetchp3eEnemyWeaknesses.js";
 import createP3WeaknessChart from "../../createP3WeaknessChart.js";
-import { fetchP3EnemyStats } from "../../queries/fetchp3EnemyStats.js";
+import { fetchP3E_EnemyStats } from "../../queries/fetchp3eEnemyStats.js";
 
 //! Creates slash command that returns a weakness chart image based on the monster
 //! name inputted by the user
 export default {
-  name: "p3-monster-name",
-  description: "Provides info on a monster within Persona 3 Reload (not including Aegis)",
+  name: "p3e-monster-name",
+  description: "Provides info on a monster within Persona 3 Reload: Episode Aegis",
   options: [
     {
       name: "monster-name",
@@ -29,9 +29,9 @@ export default {
     // get the monster name from the interaction
     const monsterName = interaction.options.get("monster-name").value;
 
-    const dbResult = await fetchP3EnemyWeaknesses(monsterName);
+    const dbResult = await fetchP3E_EnemyWeaknesses(monsterName);
 
-    const enemyStats = await fetchP3EnemyStats(monsterName);
+    const enemyStats = await fetchP3E_EnemyStats(monsterName);
 
     console.log(enemyStats);
 
@@ -39,7 +39,7 @@ export default {
     if (dbResult.length === 0) {
       interaction.reply({
         content:
-          "This monster does not exist within the world of Persona 3 Reload",
+          "This monster does not exist within the world of Persona 3 Reload: Episode Aegis",
       });
     }
 
