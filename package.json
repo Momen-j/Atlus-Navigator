@@ -18,7 +18,7 @@
     "build": "tsc",
     "dev": "nodemon dist/index.js",
     "test": "jest --coverage --verbose",
-    "jsdoc": "jsdoc -c jsdoc.json --debug"
+    "doc": "jsdoc -c jsdoc.json --debug"
   },
   "dependencies": {
     "canvas": "^3.0.1",

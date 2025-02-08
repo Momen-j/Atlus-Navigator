@@ -1,6 +1,6 @@
 import { EmbedBuilder, ApplicationCommandOptionType } from "discord.js";
 import { fetchEnemyWeaknesses } from "../../queries/fetchMetaphorEnemyWeaknesses.js";
-import createWeaknessChart from "../../createmetaphorWeaknessChart.js";
+import createMetaphorWeaknessChart from "../../createmetaphorWeaknessChart.js";
 import { fetchEnemyStats } from "../../queries/fetchMetaphorEnemyStats.js";
 
 //! Creates slash command that returns a weakness chart image based on the monster
@@ -45,7 +45,7 @@ export default {
       }
 
       // Create weakness chart (image buffer) using the database result
-      const weaknessChart = await createWeaknessChart(dbResult[0]);
+      const weaknessChart = await createMetaphorWeaknessChart(dbResult[0]);
 
       // Create an embed and set the image attachment link
       const embed = new EmbedBuilder()

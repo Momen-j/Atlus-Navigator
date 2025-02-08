@@ -6,7 +6,7 @@ import path from "path";
  * The chart visually represents elemental weaknesses for different elements.
  *
  * @async
- * @function createWeaknessChart
+ * @function createMetaphorWeaknessChart
  * @param {Object.<string, string>} data - An object mapping element names to their respective weaknesses.
  * @param {string} data[element] - The weakness value for a given element (e.g., "Weak", "Resist", "Null").
  * @returns {Promise<Buffer>} A Promise that resolves to an image buffer containing the generated weakness chart.
@@ -17,11 +17,11 @@ import path from "path";
  *   ice: "Resist",
  *   elec: "Null"
  * };
- * const buffer = await createWeaknessChart(weaknesses);
+ * const buffer = await createMetaphorWeaknessChart(weaknesses);
  * Use the buffer to send an image or save it to a file
  */
 
-export default async function createWeaknessChart(data) {
+export default async function createMetaphorWeaknessChart(data) {
   //! BREAK UP INTO HELPER FUNCTIONS FOR DIFFERENT GAMES and make game type a parameter
   // Canvas & context setup to draw on canvas
   const canvas = createCanvas(2000, 350);
