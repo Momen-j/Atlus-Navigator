@@ -2,6 +2,8 @@ import { EmbedBuilder, ApplicationCommandOptionType } from "discord.js";
 import { fetchEnemyWeaknesses } from "../../queries/fetchMetaphorEnemyWeaknesses.js";
 import createMetaphorWeaknessChart from "../../createmetaphorWeaknessChart.js";
 import { fetchEnemyStats } from "../../queries/fetchMetaphorEnemyStats.js";
+import { MetaphorEnemyStats } from "src/metaphorInterface.js";
+import { MetaphorEnemyWeaknesses } from "src/metaphorInterface.js";
 
 //! Creates slash command that returns a weakness chart image based on the monster
 //! name inputted by the user
@@ -25,15 +27,37 @@ export default {
     //! this callback function takes the monster name inputted
     //! by the user and returns the weakness chart of the monster
 
+    // init dbResult & enemyStats
+    let dbResult: MetaphorEnemyWeaknesses[];
+    let enemyStats: MetaphorEnemyStats[];
+
+    // Get the monster name from the interaction
+    const monsterName = interaction.options.get("monster-name").value;
+
     try {
-      // Get the monster name from the interaction
-      const monsterName = interaction.options.get("monster-name").value;
-
       // Fetch weaknesses and stats
-      const dbResult = await fetchEnemyWeaknesses(monsterName);
-      const enemyStats = await fetchEnemyStats(monsterName);
+      dbResult = await fetchEnemyWeaknesses(monsterName);
+      enemyStats = await fetchEnemyStats(monsterName);
 
-      console.log(enemyStats);
+    } catch (error: any) {
+      console.error("Error fetching enemy data:", error);
+
+      let errorMessage =
+        "❌ An unexpected error occurred. Please try again later.";
+
+      if (error.message.includes("ECONNREFUSED")) {
+        errorMessage =
+          "⚠️ My connection to the database is currently down. Please try again later!";
+      } else if (error.message.includes("timeout")) {
+        errorMessage =
+          "⏳ The database took too long to respond. Try again in a few moments.";
+      } 
+
+      return interaction.reply({
+        content: errorMessage,
+        ephemeral: true, // Ensures only the user who triggered the command sees the error
+      });
+    }
 
       // If no data is returned from the database, respond to the user
       if (dbResult.length === 0) {
@@ -66,24 +90,5 @@ export default {
           },
         ],
       });
-    } catch (error: any) {
-      console.error("Error fetching enemy data:", error);
-
-      let errorMessage =
-        "❌ An unexpected error occurred. Please try again later.";
-
-      if (error.message === "Database connection failed.") {
-        errorMessage =
-          "⚠️ My connection to the database is currently down. Please try again later!";
-      } else if (error.message === "Database query timed out.") {
-        errorMessage =
-          "⏳ The database took too long to respond. Try again in a few moments.";
-      }
-
-      return interaction.reply({
-        content: errorMessage,
-        ephemeral: true, // Ensures only the user who triggered the command sees the error
-      });
-    }
   },
 };

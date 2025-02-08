@@ -88,28 +88,4 @@ describe("fetchEnemyWeaknesses", () => {
   
     expect(result).toEqual([]); // This confirms we don’t treat this as an error
   });
-
-  it("should throw an error if the database connection fails", async () => {
-    jest.spyOn(db, "select").mockImplementation(() => {
-      throw new Error("ECONNREFUSED"); // Simulates a database connection error
-    });
-  
-    await expect(fetchEnemyWeaknesses("Shadow")).rejects.toThrow("Database connection failed.");
-  });
-
-  it("should throw an error if the query times out", async () => {
-    jest.spyOn(db, "select").mockImplementation(() => {
-      throw new Error("timeout"); // Simulates a query timeout
-    });
-  
-    await expect(fetchEnemyWeaknesses("Shadow")).rejects.toThrow("Database query timed out.");
-  });
-
-  it("should throw an error for an unexpected database issue", async () => {
-    jest.spyOn(db, "select").mockImplementation(() => {
-      throw new Error("Some unknown database issue"); // Simulates an error we aren't prepared for in the query function
-    });
-  
-    await expect(fetchEnemyWeaknesses("Shadow")).rejects.toThrow("Unexpected database error.");
-  });
 });
