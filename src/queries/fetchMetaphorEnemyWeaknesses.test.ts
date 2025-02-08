@@ -1,4 +1,4 @@
-import { fetchEnemyWeaknesses } from "./fetchMetaphorEnemyWeaknesses";
+import { fetchMetaphorEnemyWeaknesses } from "./fetchMetaphorEnemyWeaknesses";
 import { db, metaphorEnemyStats } from "../drizzleconfig.js";
 //TODO: ADD COMMENTS TO THIS FILE + CREATE EXCEPTION HANDLERS IN QUERY FUNCTIONS TO HANDLE NO MONSTER IN DB OR DB CONNECTION ERRORS
 
@@ -48,9 +48,9 @@ jest.mock("../drizzleconfig", () => {
   };
 });
 
-describe("fetchEnemyWeaknesses", () => {
+describe("fetchMetaphorEnemyWeaknesses", () => {
   it("should return the correct weaknesses for a given enemy", async () => {
-    const result = await fetchEnemyWeaknesses("Shadow");
+    const result = await fetchMetaphorEnemyWeaknesses("Shadow");
 
     expect(result).toEqual([
       {
@@ -80,12 +80,14 @@ describe("fetchEnemyWeaknesses", () => {
       db.select(expect.any(Object)).from(metaphorEnemyStats).where
     ).toHaveBeenCalledWith(expect.anything());
   });
-  
+
   it("should return an empty array when no enemy is found", async () => {
-    jest.spyOn(db.select(expect.any(Object)).from(metaphorEnemyStats), "where").mockResolvedValue([]);
-  
-    const result = await fetchEnemyWeaknesses("NonExistentEnemy");
-  
+    jest
+      .spyOn(db.select(expect.any(Object)).from(metaphorEnemyStats), "where")
+      .mockResolvedValue([]);
+
+    const result = await fetchMetaphorEnemyWeaknesses("NonExistentEnemy");
+
     expect(result).toEqual([]); // This confirms we don’t treat this as an error
   });
 });

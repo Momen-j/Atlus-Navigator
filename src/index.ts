@@ -3,6 +3,11 @@ import { eventHandler } from "./handlers/eventHandler.js";
 import dotenv from "dotenv";
 dotenv.config();
 
+/**
+ * @file this is the root
+ * @author Moses Joseph
+ */
+
 //? Sets up discord bot with permissions in order to perform actions based on events
 const client = new Client({
   intents: [
