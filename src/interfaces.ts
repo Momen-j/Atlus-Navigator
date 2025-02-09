@@ -16,7 +16,7 @@ export interface MetaphorEnemyStats {
   hp: string;
 }
 
-export interface P3E_EnemyWeaknesses {
+export interface P3EEnemyWeaknesses {
   slash: string;
   pierce: string;
   strike: string;
@@ -29,7 +29,7 @@ export interface P3E_EnemyWeaknesses {
   almighty: string;
 }
 
-export interface P3E_EnemyStats {
+export interface P3EEnemyStats {
   level: string;
   hp: string;
   appears: string;

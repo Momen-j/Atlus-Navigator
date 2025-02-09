@@ -2,9 +2,6 @@ import { eq } from "drizzle-orm";
 import { db, metaphorEnemyStats } from "../drizzleconfig.js";
 import { MetaphorEnemyWeaknesses } from "src/interfaces.js";
 
-//! Returns an object where keys represent the element type
-//! and the values are the enemy's reaction to the element
-
 /**
  * Fetches the weaknesses of a Metaphor: Refantazio enemy from the database.
  * @memberof DatabaseQueries
@@ -13,7 +10,20 @@ import { MetaphorEnemyWeaknesses } from "src/interfaces.js";
  * @returns {Promise<MetaphorEnemyWeaknesses[]>} A promise that resolves to an array of objects containing elements as keys and enemy weaknesses/reactions as values
  * If the enemy is not found, the array will be empty.
  * @throws {Error} Throws an error if there is a database connection issue or a query failure.
+ * @example export interface MetaphorEnemyWeaknesses {
+  slash: string;
+  pierce: string;
+  strike: string;
+  fire: string;
+  ice: string;
+  elec: string;
+  wind: string;
+  light: string;
+  dark: string;
+  almighty: string;
+}
  */
+
 export async function fetchMetaphorEnemyWeaknesses(
   enemyName: string
 ): Promise<MetaphorEnemyWeaknesses[]> {

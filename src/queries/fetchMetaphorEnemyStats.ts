@@ -10,7 +10,12 @@ import { MetaphorEnemyStats } from "src/interfaces.js";
  * @returns {Promise<MetaphorEnemyStats[]>} A promise that resolves to an array of objects containing general stats as keys and the accompnaying data as values
  * If the enemy is not found, the array will be empty.
  * @throws {Error} Throws an error if there is a database connection issue or a query failure.
+ * @example export interface MetaphorEnemyStats {
+  level: string;
+  hp: string;
+}
  */
+
 export async function fetchMetaphorEnemyStats(
   enemyName: string
 ): Promise<MetaphorEnemyStats[]> {
