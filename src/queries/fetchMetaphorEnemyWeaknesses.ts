@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { db, metaphorEnemyStats } from "../drizzleconfig.js";
-import { MetaphorEnemyWeaknesses } from "src/metaphorInterface.js";
+import { MetaphorEnemyWeaknesses } from "src/interfaces.js";
 
 //! Returns an object where keys represent the element type
 //! and the values are the enemy's reaction to the element

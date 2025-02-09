@@ -2,8 +2,8 @@ import { EmbedBuilder, ApplicationCommandOptionType } from "discord.js";
 import { fetchMetaphorEnemyWeaknesses } from "../../queries/fetchMetaphorEnemyWeaknesses.js";
 import createMetaphorWeaknessChart from "../../createmetaphorWeaknessChart.js";
 import { fetchMetaphorEnemyStats } from "../../queries/fetchMetaphorEnemyStats.js";
-import { MetaphorEnemyStats } from "src/metaphorInterface.js";
-import { MetaphorEnemyWeaknesses } from "src/metaphorInterface.js";
+import { MetaphorEnemyStats } from "src/interfaces.js";
+import { MetaphorEnemyWeaknesses } from "src/interfaces.js";
 
 //! Creates slash command that returns a weakness chart image based on the monster
 //! name inputted by the user
