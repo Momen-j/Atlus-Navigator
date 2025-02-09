@@ -25,24 +25,24 @@ import { P4EnemyWeaknesses } from "src/interfaces.js";
 export async function fetchP4EnemyWeaknesses(
   enemyName: string
 ): Promise<P4EnemyWeaknesses[]> {
-  try {
-    const enemiesWeaknesses = await db
-      .select({
-        phys: p4EnemyStats.phys,
-        fire: p4EnemyStats.fire,
-        ice: p4EnemyStats.ice,
-        elec: p4EnemyStats.elec,
-        wind: p4EnemyStats.wind,
-        light: p4EnemyStats.light,
-        dark: p4EnemyStats.dark,
-        almighty: p4EnemyStats.almighty,
-      })
-      .from(p4EnemyStats)
-      .where(eq(p4EnemyStats.enemyName, enemyName));
+  const enemiesWeaknesses = await db
+    .select({
+      phys: p4EnemyStats.phys,
+      fire: p4EnemyStats.fire,
+      ice: p4EnemyStats.ice,
+      elec: p4EnemyStats.elec,
+      wind: p4EnemyStats.wind,
+      light: p4EnemyStats.light,
+      dark: p4EnemyStats.dark,
+      almighty: p4EnemyStats.almighty,
+    })
+    .from(p4EnemyStats)
+    .where(eq(p4EnemyStats.enemyName, enemyName));
 
-    return enemiesWeaknesses;
-  } catch (error) {
-    console.log(`There was an error querying the DB: ${error}`);
+  // when no enemies are found in db, return empty array
+  if (enemiesWeaknesses.length === 0) {
     return [];
   }
+
+  return enemiesWeaknesses;
 }

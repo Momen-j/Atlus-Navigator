@@ -27,26 +27,26 @@ import { P3EnemyWeaknesses } from "src/interfaces.js";
 export async function fetchP3E_EnemyWeaknesses(
   enemyName: string
 ): Promise<P3EnemyWeaknesses[]> {
-  try {
-    const enemiesWeaknesses = await db
-      .select({
-        slash: p3eEnemyStats.slash,
-        pierce: p3eEnemyStats.pierce,
-        strike: p3eEnemyStats.strike,
-        fire: p3eEnemyStats.fire,
-        ice: p3eEnemyStats.ice,
-        elec: p3eEnemyStats.elec,
-        wind: p3eEnemyStats.wind,
-        light: p3eEnemyStats.light,
-        dark: p3eEnemyStats.dark,
-        almighty: p3eEnemyStats.almighty,
-      })
-      .from(p3eEnemyStats)
-      .where(eq(p3eEnemyStats.enemyName, enemyName));
+  const enemiesWeaknesses = await db
+    .select({
+      slash: p3eEnemyStats.slash,
+      pierce: p3eEnemyStats.pierce,
+      strike: p3eEnemyStats.strike,
+      fire: p3eEnemyStats.fire,
+      ice: p3eEnemyStats.ice,
+      elec: p3eEnemyStats.elec,
+      wind: p3eEnemyStats.wind,
+      light: p3eEnemyStats.light,
+      dark: p3eEnemyStats.dark,
+      almighty: p3eEnemyStats.almighty,
+    })
+    .from(p3eEnemyStats)
+    .where(eq(p3eEnemyStats.enemyName, enemyName));
 
-    return enemiesWeaknesses;
-  } catch (error) {
-    console.log(`There was an error querying the DB: ${error}`);
+  // when no enemies are found in db, return empty array
+  if (enemiesWeaknesses.length === 0) {
     return [];
   }
+
+  return enemiesWeaknesses;
 }

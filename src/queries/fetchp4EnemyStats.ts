@@ -20,7 +20,6 @@ import { P4EnemyStats } from "src/interfaces.js";
 export async function fetchP4EnemyStats(
   enemyName: string
 ): Promise<P4EnemyStats[]> {
-  try {
     const enemiesStats = await db
       .select({
         level: p4EnemyStats.level,
@@ -31,8 +30,4 @@ export async function fetchP4EnemyStats(
       .where(eq(p4EnemyStats.enemyName, enemyName));
 
     return enemiesStats;
-  } catch (error) {
-    console.log(`There was an error querying the DB: ${error}`);
-    return [];
-  }
 }
