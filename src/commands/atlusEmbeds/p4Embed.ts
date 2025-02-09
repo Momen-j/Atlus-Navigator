@@ -1,11 +1,9 @@
 import { EmbedBuilder, ApplicationCommandOptionType } from "discord.js";
-import {
-  fetchP4EnemyWeaknesses,
-} from "../../queries/fetchp4EnemyWeaknesses.js";
+import { fetchP4EnemyWeaknesses } from "../../queries/fetchp4EnemyWeaknesses.js";
 import createP4WeaknessChart from "../../createP4WeaknessChart.js";
 import { fetchP4EnemyStats } from "../../queries/fetchp4EnemyStats.js";
-
-
+import { P4EnemyStats } from "src/interfaces.js";
+import { P4EnemyWeaknesses } from "src/interfaces.js";
 
 //! Creates slash command that returns a weakness chart image based on the monster
 //! name inputted by the user
@@ -28,36 +26,59 @@ export default {
     //! this callback function takes the monster name inputted
     //! by the user and returns the weakness chart of the monster
 
-    // get the monster name from the interaction
+    // init dbResult & enemyStats
+    let dbResult: P4EnemyWeaknesses[];
+    let enemyStats: P4EnemyStats[];
+
+    // Get the monster name from the interaction
     const monsterName = interaction.options.get("monster-name").value;
 
-    const dbResult = await fetchP4EnemyWeaknesses(monsterName);
+    try {
+      // Fetch weaknesses and stats
+      dbResult = await fetchP4EnemyWeaknesses(monsterName);
+      enemyStats = await fetchP4EnemyStats(monsterName);
+    } catch (error: any) {
+      console.error("Error fetching enemy data:", error);
 
-    const enemyStats = await fetchP4EnemyStats(monsterName);
+      let errorMessage =
+        "❌ An unexpected error occurred. Please try again later.";
 
-    console.log(enemyStats);
+      if (error.message.includes("ECONNREFUSED")) {
+        errorMessage =
+          "⚠️ My connection to the database is currently down. Please try again later!";
+      } else if (error.message.includes("timeout")) {
+        errorMessage =
+          "⏳ The database took too long to respond. Try again in a few moments.";
+      }
 
-    // if nothing is returned byu query to DB then respond to user
-    if (dbResult.length === 0) {
-      interaction.reply({
-        content:
-          "This shadow does not exist within the world of Persona 4 Golden",
+      return interaction.reply({
+        content: errorMessage,
+        ephemeral: true, // Ensures only the user who triggered the command sees the error
       });
     }
 
-    // create weakness chart (aka Image Buffer) for monster using data from dbResult
+    // If no data is returned from the database, respond to the user
+    if (dbResult.length === 0) {
+      return interaction.reply({
+        content:
+          "❌ This shadow does not exist within the world of Persona 4 Golden.",
+        ephemeral: true, // Sends a private message to the user
+      });
+    }
+
+    // Create weakness chart (image buffer) using the database result
     const weaknessChart = await createP4WeaknessChart(dbResult[0]);
 
     // Create an embed and set the image attachment link
     const embed = new EmbedBuilder()
       .setTitle(`**${monsterName}**`)
       .setDescription(
-        `**Persona 4 Golden** \n**Level:** ${enemyStats[0].level}\n**HP:** ${enemyStats[0].hp}\n**Located:** ${enemyStats[0].appears}`
+        `**Persona 4 Golden** \n**Level:** ${enemyStats[0]?.level ?? "Unknown"}\n**HP:** ${enemyStats[0]?.hp ?? "Unknown"}\n**Located:** ${enemyStats[0]?.appears ?? "Unknown"}`
       )
       .setColor("Yellow")
       .setImage("attachment://elements.png");
 
-    // Send the embed with the weaknessChart as an attachment
+    // Send the embed with the weakness chart as an attachment
     await interaction.reply({
       embeds: [embed],
       files: [
