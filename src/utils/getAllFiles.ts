@@ -2,12 +2,12 @@ import fs from "fs";
 import path from "path";
 
 /**
- * Function retrieves all files & folders (can excludes files) from a given directory/path
+ * Function retrieves all files & folders (can excludes files) from a given directory/path.
  * 
  * @memberof UtilityFunctions
- * @param {string} directory Directory to get files from
- * @param {boolean} foldersOnly Adjusts array to exclude or include file names
- * @returns {Array<string>} Returns a list of files & folders within a certain directory (can exclude files thru foldersOnly param)
+ * @param {string} directory Directory to retrieve files from.
+ * @param {boolean} foldersOnly Adjusts result array to exclude or include files with directory.
+ * @returns {Array<string>} Returns a list of files & folders within a certain directory (can exclude files thru foldersOnly param).
  */
 export function getAllFiles(directory: string, foldersOnly:boolean = false): Array<string> {
   let fileNames = [];

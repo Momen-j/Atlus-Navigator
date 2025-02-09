@@ -7,6 +7,7 @@ import { SlashCommand } from "src/interfaces.js";
  * Function retrieves all commands from local system/project. <br>
  * Gets all files from the "commands" folder and iterates through each file, retrieves the command object, & pushes it into the return array.
  * 
+ * @async
  * @memberof UtilityFunctions
  * @param {Array<string>} exceptions An array of commands we want to exclude.
  * @returns {Promise<SlashCommand[]>} Returns a promise that resolves to an array of local SlashCommand objects (excluding those within exceptions).
