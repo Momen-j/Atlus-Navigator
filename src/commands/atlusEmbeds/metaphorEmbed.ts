@@ -5,9 +5,19 @@ import { fetchMetaphorEnemyStats } from "../../queries/fetchMetaphorEnemyStats.j
 import { MetaphorEnemyStats } from "src/interfaces.js";
 import { MetaphorEnemyWeaknesses } from "src/interfaces.js";
 
-//! Creates slash command that returns a weakness chart image based on the monster
-//! name inputted by the user
-/** Represents the embed returning Metaphor: ReFantazio data */
+/**
+ * @module metaphorMonsterCommand
+ */
+
+/**
+ * Slash command for fetching monster weaknesses.
+ * @type {Object}
+ * @property {string} name - The command name for the specific game.
+ * @property {string} description - The description of the command.
+ * @property {Array<Object>} options - The available options (user types in shadow/monster they are curious about).
+ * @property {Function} callback - The function handling the command execution. 
+ * We call query functions to the database using the option given by the user then send that data off into the weakness chart function to then reply with a weakness chart embed.
+ */
 export default {
   name: "metaphor-monster-name",
   description: "Provides info on a monster within Metaphor: ReFantazio",
@@ -23,10 +33,15 @@ export default {
   //deleted: Boolean,
   // permissionsRequired: Boolean,
   // botPermissions: Boolean
-  callback: async (client, interaction) => {
-    //! this callback function takes the monster name inputted
-    //! by the user and returns the weakness chart of the monster
 
+  /**
+   * 
+   * @async
+   * @param client 
+   * @param interaction 
+   * @returns null
+   */
+  callback: async (client, interaction) => {
     // init dbResult & enemyStats
     let dbResult: MetaphorEnemyWeaknesses[];
     let enemyStats: MetaphorEnemyStats[];
