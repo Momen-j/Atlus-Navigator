@@ -1,27 +1,20 @@
 import { createCanvas, loadImage } from "canvas"; // Canvas package for creating images
 import path from "path";
+import { MetaphorEnemyWeaknesses } from "src/interfaces.js";
 
 /**
- * Generates a weakness chart as an image buffer.
- * The chart visually represents elemental weaknesses for different elements.
+ * Generates a Metaphor: ReFantazio weakness chart as an image buffer given a specific monster's weakness data within an object.
+ * The chart visually represents a monster's reaction to every element within the game.
  *
+ * @memberof WeaknessChartFunctions
  * @async
  * @function createMetaphorWeaknessChart
- * @param {Object.<string, string>} data - An object mapping element names to their respective weaknesses.
- * @param {string} data[element] - The weakness value for a given element (e.g., "Weak", "Resist", "Null").
- * @returns {Promise<Buffer>} A Promise that resolves to an image buffer containing the generated weakness chart.
- *
- * @example
- * const weaknesses = {
- *   fire: "Weak",
- *   ice: "Resist",
- *   elec: "Null"
- * };
- * const buffer = await createMetaphorWeaknessChart(weaknesses);
- * Use the buffer to send an image or save it to a file
+ * @param {MetaphorEnemyWeaknesses} data - An object mapping element names to their respective weaknesses/reactions for a specific monster.
+ * @returns {Promise<Buffer>} A Promise that resolves to an image buffer containing the generated Metaphor: ReFantazio weakness chart.
+ * @see {@link DatabaseQueries.exports.fetchMetaphorEnemyWeaknesses}
  */
 
-export default async function createMetaphorWeaknessChart(data) {
+export default async function createMetaphorWeaknessChart(data: MetaphorEnemyWeaknesses): Promise<Buffer> {
   //! BREAK UP INTO HELPER FUNCTIONS FOR DIFFERENT GAMES and make game type a parameter
   // Canvas & context setup to draw on canvas
   const canvas = createCanvas(2000, 350);
@@ -167,5 +160,3 @@ export default async function createMetaphorWeaknessChart(data) {
 
   return canvas.toBuffer(); // Convert canvas to buffer
 }
-
-//! change color of both embed returns based on game

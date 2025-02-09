@@ -1,16 +1,16 @@
 import { eq } from "drizzle-orm";
 import { db, p3eEnemyStats } from "../drizzleconfig.js";
-import { P3EEnemyWeaknesses } from "src/interfaces.js";
+import { P3EnemyWeaknesses } from "src/interfaces.js";
 
 /**
  * Fetches the weaknesses of a Persona 3 Reload: Episode Aigis shadow from the database.
  * @memberof DatabaseQueries
  * @async
  * @param {string} enemyName The name of the enemy given by the user.
- * @returns {Promise<P3EEnemyWeaknesses[]>} A promise that resolves to an array of objects containing elements as keys and enemy weaknesses/reactions as values
+ * @returns {Promise<P3EnemyWeaknesses[]>} A promise that resolves to an array of objects containing elements as keys and enemy weaknesses/reactions as values
  * If the enemy is not found, the array will be empty.
  * @throws {Error} Throws an error if there is a database connection issue or a query failure.
- * @example export interface P3E_EnemyWeaknesses {
+ * @example export interface P3EnemyWeaknesses {
   slash: string;
   pierce: string;
   strike: string;
@@ -26,7 +26,7 @@ import { P3EEnemyWeaknesses } from "src/interfaces.js";
 
 export async function fetchP3E_EnemyWeaknesses(
   enemyName: string
-): Promise<P3EEnemyWeaknesses[]> {
+): Promise<P3EnemyWeaknesses[]> {
   try {
     const enemiesWeaknesses = await db
       .select({

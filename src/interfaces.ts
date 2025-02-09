@@ -16,25 +16,6 @@ export interface MetaphorEnemyStats {
   hp: string;
 }
 
-export interface P3EEnemyWeaknesses {
-  slash: string;
-  pierce: string;
-  strike: string;
-  fire: string;
-  ice: string;
-  elec: string;
-  wind: string;
-  light: string;
-  dark: string;
-  almighty: string;
-}
-
-export interface P3EEnemyStats {
-  level: string;
-  hp: string;
-  appears: string;
-}
-
 export interface P3EnemyWeaknesses {
   slash: string;
   pierce: string;

@@ -1,7 +1,20 @@
 import { createCanvas, loadImage } from "canvas"; // Canvas package for creating images
 import path from "path";
+import { P5EnemyWeaknesses } from "src/interfaces.js";
 
-export default async function createP5WeaknessChart(data) {
+/**
+ * Generates a Persona 5 Royal weakness chart as an image buffer given a specific shadow's weakness data within an object.
+ * The chart visually represents a shadow's reaction to every element within the game.
+ *
+ * @memberof WeaknessChartFunctions
+ * @async
+ * @function createP5WeaknessChart
+ * @param {P5EnemyWeaknesses} data - An object mapping element names to their respective weaknesses/reactions for a specific shadow.
+ * @returns {Promise<Buffer>} A Promise that resolves to an image buffer containing the generated Persona 5 Royal weakness chart.
+ * @see {@link DatabaseQueries.exports.fetchP5EnemyWeaknesses}
+ */
+
+export default async function createP5WeaknessChart(data: P5EnemyWeaknesses): Promise<Buffer> {
   //! BREAK UP INTO HELPER FUNCTIONS FOR DIFFERENT GAMES and make game type a parameter
   // Canvas & context setup to draw on canvas
   const canvas = createCanvas(1825, 275);

@@ -1,7 +1,20 @@
 import { createCanvas, loadImage } from "canvas"; // Canvas package for creating images
 import path from "path";
+import { P3EnemyWeaknesses } from "src/interfaces.js";
 
-export default async function createP3WeaknessChart(data) {
+/**
+ * Generates a Persona 3 Reload (including Episode Aigis) weakness chart as an image buffer given a specific shadow's weakness data within an object.
+ * The chart visually represents a shadow's reaction to every element within the game.
+ *
+ * @memberof WeaknessChartFunctions
+ * @async
+ * @function createP3WeaknessChart
+ * @param {P3EnemyWeaknesses} data - An object mapping element names to their respective weaknesses/reactions for a specific shadow.
+ * @returns {Promise<Buffer>} A Promise that resolves to an image buffer containing the generated Persona 3 Reload (including Episode Aigis) weakness chart.
+ * @see {@link DatabaseQueries.exports.fetchP3EnemyWeaknesses}
+ */
+
+export default async function createP3WeaknessChart(data: P3EnemyWeaknesses): Promise<Buffer> {
   //! BREAK UP INTO HELPER FUNCTIONS FOR DIFFERENT GAMES and make game type a parameter
   // Canvas & context setup to draw on canvas
   const canvas = createCanvas(2200, 275);
