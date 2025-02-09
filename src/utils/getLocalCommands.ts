@@ -1,6 +1,7 @@
 import path from "path";
 import { getAllFiles } from "./getAllFiles.js";
 import { fileURLToPath } from "url";
+import { SlashCommand } from "src/interfaces.js";
 
 /**
  * Function retrieves all commands from local system/project. <br>
@@ -8,9 +9,9 @@ import { fileURLToPath } from "url";
  * 
  * @memberof UtilityFunctions
  * @param {Array<string>} exceptions An array of commands we want to exclude.
- * @returns {} Returns an array of xxxx containing the local commands (excluding those within exceptions).
+ * @returns {Promise<SlashCommand[]>} Returns a promise that resolves to an array of local SlashCommand objects (excluding those within exceptions).
  */
-export async function getLocalCommands(exceptions: Array<string> = []) {
+export async function getLocalCommands(exceptions: Array<string> = []): Promise<SlashCommand[]> {
   let localCommands = [];
 
   // change URL of current module file to a path

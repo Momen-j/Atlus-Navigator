@@ -1,3 +1,26 @@
+import { ApplicationCommandOptionType } from "discord.js";
+
+export interface CommandOption {
+  name: string; // The name of the option (e.g., "monster-name")
+  description: string; // A brief description of the option
+  type: ApplicationCommandOptionType; // The type of the option (e.g., String, Integer, etc.)
+  required: boolean; // Whether the option is required
+}
+
+export interface SlashCommand {
+  name: string; // The name of the slash command
+  description: string; // The description of the slash command
+  options: CommandOption[]; // Array of options that the command accepts
+  callback: (client: any, interaction: any) => Promise<void>; // The callback function that is executed when the command is run
+  // optional fields below
+  deleted: Boolean; 
+  devOnly: Boolean;
+  testOnly: Boolean;
+  permissionsRequired: string[]; // Array of strings
+  botPermissions: string[]; // Array of strings
+}
+
+
 export interface MetaphorEnemyWeaknesses {
   slash: string;
   pierce: string;
