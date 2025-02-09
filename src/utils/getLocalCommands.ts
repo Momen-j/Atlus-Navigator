@@ -2,7 +2,15 @@ import path from "path";
 import { getAllFiles } from "./getAllFiles.js";
 import { fileURLToPath } from "url";
 
-export async function getLocalCommands(exceptions = []) {
+/**
+ * Function retrieves all commands from local system/project. <br>
+ * Gets all files from the "commands" folder and iterates through each file, retrieves the command object, & pushes it into the return array.
+ * 
+ * @memberof UtilityFunctions
+ * @param {Array<string>} exceptions An array of commands we want to exclude.
+ * @returns {} Returns an array of xxxx containing the local commands (excluding those within exceptions).
+ */
+export async function getLocalCommands(exceptions: Array<string> = []) {
   let localCommands = [];
 
   // change URL of current module file to a path

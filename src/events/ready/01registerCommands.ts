@@ -3,6 +3,15 @@ import { areChoicesDifferent } from "../../utils/areCommandsDifferent.js";
 import { getApplicationCommands } from "../../utils/getApplicationCommands.js";
 import { getLocalCommands } from "../../utils/getLocalCommands.js";
 
+/**
+ * @module events
+ */
+
+
+/**
+ * 
+ * @param client Represents the Atlus Discord Bot.
+ */
 export default async function (client) {
   const { testServer } = jsonConfig;
   // compare the local commands which our bot controls and creates against the commands within the guild/server

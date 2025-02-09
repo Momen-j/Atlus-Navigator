@@ -2,6 +2,17 @@ import path from "path";
 import { getAllFiles } from "../utils/getAllFiles.js";
 import { fileURLToPath } from "url";
 
+/**
+ * @module eventHandler
+ */
+
+/**
+ * Function gets all folders within events and iterates through each file importing the function from within it.  <br>
+ * The bot then listens for the specific event and once it occurs, the bot calls the imported functions from the folder corresponding to the occuring event. <br>
+ * Allows for automation of running event functions everytime the bot comes online.
+ * 
+ * @param client Represents the Atlus Discord Bot. Listens on events and is used as a param for the current event function
+ */
 export function eventHandler(client) {
   // change URL of current module file to a path
   const __filename = fileURLToPath(import.meta.url);
@@ -18,7 +29,7 @@ export function eventHandler(client) {
     const eventFiles = getAllFiles(eventFolder);
 
     // sort eventFiles so certain files' functions run first
-    eventFiles.sort((a, b) => a - b);
+    eventFiles.sort((a, b) => a.localeCompare(b));
 
     /*
         windows returns file paths with \ (special character) instead of / 

@@ -9,7 +9,7 @@ import path from "path";
  * @param {boolean} foldersOnly Adjusts array to exclude or include file names
  * @returns {Array<string>} Returns a list of files & folders within a certain directory (can exclude files thru foldersOnly param)
  */
-export function getAllFiles(directory: string, foldersOnly:boolean = false) {
+export function getAllFiles(directory: string, foldersOnly:boolean = false): Array<string> {
   let fileNames = [];
 
   // read contents of directory and return an array of names of files and 
