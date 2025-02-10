@@ -1,5 +1,15 @@
-//! REVIEW THIS FUNCTION
-export function areChoicesDifferent(existingCommand, localCommand) {
+import { ApplicationCommand } from "discord.js";
+import { SlashCommand } from "src/interfaces";
+
+/**
+ * Compares an existing command with a local command within the project to determine if they have differences.
+ * 
+ * @memberof UtilityFunctions
+ * @param {ApplicationCommand | undefined} existingCommand The existing command fetched from Discord or Server, or undefined if not found.
+ * @param {SlashCommand} localCommand The local command definition.
+ * @returns {Boolean} Returns `true` if choices are different, otherwise `false`.
+ */
+export function areChoicesDifferent(existingCommand: ApplicationCommand | undefined, localCommand: SlashCommand): Boolean {
   const areChoicesDifferent = (existingChoices, localChoices) => {
     for (const localChoice of localChoices) {
       const existingChoice = existingChoices?.find(
@@ -17,6 +27,7 @@ export function areChoicesDifferent(existingCommand, localCommand) {
     return false;
   };
 
+  // Checks if options within commands are different
   const areOptionsDifferent = (existingOptions, localOptions) => {
     for (const localOption of localOptions) {
       const existingOption = existingOptions?.find(
@@ -44,6 +55,7 @@ export function areChoicesDifferent(existingCommand, localCommand) {
     return false;
   };
 
+  // check if description is the same, or if the options' length has changed, or if the options have changed
   if (
     existingCommand.description !== localCommand.description ||
     existingCommand.options?.length !== (localCommand.options?.length || 0) ||
