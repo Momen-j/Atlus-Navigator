@@ -1,6 +1,15 @@
+import { ChatInputCommandInteraction, Client } from "discord.js";
 import jsonConfig from "../../../config.json" assert { type: "json" };
 import { getLocalCommands } from "../../utils/getLocalCommands.js";
 
+
+/**
+ * Function that handles our commands
+ * 
+ * @param {Client} client Represents an instance of the Atlus Discord Bot.
+ * @param {ChatInputCommandInteraction} interaction  
+ * @returns 
+ */
 export default async function (client, interaction) {
   // if not a slash command, end function call
   if (!interaction.isChatInputCommand()) return;

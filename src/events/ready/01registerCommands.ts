@@ -5,12 +5,16 @@ import { getApplicationCommands } from "../../utils/getApplicationCommands.js";
 import { getLocalCommands } from "../../utils/getLocalCommands.js";
 
 /**
- * @module events
+ * @module registerCommands
  */
 
 /**
- *
+ * Runs when ready event is called by eventHandler. <br>
+ * Function checks between local & existing (Discord/Server) commands to determine whether to update Atlus Discord Bot commands. <br>
+ * If no commands need to be updated, then a new command is created. 
+ * 
  * @param {Client} client Represents the instance of the Atlus Discord Bot.
+ * @see {@link module:eventHandler}
  */
 export default async function (client: Client) {
   const { testServer } = jsonConfig;
