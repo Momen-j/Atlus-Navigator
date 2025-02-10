@@ -1,4 +1,4 @@
-import { EmbedBuilder, ApplicationCommandOptionType } from "discord.js";
+import { EmbedBuilder, ApplicationCommandOptionType, Client, ChatInputCommandInteraction  } from "discord.js";
 import { fetchMetaphorEnemyWeaknesses } from "../../queries/fetchMetaphorEnemyWeaknesses.js";
 import createMetaphorWeaknessChart from "../../createmetaphorWeaknessChart.js";
 import { fetchMetaphorEnemyStats } from "../../queries/fetchMetaphorEnemyStats.js";
@@ -37,17 +37,17 @@ export default {
   /**
    * 
    * @async
-   * @param client 
-   * @param interaction 
+   * @param {Client} client 
+   * @param {ChatInputCommandInteraction} interaction 
    * @returns null
    */
-  callback: async (client, interaction) => {
+  callback: async (client: Client, interaction: ChatInputCommandInteraction) => {
     // init dbResult & enemyStats
     let dbResult: MetaphorEnemyWeaknesses[];
     let enemyStats: MetaphorEnemyStats[];
 
     // Get the monster name from the interaction
-    const monsterName = interaction.options.get("monster-name").value;
+    const monsterName: string = interaction.options.get("monster-name").value as string;
 
     try {
       // Fetch weaknesses and stats

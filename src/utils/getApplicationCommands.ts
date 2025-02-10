@@ -1,5 +1,6 @@
 import {
   ApplicationCommandManager,
+  Client,
   Guild,
   GuildApplicationCommandManager,
 } from "discord.js";
@@ -10,13 +11,15 @@ import {
  * If not, retrieve commands from Discord itself.
  *
  * @async
- * @param client Represents the Atlus Discord Bot.
- * @param guildId Represents the server that the Atlus Discord Bot (client) is added to.
+ * @memberof UtilityFunctions
+ * @param {Client} client Represents the instance of the Atlus Discord Bot.
+ * @param {string} guildId Represents the server that the Atlus Discord Bot (client) is added to.
  * @returns {Promise<ApplicationCommandManager>} Returns a collection of commands
  */
+
 export async function getApplicationCommands(
-  client,
-  guildId
+  client: Client,
+  guildId: string
 ): Promise<ApplicationCommandManager | GuildApplicationCommandManager> {
   let applicationCommands;
 

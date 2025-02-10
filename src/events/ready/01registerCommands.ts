@@ -1,3 +1,4 @@
+import { Client } from "discord.js";
 import jsonConfig from "../../../config.json" assert { type: "json" };
 import { areChoicesDifferent } from "../../utils/areCommandsDifferent.js";
 import { getApplicationCommands } from "../../utils/getApplicationCommands.js";
@@ -7,12 +8,11 @@ import { getLocalCommands } from "../../utils/getLocalCommands.js";
  * @module events
  */
 
-
 /**
- * 
- * @param client Represents the Atlus Discord Bot.
+ *
+ * @param {Client} client Represents the instance of the Atlus Discord Bot.
  */
-export default async function (client) {
+export default async function (client: Client) {
   const { testServer } = jsonConfig;
   // compare the local commands which our bot controls and creates against the commands within the guild/server
   try {

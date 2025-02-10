@@ -1,6 +1,7 @@
 import path from "path";
 import { getAllFiles } from "../utils/getAllFiles.js";
 import { fileURLToPath } from "url";
+import { Client } from "discord.js";
 
 /**
  * @module eventHandler
@@ -10,10 +11,10 @@ import { fileURLToPath } from "url";
  * Function gets all folders within events and iterates through each file importing the function from within it.  <br>
  * The bot then listens for the specific event and once it occurs, the bot calls the imported functions from the folder corresponding to the occuring event. <br>
  * Allows for automation of running event functions everytime the bot comes online.
- * 
- * @param client Represents the Atlus Discord Bot. Listens on events and is used as a param for the current event function
+ *
+ * @param {Client} client Represents the instance of the Atlus Discord Bot. Listens on events and is used as a param for the current event function
  */
-export function eventHandler(client) {
+export function eventHandler(client: Client) {
   // change URL of current module file to a path
   const __filename = fileURLToPath(import.meta.url);
 
@@ -39,6 +40,10 @@ export function eventHandler(client) {
     const eventName = eventFolder.replace(/\\/g, "/").split("/").pop();
 
     //! the above code allows us to setup an event listener for the discord bot
+
+    /**
+     * Atlus Discord Bot (Client) listens on a specific event name and runs the appropriate function from the event folder with the same name.
+     */
     client.on(eventName, async (arg) => {
       // loop thru each file within eventFiles, extract the function, then run the function inside of the file
       for (const eventFile of eventFiles) {
