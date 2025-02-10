@@ -20,7 +20,6 @@ export interface SlashCommand {
   botPermissions: string[]; // Array of strings
 }
 
-
 export interface MetaphorEnemyWeaknesses {
   slash: string;
   pierce: string;

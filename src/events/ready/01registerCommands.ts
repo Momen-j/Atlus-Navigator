@@ -45,7 +45,7 @@ export default async function (client) {
         if (areChoicesDifferent(existingCommand, localCommand)) {
           await applicationCommands.edit(existingCommand.id, {
             description,
-            options,
+            ...options,
           });
 
           console.log(`🔄 Edited Command: ${name}`);
@@ -65,7 +65,7 @@ export default async function (client) {
         await applicationCommands.create({
           name,
           description,
-          options,
+          ...options,
         });
 
         console.log(`👍 Registed command "${name}"`);
