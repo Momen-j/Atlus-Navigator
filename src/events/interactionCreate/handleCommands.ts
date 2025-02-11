@@ -3,7 +3,7 @@ import jsonConfig from "../../../config.json" assert { type: "json" };
 import { getLocalCommands } from "../../utils/getLocalCommands.js";
 
 /**
- * @module commandHandler
+ * @module handleCommands
  */
 
 /**

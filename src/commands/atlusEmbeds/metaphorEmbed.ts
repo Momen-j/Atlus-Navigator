@@ -32,14 +32,15 @@ export default {
   //options: Object[],
   //deleted: Boolean,
   // permissionsRequired: Boolean,
-  // botPermissions: Boolean
+  // botPermissions: Boolean,
 
   /**
    * 
    * @async
-   * @param {Client} client 
-   * @param {ChatInputCommandInteraction} interaction 
-   * @returns null
+   * @param {Client} client Represents an instance of the Atlus Discord Bot.
+   * @param {ChatInputCommandInteraction} interaction Current instance of the chat input command inputted by user.
+   * @returns Returns nothing but calls an async callback function if it passes all checks in handleCommands function.
+   * @see {@link module:handleCommands}
    */
   callback: async (client: Client, interaction: ChatInputCommandInteraction) => {
     // init dbResult & enemyStats
