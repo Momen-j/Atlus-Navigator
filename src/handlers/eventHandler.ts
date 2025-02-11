@@ -13,6 +13,7 @@ import { Client } from "discord.js";
  * Allows for automation of running event functions everytime the bot comes online.
  *
  * @param {Client} client Represents the instance of the Atlus Discord Bot. Listens on events and is used as a param for the current event function
+ * @returns {void} Returns nothing but calls an event function.
  */
 export function eventHandler(client: Client) {
   // change URL of current module file to a path

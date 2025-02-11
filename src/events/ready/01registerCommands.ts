@@ -13,6 +13,7 @@ import { getLocalCommands } from "../../utils/getLocalCommands.js";
  * Function checks between local & existing (Discord/Server) commands to determine whether to update Atlus Discord Bot commands. <br>
  * If no commands need to be updated, then a new command is created. 
  * 
+ * @async
  * @param {Client} client Represents the instance of the Atlus Discord Bot.
  * @see {@link module:eventHandler}
  */

@@ -6,15 +6,19 @@ import { getLocalCommands } from "../../utils/getLocalCommands.js";
  * @module commandHandler
  */
 
-
 /**
- * Function that handles each command object 
- * 
+ * Function that handles each command object & checks a couple of conditions to ensure that the <br>
+ * command object callback function can be called properly.
+ *
+ * @async
  * @param {Client} client Represents an instance of the Atlus Discord Bot.
- * @param {ChatInputCommandInteraction} interaction Current instance of the chat input command inputted by user
- * @returns {Promise<void>} Returns nothing but calls a callback function if 
+ * @param {ChatInputCommandInteraction} interaction Current instance of the chat input command inputted by user.
+ * @returns {Promise<void>} Returns nothing but calls a callback function if all checks pass.
  */
-export default async function (client: Client, interaction: ChatInputCommandInteraction): Promise<void> {
+export default async function (
+  client: Client,
+  interaction: ChatInputCommandInteraction
+): Promise<void> {
   // if not a slash command, end function call
   if (!interaction.isChatInputCommand()) return;
 
@@ -36,9 +40,14 @@ export default async function (client: Client, interaction: ChatInputCommandInte
     // if the command's devOnly value is true, check if the user who typed command is a dev
     // if not, return a stern message
     if (commandObject.devOnly) {
-      if (!interaction.member || !("id" in interaction.member) || !devs.includes(interaction.member.id)) {
+      if (
+        !interaction.member ||
+        !("id" in interaction.member) ||
+        !devs.includes(interaction.member.id)
+      ) {
         interaction.reply({
-          content: "You don't have enough Charm for this task, only the developer does.",
+          content:
+            "You don't have enough Charm for this task, only the developer does.",
           ephemeral: true,
         });
         return;
