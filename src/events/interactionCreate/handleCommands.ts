@@ -2,15 +2,19 @@ import { ChatInputCommandInteraction, Client } from "discord.js";
 import jsonConfig from "../../../config.json" assert { type: "json" };
 import { getLocalCommands } from "../../utils/getLocalCommands.js";
 
+/**
+ * @module commandHandler
+ */
+
 
 /**
- * Function that handles our commands
+ * Function that handles each command object 
  * 
  * @param {Client} client Represents an instance of the Atlus Discord Bot.
- * @param {ChatInputCommandInteraction} interaction  
- * @returns 
+ * @param {ChatInputCommandInteraction} interaction Current instance of the chat input command inputted by user
+ * @returns {Promise<void>} Returns nothing but calls a callback function if 
  */
-export default async function (client, interaction) {
+export default async function (client: Client, interaction: ChatInputCommandInteraction): Promise<void> {
   // if not a slash command, end function call
   if (!interaction.isChatInputCommand()) return;
 
@@ -32,9 +36,9 @@ export default async function (client, interaction) {
     // if the command's devOnly value is true, check if the user who typed command is a dev
     // if not, return a stern message
     if (commandObject.devOnly) {
-      if (!devs.includes(interaction.member.id)) {
+      if (!interaction.member || !("id" in interaction.member) || !devs.includes(interaction.member.id)) {
         interaction.reply({
-          content: "Only devs can run this command",
+          content: "You don't have enough Charm for this task, only the developer does.",
           ephemeral: true,
         });
         return;
@@ -57,7 +61,7 @@ export default async function (client, interaction) {
     // check if the person running the command has the appropriate permissions
     if (commandObject.permissionsRequired?.length) {
       for (const permission of commandObject.permissionsRequired) {
-        if (!interaction.member.permissions.has(permission)) {
+        if (!interaction.memberPermissions.has(permission)) {
           // if not, reply to interaction
           interaction.reply({
             content: "Not enough permissions",

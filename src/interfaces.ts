@@ -12,12 +12,13 @@ export interface SlashCommand {
   description: string; // The description of the slash command
   options: CommandOption[]; // Array of options that the command accepts
   callback: (client: any, interaction: any) => Promise<void>; // The callback function that is executed when the command is run
-  // optional fields below
-  deleted: Boolean; 
-  devOnly: Boolean;
-  testOnly: Boolean;
-  permissionsRequired: string[]; // Array of strings
-  botPermissions: string[]; // Array of strings
+  // optional fields below 
+  // question marks indicate optional fields
+  deleted?: Boolean; 
+  devOnly?: Boolean;
+  testOnly?: Boolean;
+  permissionsRequired?: bigint[]; // Array of strings
+  botPermissions?: bigint[]; // Array of strings
 }
 
 export interface MetaphorEnemyWeaknesses {
