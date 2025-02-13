@@ -20,7 +20,7 @@ export default async function (
   interaction: ChatInputCommandInteraction
 ): Promise<void> {
   // if not a slash command, end function call
-  if (!interaction.isChatInputCommand()) return;
+  //if (!interaction.isChatInputCommand()) return;
 
   const { testServer, devs } = jsonConfig;
 
