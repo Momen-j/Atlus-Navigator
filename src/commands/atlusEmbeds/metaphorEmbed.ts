@@ -27,6 +27,7 @@ export default {
       description: "Name of monster",
       type: ApplicationCommandOptionType.String,
       required: true,
+      autocomplete: true
     },
   ],
   //options: Object[],

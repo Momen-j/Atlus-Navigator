@@ -12,6 +12,6 @@ import { Client } from "discord.js";
  * @see {@link module:eventHandler}
  */
 
-export default function (client: Client) {
+export function consoleLog(client: Client) {
   console.log(`🤖 ${client.user.tag} is online.`);
 }

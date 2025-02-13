@@ -17,7 +17,7 @@ import { getLocalCommands } from "../../utils/getLocalCommands.js";
  * @param {Client} client Represents the instance of the Atlus Discord Bot.
  * @see {@link module:eventHandler}
  */
-export default async function (client: Client) {
+export async function registerCommands(client: Client) {
   const { testServer } = jsonConfig;
   // compare the local commands which our bot controls and creates against the commands within the guild/server
   try {
