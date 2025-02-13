@@ -8,7 +8,7 @@ import { P3EnemyWeaknesses } from "src/interfaces.js";
 //! Creates slash command that returns a weakness chart image based on the monster
 //! name inputted by the user
 export default {
-  name: "p3e-monster-name",
+  name: "p3-aigis", 
   description:
     "Provides info on a monster within Persona 3 Reload: Episode Aegis",
   options: [
@@ -17,10 +17,11 @@ export default {
       description: "Name of monster",
       type: ApplicationCommandOptionType.String,
       required: true,
+      autocomplete: true,
     },
   ],
   //options: Object[],
-  //deleted: Boolean,
+  //deleted: true,
   // permissionsRequired: Boolean,
   // botPermissions: Boolean
   callback: async (client, interaction) => {

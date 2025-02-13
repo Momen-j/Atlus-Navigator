@@ -19,7 +19,7 @@ import { MetaphorEnemyWeaknesses } from "src/interfaces.js";
  * We call query functions to the database using the option given by the user then send that data off into the weakness chart function to then reply with a weakness chart embed.
  */
 export default {
-  name: "metaphor-monster-name",
+  name: "metaphor",
   description: "Provides info on a monster within Metaphor: ReFantazio",
   options: [
     {
@@ -31,7 +31,7 @@ export default {
     },
   ],
   //options: Object[],
-  //deleted: Boolean,
+  //deleted: true,
   // permissionsRequired: Boolean,
   // botPermissions: Boolean,
 

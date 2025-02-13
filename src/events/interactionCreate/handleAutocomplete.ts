@@ -1,18 +1,37 @@
 import { Client, AutocompleteInteraction } from "discord.js";
+import { fetchMonsterNames } from "../../queries/fetchMonsterNames.js";
 
 export default async function handleAutocomplete(
   client: Client,
   interaction: AutocompleteInteraction
 ) {
-  // Example: Provide a dynamic list of autocomplete choices
+  // Get the user's current input
   const focusedOption = interaction.options.getFocused();
-  const choices = ["Orgo", "Goborn", "Gold Elementa"];
 
-  const filteredChoices = choices.filter((choice) =>
-    choice.toLowerCase().startsWith(focusedOption.toLowerCase())
-  );
+  let allMonsters;
 
+  if (interaction.commandName === 'metaphor') {
+    // Fetch all monster objects from the database
+    allMonsters = await fetchMonsterNames('metaphor'); // Returns an array of objects
+  }
+
+  if (interaction.commandName === 'p3-aigis') {
+    // Fetch all monster objects from the database
+    allMonsters = await fetchMonsterNames('p3-aigis'); // Returns an array of objects
+  }
+
+  // Extract just the `monster_name` values from the objects
+  const allMonsterNames = allMonsters.map((monster) => monster.name);
+
+  // Filter names that start with the user's input (case-insensitive)
+  const filteredChoices = allMonsterNames
+    .filter((name) =>
+      name.toLowerCase().startsWith(focusedOption.toLowerCase())
+    )
+    .slice(0, 25); // Limit to 25 choices (Discord API max)
+
+  // Respond with the filtered choices
   await interaction.respond(
-    filteredChoices.map((choice) => ({ name: choice, value: choice }))
+    filteredChoices.map((name) => ({ name, value: name }))
   );
 }

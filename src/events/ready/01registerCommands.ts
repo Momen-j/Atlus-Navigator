@@ -1,4 +1,4 @@
-import { Client } from "discord.js";
+import { Client, ApplicationCommandOptionType } from "discord.js";
 import jsonConfig from "../../../config.json" assert { type: "json" };
 import { areChoicesDifferent } from "../../utils/areCommandsDifferent.js";
 import { getApplicationCommands } from "../../utils/getApplicationCommands.js";
@@ -50,7 +50,15 @@ export async function registerCommands(client: Client) {
         if (areChoicesDifferent(existingCommand, localCommand)) {
           await applicationCommands.edit(existingCommand.id, {
             description,
-            ...options,
+            options: [
+              {
+                name: "monster-name",
+                description: "Name of monster",
+                type: ApplicationCommandOptionType.String,
+                required: true,
+                autocomplete: true,
+              },
+            ],
           });
 
           console.log(`🔄 Edited Command: ${name}`);
