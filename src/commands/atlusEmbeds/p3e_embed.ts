@@ -8,7 +8,7 @@ import { P3EnemyWeaknesses } from "src/interfaces.js";
 //! Creates slash command that returns a weakness chart image based on the monster
 //! name inputted by the user
 export default {
-  name: "p3-aigis", 
+  name: "p3r-aigis", 
   description:
     "Provides info on a monster within Persona 3 Reload: Episode Aegis",
   options: [

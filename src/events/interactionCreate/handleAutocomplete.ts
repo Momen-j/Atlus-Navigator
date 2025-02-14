@@ -1,5 +1,7 @@
 import { Client, AutocompleteInteraction } from "discord.js";
 import { fetchMonsterNames } from "../../queries/fetchMonsterNames.js";
+import { AtlusGame } from "../../enums.js";
+
 
 export default async function handleAutocomplete(
   client: Client,
@@ -10,14 +12,14 @@ export default async function handleAutocomplete(
 
   let allMonsters;
 
-  if (interaction.commandName === 'metaphor') {
+  if (interaction.commandName === AtlusGame.Metaphor) {
     // Fetch all monster objects from the database
-    allMonsters = await fetchMonsterNames('metaphor'); // Returns an array of objects
+    allMonsters = await fetchMonsterNames(AtlusGame.Metaphor); // Returns an array of objects
   }
 
-  if (interaction.commandName === 'p3-aigis') {
+  if (interaction.commandName === AtlusGame.Persona3ReloadAigis) {
     // Fetch all monster objects from the database
-    allMonsters = await fetchMonsterNames('p3-aigis'); // Returns an array of objects
+    allMonsters = await fetchMonsterNames(AtlusGame.Persona3ReloadAigis); // Returns an array of objects
   }
 
   // Extract just the `monster_name` values from the objects
