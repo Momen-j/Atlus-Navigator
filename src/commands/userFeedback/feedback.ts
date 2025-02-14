@@ -5,6 +5,9 @@ import { insertFeedback } from "../../queries/insertFeedback.js";
  * @module feedbackCommand
  */
 
+//? Stores user ids and user cooldown timestamps in milliseconds (key = userId, value = timestamp in milliseconds)
+const cooldowns = new Map<string, number>();
+
 /**
  * Slash command for submitting feedback.
  * @type {Object}
@@ -34,6 +37,27 @@ export default {
    * @returns Returns a response after submitting feedback.
    */
   callback: async (client: Client, interaction: ChatInputCommandInteraction) => {
+    // get userId to store
+    const userId = interaction.user.id;
+
+    // get current timestamp in milliseconds
+    const now = Date.now();
+
+    const cooldownTime = 24 * 60 * 60 * 1000; // 24 hours = 24 * 60 * 60 * 1000
+
+    // Check cooldown on specific user if they exist in the cooldowns map
+    if (cooldowns.has(userId)) {
+      const lastUsed = cooldowns.get(userId) || 0; // Get timestamp of the last time the user used the command in milliseconds or get 0
+      const timeLeft = cooldownTime - (now - lastUsed); // Calculate time left
+
+      if (timeLeft > 0) {
+        return interaction.reply({
+          content: `⏳ You can submit feedback again in **${(timeLeft / 1000 / 60 / 60 ).toFixed(1)} hours**.`,
+          ephemeral: true,
+        });
+      }
+    }
+
     // Get the feedback description from the interaction
     const description: string = interaction.options.get("description").value as string;
 
@@ -45,9 +69,24 @@ export default {
       });
     }
 
+    // Check if the description is 0 characters
+    if (description.length === 0) {
+      return interaction.reply({
+        content: "You can't submit nothing as feedback silly 😝!",
+        //ephemeral: true,
+      });
+    }
+
     try {
       // Insert the feedback into the database
       await insertFeedback(description);
+
+      // Store userId and timestamp at time of submission in milliseconds for this user into cooldowns Map
+      cooldowns.set(userId, now);
+
+      // set an scheduled function call to delete userId key from Map after cooldown time ends
+      // Remove cooldown after time expires & helps to stop map from growing indefinitely
+      setTimeout(() => cooldowns.delete(userId), cooldownTime); 
 
       // Reply to the user confirming the submission
       await interaction.reply({
