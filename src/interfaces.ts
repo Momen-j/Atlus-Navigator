@@ -15,6 +15,7 @@ export interface SlashCommand {
   // optional fields below 
   // question marks indicate optional fields
   deleted?: Boolean; 
+  autocomplete?: Boolean;
   devOnly?: Boolean;
   testOnly?: Boolean;
   permissionsRequired?: bigint[]; // Array of strings

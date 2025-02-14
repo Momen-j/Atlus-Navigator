@@ -11,8 +11,8 @@ import { getLocalCommands } from "../../utils/getLocalCommands.js";
 /**
  * Runs when ready event is called by eventHandler. <br>
  * Function checks between local & existing (Discord/Server) commands to determine whether to update Atlus Discord Bot commands. <br>
- * If no commands need to be updated, then a new command is created. 
- * 
+ * If no commands need to be updated, then a new command is created.
+ *
  * @async
  * @param {Client} client Represents the instance of the Atlus Discord Bot.
  * @see {@link module:eventHandler}
@@ -48,18 +48,33 @@ export async function registerCommands(client: Client) {
 
         // if commands aren't different, take the existing command and update it to match the localCommand version
         if (areChoicesDifferent(existingCommand, localCommand)) {
-          await applicationCommands.edit(existingCommand.id, {
-            description,
-            options: [
-              {
-                name: "monster-name",
-                description: "Name of monster",
-                type: ApplicationCommandOptionType.String,
-                required: true,
-                autocomplete: true,
-              },
-            ],
-          });
+          // if the local command has autocomplete (is an embed)
+          if (localCommand.autocomplete === true) {
+            await applicationCommands.edit(existingCommand.id, {
+              description,
+              options: [
+                {
+                  name: "monster-name",
+                  description: "Name of monster",
+                  type: ApplicationCommandOptionType.String,
+                  required: true,
+                  autocomplete: true,
+                },
+              ],
+            });
+          } else { // else if the local command doesn't have autocomplete (not an embed) and is a feedback command for now
+            await applicationCommands.edit(existingCommand.id, {
+              description,
+              options: [
+                {
+                  name: "description",
+                  description: "Provide your feedback",
+                  type: ApplicationCommandOptionType.String,
+                  required: true, // This makes the description field required
+                },
+              ],
+            });
+          }
 
           console.log(`🔄 Edited Command: ${name}`);
         }

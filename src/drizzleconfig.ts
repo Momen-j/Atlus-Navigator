@@ -1,5 +1,5 @@
 import { drizzle } from "drizzle-orm/node-postgres";
-import { pgTable, serial, text, integer } from "drizzle-orm/pg-core";
+import { pgTable, serial, text, integer, timestamp, varchar } from "drizzle-orm/pg-core";
 import pkg from "pg";
 import dotenv from "dotenv";
 dotenv.config();
@@ -119,4 +119,10 @@ export const p5EnemyStats = pgTable("p5_enemies", {
   almighty: text("almighty"),
   drops: text("drops"),
   appears: text("appears"),
+});
+
+export const feedback = pgTable("feedback", {
+  id: serial("id").primaryKey(), // Auto-incrementing ID
+  created_at: timestamp("created_at").defaultNow(), // Timestamp column
+  description: varchar("description", { length: 255 }), // Varchar column with max length of 255 characters
 });
