@@ -1,4 +1,4 @@
-import { EmbedBuilder, ApplicationCommandOptionType } from "discord.js";
+import { EmbedBuilder, ApplicationCommandOptionType, Client, ChatInputCommandInteraction } from "discord.js";
 import { fetchP3E_EnemyWeaknesses } from "../../queries/fetchp3eEnemyWeaknesses.js";
 import createP3WeaknessChart from "../../createP3WeaknessChart.js";
 import { fetchP3E_EnemyStats } from "../../queries/fetchp3eEnemyStats.js";
@@ -24,7 +24,7 @@ export default {
   //deleted: true,
   // permissionsRequired: Boolean,
   // botPermissions: Boolean
-  callback: async (client, interaction) => {
+  callback: async (client: Client, interaction: ChatInputCommandInteraction) => {
     //! this callback function takes the monster name inputted
     //! by the user and returns the weakness chart of the monster
 
@@ -33,7 +33,7 @@ export default {
     let enemyStats: P3EnemyStats[];
 
     // Get the monster name from the interaction
-    const monsterName = interaction.options.get("monster-name").value;
+    const monsterName = interaction.options.get("monster-name").value as string;
 
     try {
       // Fetch weaknesses and stats

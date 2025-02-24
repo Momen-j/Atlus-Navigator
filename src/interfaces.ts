@@ -5,6 +5,7 @@ export interface CommandOption {
   description: string; // A brief description of the option
   type: ApplicationCommandOptionType; // The type of the option (e.g., String, Integer, etc.)
   required: boolean; // Whether the option is required
+  autocomplete?: Boolean;
 }
 
 export interface SlashCommand {

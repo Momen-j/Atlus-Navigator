@@ -1,4 +1,4 @@
-import { EmbedBuilder, ApplicationCommandOptionType } from "discord.js";
+import { EmbedBuilder, ApplicationCommandOptionType, Client, ChatInputCommandInteraction } from "discord.js";
 import { fetchP4EnemyWeaknesses } from "../../queries/fetchp4EnemyWeaknesses.js";
 import createP4WeaknessChart from "../../createP4WeaknessChart.js";
 import { fetchP4EnemyStats } from "../../queries/fetchp4EnemyStats.js";
@@ -8,7 +8,7 @@ import { P4EnemyWeaknesses } from "src/interfaces.js";
 //! Creates slash command that returns a weakness chart image based on the monster
 //! name inputted by the user
 export default {
-  name: "p4-monster-name",
+  name: "p4g",
   description: "Provides info on a monster within Persona 4 Golden",
   options: [
     {
@@ -16,13 +16,14 @@ export default {
       description: "Name of monster",
       type: ApplicationCommandOptionType.String,
       required: true,
+      autocomplete: true,
     },
   ],
   //options: Object[],
-  //deleted: Boolean,
+  //deleted: true,
   // permissionsRequired: Boolean,
   // botPermissions: Boolean
-  callback: async (client, interaction) => {
+  callback: async (client: Client, interaction: ChatInputCommandInteraction) => {
     //! this callback function takes the monster name inputted
     //! by the user and returns the weakness chart of the monster
 
@@ -31,7 +32,7 @@ export default {
     let enemyStats: P4EnemyStats[];
 
     // Get the monster name from the interaction
-    const monsterName = interaction.options.get("monster-name").value;
+    const monsterName = interaction.options.get("monster-name").value as string;
 
     try {
       // Fetch weaknesses and stats

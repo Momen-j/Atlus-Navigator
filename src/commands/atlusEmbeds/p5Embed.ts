@@ -1,4 +1,4 @@
-import { EmbedBuilder, ApplicationCommandOptionType } from "discord.js";
+import { EmbedBuilder, ApplicationCommandOptionType, Client, ChatInputCommandInteraction } from "discord.js";
 import { fetchP5EnemyWeaknesses } from "../../queries/fetchp5EnemyWeaknesses.js";
 import createP5WeaknessChart from "../../createP5WeaknessChart.js";
 import { fetchP5EnemyStats } from "../../queries/fetchp5EnemyStats.js";
@@ -8,7 +8,7 @@ import { P5EnemyWeaknesses } from "src/interfaces.js";
 //! Creates slash command that returns a weakness chart image based on the monster
 //! name inputted by the user
 export default {
-  name: "p5-monster-name",
+  name: "p5r",
   description: "Provides info on a monster within Persona 5 Royal",
   options: [
     {
@@ -16,13 +16,14 @@ export default {
       description: "Name of monster",
       type: ApplicationCommandOptionType.String,
       required: true,
+      autocomplete: true,
     },
   ],
   //options: Object[],
-  //deleted: Boolean,
+  //deleted: true,
   // permissionsRequired: Boolean,
   // botPermissions: Boolean
-  callback: async (client, interaction) => {
+  callback: async (client: Client, interaction: ChatInputCommandInteraction) => {
     //! this callback function takes the monster name inputted
     //! by the user and returns the weakness chart of the monster
 
@@ -31,7 +32,7 @@ export default {
     let enemyStats: P5EnemyStats[];
 
     // Get the monster name from the interaction
-    const monsterName = interaction.options.get("monster-name").value;
+    const monsterName = interaction.options.get("monster-name").value as string;
 
     try {
       // Fetch weaknesses and stats

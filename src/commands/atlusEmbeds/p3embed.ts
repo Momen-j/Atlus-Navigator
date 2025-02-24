@@ -1,4 +1,4 @@
-import { EmbedBuilder, ApplicationCommandOptionType } from "discord.js";
+import { EmbedBuilder, ApplicationCommandOptionType, Client, ChatInputCommandInteraction } from "discord.js";
 import { fetchP3EnemyWeaknesses } from "../../queries/fetchp3EnemyWeaknesses.js";
 import createP3WeaknessChart from "../../createP3WeaknessChart.js";
 import { fetchP3EnemyStats } from "../../queries/fetchp3EnemyStats.js";
@@ -8,7 +8,7 @@ import { P3EnemyWeaknesses } from "src/interfaces.js";
 //! Creates slash command that returns a weakness chart image based on the monster
 //! name inputted by the user
 export default {
-  name: "p3-monster-name",
+  name: "p3r",
   description:
     "Provides info on a monster within Persona 3 Reload (not including Aegis)",
   options: [
@@ -17,13 +17,14 @@ export default {
       description: "Name of monster",
       type: ApplicationCommandOptionType.String,
       required: true,
+      autocomplete: true,
     },
   ],
   //options: Object[],
-  //deleted: Boolean,
+  //deleted: true,
   // permissionsRequired: Boolean,
   // botPermissions: Boolean
-  callback: async (client, interaction) => {
+  callback: async (client: Client, interaction: ChatInputCommandInteraction) => {
     //! this callback function takes the monster name inputted
     //! by the user and returns the weakness chart of the monster
 
@@ -32,7 +33,7 @@ export default {
     let enemyStats: P3EnemyStats[];
 
     // Get the monster name from the interaction
-    const monsterName = interaction.options.get("monster-name").value;
+    const monsterName = interaction.options.get("monster-name").value as string;
 
     try {
       // Fetch weaknesses and stats

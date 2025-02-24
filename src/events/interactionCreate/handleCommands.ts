@@ -2,6 +2,11 @@ import { ChatInputCommandInteraction, Client } from "discord.js";
 import jsonConfig from "../../../config.json" assert { type: "json" };
 //import { getLocalCommands } from "../../utils/getLocalCommands.js";
 import metaphorEmbed from "../../commands/atlusEmbeds/metaphorEmbed.js";
+import p3eEmbed from "../../commands/atlusEmbeds/p3e_embed.js";
+import p3Embed from "../../commands/atlusEmbeds/p3embed.js";
+import p4Embed from "../../commands/atlusEmbeds/p4Embed.js";
+import p5Embed from "../../commands/atlusEmbeds/p5Embed.js";
+import feedback from "../../commands/userFeedback/feedback.js";
 import { SlashCommand } from "src/interfaces";
 
 /**
@@ -27,7 +32,7 @@ export default async function (
   const { testServer, devs } = jsonConfig;
 
   // get local commands
-  const localCommands = [metaphorEmbed as unknown] as SlashCommand[];
+  const localCommands = [metaphorEmbed as unknown, p3eEmbed as unknown, p3Embed as unknown, p4Embed as unknown, p5Embed as unknown, feedback as unknown] as SlashCommand[];
 
   // try to check if the command by the user matches one of our local commands
   try {

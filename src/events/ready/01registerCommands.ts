@@ -4,6 +4,11 @@ import { areChoicesDifferent } from "../../utils/areCommandsDifferent.js";
 import { getApplicationCommands } from "../../utils/getApplicationCommands.js";
 //import { getLocalCommands } from "../../utils/getLocalCommands.js";
 import metaphorEmbed from "../../commands/atlusEmbeds/metaphorEmbed.js";
+import p3eEmbed from "../../commands/atlusEmbeds/p3e_embed.js";
+import p3Embed from "../../commands/atlusEmbeds/p3embed.js";
+import p4Embed from "../../commands/atlusEmbeds/p4Embed.js";
+import p5Embed from "../../commands/atlusEmbeds/p5Embed.js";
+import feedback from "../../commands/userFeedback/feedback.js";
 import { SlashCommand } from "src/interfaces";
 
 /**
@@ -24,7 +29,7 @@ export async function registerCommands(client: Client) {
   // compare the local commands which our bot controls and creates against the commands within the guild/server
   try {
     // tells the language server the commands within the array are slash commands
-    const localCommands = [metaphorEmbed as unknown] as SlashCommand[];
+    const localCommands = [metaphorEmbed as unknown, p3eEmbed as unknown, p3Embed as unknown, p4Embed as unknown, p5Embed as unknown, feedback as unknown] as SlashCommand[];
     //const localCommands = await getLocalCommands();
     const applicationCommands = await getApplicationCommands(
       client,
@@ -40,6 +45,10 @@ export async function registerCommands(client: Client) {
         return cmd.name === name;
       });
 
+      // Check if any option has autocomplete enabled
+    const hasAutocomplete = localCommand.options?.some((option) => option.autocomplete === true);
+
+
       // if existingCommand is truthy/has value AKA local command exists within applicationCommands
       if (existingCommand) {
         // check if deleted key has been marked as true.
@@ -53,7 +62,7 @@ export async function registerCommands(client: Client) {
         // if commands aren't different, take the existing command and update it to match the localCommand version
         if (areChoicesDifferent(existingCommand, localCommand)) {
           // if the local command has autocomplete (is an embed)
-          if (localCommand.autocomplete === true) {
+          if (hasAutocomplete) {
             await applicationCommands.edit(existingCommand.id, {
               description,
               options: [

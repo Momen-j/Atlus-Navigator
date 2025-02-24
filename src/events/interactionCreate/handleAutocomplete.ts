@@ -22,6 +22,21 @@ export default async function handleAutocomplete(
     allMonsters = await fetchMonsterNames(AtlusGame.Persona3ReloadAigis); // Returns an array of objects
   }
 
+  if (interaction.commandName === AtlusGame.Persona3Reload) {
+    // Fetch all monster objects from the database
+    allMonsters = await fetchMonsterNames(AtlusGame.Persona3Reload); // Returns an array of objects
+  }
+
+  if (interaction.commandName === AtlusGame.Persona4Golden) {
+    // Fetch all monster objects from the database
+    allMonsters = await fetchMonsterNames(AtlusGame.Persona4Golden); // Returns an array of objects
+  }
+
+  if (interaction.commandName === AtlusGame.Persona5Royal) {
+    // Fetch all monster objects from the database
+    allMonsters = await fetchMonsterNames(AtlusGame.Persona5Royal); // Returns an array of objects
+  }
+
   // Extract just the `monster_name` values from the objects
   const allMonsterNames = allMonsters.map((monster) => monster.name);
 
