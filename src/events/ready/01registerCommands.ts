@@ -2,7 +2,9 @@ import { Client, ApplicationCommandOptionType } from "discord.js";
 import jsonConfig from "../../../config.json" assert { type: "json" };
 import { areChoicesDifferent } from "../../utils/areCommandsDifferent.js";
 import { getApplicationCommands } from "../../utils/getApplicationCommands.js";
-import { getLocalCommands } from "../../utils/getLocalCommands.js";
+//import { getLocalCommands } from "../../utils/getLocalCommands.js";
+import metaphorEmbed from "../../commands/atlusEmbeds/metaphorEmbed.js";
+import { SlashCommand } from "src/interfaces";
 
 /**
  * @module registerCommands
@@ -21,7 +23,9 @@ export async function registerCommands(client: Client) {
   const { testServer } = jsonConfig;
   // compare the local commands which our bot controls and creates against the commands within the guild/server
   try {
-    const localCommands = await getLocalCommands();
+    // tells the language server the commands within the array are slash commands
+    const localCommands = [metaphorEmbed as unknown] as SlashCommand[];
+    //const localCommands = await getLocalCommands();
     const applicationCommands = await getApplicationCommands(
       client,
       testServer
@@ -62,7 +66,8 @@ export async function registerCommands(client: Client) {
                 },
               ],
             });
-          } else { // else if the local command doesn't have autocomplete (not an embed) and is a feedback command for now
+          } else {
+            // else if the local command doesn't have autocomplete (not an embed) and is a feedback command for now
             await applicationCommands.edit(existingCommand.id, {
               description,
               options: [

@@ -15,8 +15,9 @@ const pool = new Pool({
 export const db = drizzle(pool);
 
 // Define tables
-export const metaphorEnemyStats = pgTable("metaphor_enemy_stats", {
+export const metaphorEnemyStats = pgTable("metaphor_enemies", {
   id: serial("id").primaryKey(), // Auto-incrementing ID remains the same
+  enemyNameInternal: text("Enemy Name Internal").notNull(),
   enemyName: text("Enemy Name").notNull(), // Enemy name is required
   level: text("level"), // Text type for level (even if it's numeric data)
   hp: text("hp"),

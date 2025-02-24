@@ -1,6 +1,8 @@
 import { ChatInputCommandInteraction, Client } from "discord.js";
 import jsonConfig from "../../../config.json" assert { type: "json" };
-import { getLocalCommands } from "../../utils/getLocalCommands.js";
+//import { getLocalCommands } from "../../utils/getLocalCommands.js";
+import metaphorEmbed from "../../commands/atlusEmbeds/metaphorEmbed.js";
+import { SlashCommand } from "src/interfaces";
 
 /**
  * @module handleCommands
@@ -25,7 +27,7 @@ export default async function (
   const { testServer, devs } = jsonConfig;
 
   // get local commands
-  const localCommands = await getLocalCommands();
+  const localCommands = [metaphorEmbed as unknown] as SlashCommand[];
 
   // try to check if the command by the user matches one of our local commands
   try {
