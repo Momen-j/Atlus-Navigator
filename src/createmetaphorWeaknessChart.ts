@@ -79,6 +79,7 @@ export default async function createMetaphorWeaknessChart(data: MetaphorEnemyWea
     null: path.join(reactionsFolder, "null.png"),
     drain: path.join(reactionsFolder, "drain.png"),
     reflect: path.join(reactionsFolder, "reflect.png"),
+    vulnerable: path.join(reactionsFolder, "vulnerable.png"),
     neutral: path.join(reactionsFolder, "neutral.png"),
   };
 
@@ -138,6 +139,9 @@ export default async function createMetaphorWeaknessChart(data: MetaphorEnemyWea
         break;
       case "Repel":
         weaknessImagePath = imagePaths.reflect;
+        break;
+      case "Vulnerable":
+        weaknessImagePath = imagePaths.vulnerable;
         break;
       case "Neutral":
         weaknessImagePath = imagePaths.neutral;
