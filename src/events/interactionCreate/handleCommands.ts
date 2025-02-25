@@ -1,6 +1,5 @@
 import { ChatInputCommandInteraction, Client } from "discord.js";
 import jsonConfig from "../../../config.json" assert { type: "json" };
-//import { getLocalCommands } from "../../utils/getLocalCommands.js";
 import metaphorEmbed from "../../commands/atlusEmbeds/metaphorEmbed.js";
 import p3eEmbed from "../../commands/atlusEmbeds/p3e_embed.js";
 import p3Embed from "../../commands/atlusEmbeds/p3embed.js";
