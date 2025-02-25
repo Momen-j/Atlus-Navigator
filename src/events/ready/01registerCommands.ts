@@ -29,7 +29,14 @@ export async function registerCommands(client: Client) {
   // compare the local commands which our bot controls and creates against the commands within the guild/server
   try {
     // tells the language server the commands within the array are slash commands
-    const localCommands = [metaphorEmbed as unknown, p3eEmbed as unknown, p3Embed as unknown, p4Embed as unknown, p5Embed as unknown, feedback as unknown] as SlashCommand[];
+    const localCommands = [
+      metaphorEmbed as unknown,
+      p3eEmbed as unknown,
+      p3Embed as unknown,
+      p4Embed as unknown,
+      p5Embed as unknown,
+      feedback as unknown,
+    ] as SlashCommand[];
     //const localCommands = await getLocalCommands();
     const applicationCommands = await getApplicationCommands(
       client,
@@ -46,8 +53,9 @@ export async function registerCommands(client: Client) {
       });
 
       // Check if any option has autocomplete enabled
-    const hasAutocomplete = localCommand.options?.some((option) => option.autocomplete === true);
-
+      const hasAutocomplete = localCommand.options?.some(
+        (option) => option.autocomplete === true
+      );
 
       // if existingCommand is truthy/has value AKA local command exists within applicationCommands
       if (existingCommand) {
@@ -81,8 +89,9 @@ export async function registerCommands(client: Client) {
               description,
               options: [
                 {
-                  name: "description",
-                  description: "Provide your feedback",
+                  name: "message",
+                  description:
+                    "Submit feedback, suggestions, or report issues.",
                   type: ApplicationCommandOptionType.String,
                   required: true, // This makes the description field required
                 },

@@ -1,4 +1,8 @@
-import { ApplicationCommandOptionType, Client, ChatInputCommandInteraction } from "discord.js";
+import {
+  ApplicationCommandOptionType,
+  Client,
+  ChatInputCommandInteraction,
+} from "discord.js";
 import { insertFeedback } from "../../queries/insertFeedback.js";
 
 /**
@@ -22,21 +26,24 @@ export default {
   //deleted: true,
   options: [
     {
-      name: "description",
-      description: "Provide your feedback",
+      name: "message",
+      description: "Submit feedback, suggestions, or report issues.",
       type: ApplicationCommandOptionType.String,
       required: true, // This makes the description field required
     },
   ],
 
   /**
-   * 
+   *
    * @async
    * @param {Client} client Represents an instance of the Discord client.
    * @param {ChatInputCommandInteraction} interaction The interaction from the user.
    * @returns Returns a response after submitting feedback.
    */
-  callback: async (client: Client, interaction: ChatInputCommandInteraction) => {
+  callback: async (
+    client: Client,
+    interaction: ChatInputCommandInteraction
+  ) => {
     // get userId to store
     const userId = interaction.user.id;
 
@@ -52,19 +59,21 @@ export default {
 
       if (timeLeft > 0) {
         return interaction.reply({
-          content: `⏳ You can submit feedback again in **${(timeLeft / 1000 / 60 / 60 ).toFixed(1)} hours**.`,
+          content: `⏳ You can submit feedback again in **${(timeLeft / 1000 / 60 / 60).toFixed(1)} hours**.`,
           ephemeral: true,
         });
       }
     }
 
     // Get the feedback description from the interaction
-    const description: string = interaction.options.get("description").value as string;
+    const description: string = interaction.options.get("message")
+      .value as string;
 
     // Check if the description exceeds 255 characters
     if (description.length > 255) {
       return interaction.reply({
-        content: "❌ Your feedback cannot exceed 255 characters. Please shorten it and try again.",
+        content:
+          "❌ Your feedback cannot exceed 255 characters. Please shorten it and try again.",
         ephemeral: true,
       });
     }
@@ -86,11 +95,11 @@ export default {
 
       // set an scheduled function call to delete userId key from Map after cooldown time ends
       // Remove cooldown after time expires & helps to stop map from growing indefinitely
-      setTimeout(() => cooldowns.delete(userId), cooldownTime); 
+      setTimeout(() => cooldowns.delete(userId), cooldownTime);
 
       // Reply to the user confirming the submission
       await interaction.reply({
-        content: `Your feedback 👇 **\n\n${description}** \n\nhas been submitted successfully!`,
+        content: `Your feedback 👇 **\n\n${description}** \n\nhas been submitted successfully! You can submit feedback again in the next **${(cooldownTime / 1000 / 60 / 60).toFixed(1)} hours!**\nBe sure to rate Atlus Bot on https://discordbotlist.com/ & https://top.gg/`,
         ephemeral: true, // This ensures the reply is only visible to the user who issued the command
       });
     } catch (error: any) {
@@ -98,7 +107,8 @@ export default {
 
       // Handle errors and respond with an error message
       await interaction.reply({
-        content: "❌ There was an error submitting your feedback. Please try again later.",
+        content:
+          "❌ There was an error submitting your feedback. Please try again later.",
         ephemeral: true,
       });
     }
