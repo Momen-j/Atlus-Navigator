@@ -49,6 +49,8 @@ export function eventHandler(client: Client) {
         return;
       }
 
+      await registerCommands(client); // Run this first before sending welcome message
+
       // Send the welcome message
       await welcomeChannel.send(
         `👋 **Hello, ${guild.name}!**\nThanks for adding Atlus Bot! It's here to assist you with tackling Persona & Metaphor enemies with the knowledge to impress all of your social links & confidants!\n\nGive Atlus Bot a rating on https://discordbotlist.com/ & https://top.gg/`

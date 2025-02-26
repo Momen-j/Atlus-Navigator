@@ -111,12 +111,47 @@ export async function registerCommands(client: Client) {
 
         // code below only runs if command doesn't exist & isn't set to be deleted
         // sets the name, description, & option to the ones object destructured at the beginning of the for loop
+
+        /* OLD LOGIC OF applicationCommands.create for discord bot commands
         // when we first grabbed the localCommand
-        await applicationCommands.create({
-          name,
-          description,
-          ...options,
-        });
+        // await applicationCommands.create({
+        //   name,
+        //   description,
+        //   ...options,
+        // });
+        */
+
+        // if the local command has autocomplete (is an embed)
+        if (hasAutocomplete) {
+          await applicationCommands.create({
+            name,
+            description,
+            options: [
+              {
+                name: "monster-name",
+                description: "Name of monster",
+                type: ApplicationCommandOptionType.String,
+                required: true,
+                autocomplete: true,
+              },
+            ],
+          });
+        } else {
+          // else if the local command doesn't have autocomplete (not an embed) and is a feedback command for now
+          await applicationCommands.create({
+            name,
+            description,
+            options: [
+              {
+                name: "message",
+                description:
+                  "Submit feedback, suggestions, or report issues.",
+                type: ApplicationCommandOptionType.String,
+                required: true, // This makes the description field required
+              },
+            ],
+          });
+        }
 
         console.log(`👍 Registed command "${name}"`);
       }
