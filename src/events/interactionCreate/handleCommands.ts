@@ -1,4 +1,4 @@
-import { ChatInputCommandInteraction, Client } from "discord.js";
+import { ChatInputCommandInteraction, Client, MessageFlags } from "discord.js";
 import jsonConfig from "../../../config.json" assert { type: "json" };
 import metaphorEmbed from "../../commands/atlusEmbeds/metaphorEmbed.js";
 import p3eEmbed from "../../commands/atlusEmbeds/p3e_embed.js";
@@ -31,7 +31,14 @@ export default async function (
   const { testServer, devs } = jsonConfig;
 
   // get local commands
-  const localCommands = [metaphorEmbed as unknown, p3eEmbed as unknown, p3Embed as unknown, p4Embed as unknown, p5Embed as unknown, feedback as unknown] as SlashCommand[];
+  const localCommands = [
+    metaphorEmbed as unknown,
+    p3eEmbed as unknown,
+    p3Embed as unknown,
+    p4Embed as unknown,
+    p5Embed as unknown,
+    feedback as unknown,
+  ] as SlashCommand[];
 
   // try to check if the command by the user matches one of our local commands
   try {
@@ -54,7 +61,7 @@ export default async function (
         interaction.reply({
           content:
             "You don't have enough Charm for this task, only the developer does.",
-          ephemeral: true,
+          flags: MessageFlags.Ephemeral,
         });
         return;
       }
@@ -67,7 +74,7 @@ export default async function (
       if (!(interaction.guild.id === testServer)) {
         interaction.reply({
           content: "You don't have enough Courage for this task.",
-          ephemeral: true,
+          flags: MessageFlags.Ephemeral,
         });
         return;
       }
@@ -80,7 +87,7 @@ export default async function (
           // if not, reply to interaction
           interaction.reply({
             content: "Not enough permissions",
-            ephemeral: true,
+            flags: MessageFlags.Ephemeral,
           });
           break;
         }
@@ -96,7 +103,7 @@ export default async function (
         if (!bot.permissions.has(permission)) {
           interaction.reply({
             content: "Not enough permissions",
-            ephemeral: true,
+            flags: MessageFlags.Ephemeral,
           });
           break;
         }

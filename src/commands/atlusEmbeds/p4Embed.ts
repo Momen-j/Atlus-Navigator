@@ -1,4 +1,10 @@
-import { EmbedBuilder, ApplicationCommandOptionType, Client, ChatInputCommandInteraction } from "discord.js";
+import {
+  EmbedBuilder,
+  ApplicationCommandOptionType,
+  Client,
+  ChatInputCommandInteraction,
+  MessageFlags
+} from "discord.js";
 import { fetchP4EnemyWeaknesses } from "../../queries/fetchp4EnemyWeaknesses.js";
 import createP4WeaknessChart from "../../createP4WeaknessChart.js";
 import { fetchP4EnemyStats } from "../../queries/fetchp4EnemyStats.js";
@@ -23,7 +29,10 @@ export default {
   //deleted: true,
   // permissionsRequired: Boolean,
   // botPermissions: Boolean
-  callback: async (client: Client, interaction: ChatInputCommandInteraction) => {
+  callback: async (
+    client: Client,
+    interaction: ChatInputCommandInteraction
+  ) => {
     //! this callback function takes the monster name inputted
     //! by the user and returns the weakness chart of the monster
 
@@ -54,7 +63,7 @@ export default {
 
       return interaction.reply({
         content: errorMessage,
-        ephemeral: true, // Ensures only the user who triggered the command sees the error
+        flags: MessageFlags.Ephemeral, // Ensures only the user who triggered the command sees the error
       });
     }
 
@@ -63,7 +72,7 @@ export default {
       return interaction.reply({
         content:
           "❌ This shadow does not exist within the world of Persona 4 Golden.",
-        ephemeral: true, // Sends a private message to the user
+        flags: MessageFlags.Ephemeral, // Sends a private message to the user
       });
     }
 

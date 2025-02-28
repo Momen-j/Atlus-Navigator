@@ -1,4 +1,10 @@
-import { EmbedBuilder, ApplicationCommandOptionType, Client, ChatInputCommandInteraction } from "discord.js";
+import {
+  EmbedBuilder,
+  ApplicationCommandOptionType,
+  Client,
+  ChatInputCommandInteraction,
+  MessageFlags
+} from "discord.js";
 import { fetchP3EnemyWeaknesses } from "../../queries/fetchp3EnemyWeaknesses.js";
 import createP3WeaknessChart from "../../createP3WeaknessChart.js";
 import { fetchP3EnemyStats } from "../../queries/fetchp3EnemyStats.js";
@@ -24,7 +30,10 @@ export default {
   //deleted: true,
   // permissionsRequired: Boolean,
   // botPermissions: Boolean
-  callback: async (client: Client, interaction: ChatInputCommandInteraction) => {
+  callback: async (
+    client: Client,
+    interaction: ChatInputCommandInteraction
+  ) => {
     //! this callback function takes the monster name inputted
     //! by the user and returns the weakness chart of the monster
 
@@ -55,7 +64,7 @@ export default {
 
       return interaction.reply({
         content: errorMessage,
-        ephemeral: true, // Ensures only the user who triggered the command sees the error
+        flags: MessageFlags.Ephemeral, // Ensures only the user who triggered the command sees the error
       });
     }
 
@@ -64,7 +73,7 @@ export default {
       return interaction.reply({
         content:
           "❌ This shadow does not exist within the world of Persona 3 Reload: Episode Aegis.",
-        ephemeral: true, // Sends a private message to the user
+        flags: MessageFlags.Ephemeral, // Sends a private message to the user
       });
     }
 

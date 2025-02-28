@@ -2,6 +2,7 @@ import {
   ApplicationCommandOptionType,
   Client,
   ChatInputCommandInteraction,
+  MessageFlags
 } from "discord.js";
 import { insertFeedback } from "../../queries/insertFeedback.js";
 
@@ -60,7 +61,7 @@ export default {
       if (timeLeft > 0) {
         return interaction.reply({
           content: `⏳ You can submit feedback again in **${(timeLeft / 1000 / 60 / 60).toFixed(1)} hours**.`,
-          ephemeral: true,
+          flags: MessageFlags.Ephemeral,
         });
       }
     }
@@ -74,7 +75,7 @@ export default {
       return interaction.reply({
         content:
           "❌ Your feedback cannot exceed 255 characters. Please shorten it and try again.",
-        ephemeral: true,
+        flags: MessageFlags.Ephemeral,
       });
     }
 
@@ -82,7 +83,7 @@ export default {
     if (description.length === 0) {
       return interaction.reply({
         content: "You can't submit nothing as feedback silly 😝!",
-        //ephemeral: true,
+        //flags: MessageFlags.Ephemeral,
       });
     }
 
@@ -100,7 +101,7 @@ export default {
       // Reply to the user confirming the submission
       await interaction.reply({
         content: `Your feedback 👇 **\n\n${description}** \n\nhas been submitted successfully! You can submit feedback again in the next **${(cooldownTime / 1000 / 60 / 60).toFixed(1)} hours!**\nBe sure to rate Atlus Bot on https://discordbotlist.com/ & https://top.gg/`,
-        ephemeral: true, // This ensures the reply is only visible to the user who issued the command
+        flags: MessageFlags.Ephemeral, // This ensures the reply is only visible to the user who issued the command
       });
     } catch (error: any) {
       console.error("Error submitting feedback:", error);
@@ -109,7 +110,7 @@ export default {
       await interaction.reply({
         content:
           "❌ There was an error submitting your feedback. Please try again later.",
-        ephemeral: true,
+        flags: MessageFlags.Ephemeral,
       });
     }
   },

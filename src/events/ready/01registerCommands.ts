@@ -1,5 +1,5 @@
 import { Client, ApplicationCommandOptionType } from "discord.js";
-import jsonConfig from "../../../config.json" assert { type: "json" };
+//import jsonConfig from "../../../config.json" assert { type: "json" };
 import { areChoicesDifferent } from "../../utils/areCommandsDifferent.js";
 import { getApplicationCommands } from "../../utils/getApplicationCommands.js";
 import metaphorEmbed from "../../commands/atlusEmbeds/metaphorEmbed.js";
@@ -21,10 +21,19 @@ import { SlashCommand } from "src/interfaces";
  *
  * @async
  * @param {Client} client Represents the instance of the Atlus Discord Bot.
+ * @param {string} guildId Represents the guild/server the bot is in/added to
  * @see {@link module:eventHandler}
  */
-export async function registerCommands(client: Client) {
-  const { testServer } = jsonConfig;
+export async function registerCommands(client: Client, guildId?: string) {
+  //! Code used to only access the test server
+  //!const { testServer } = jsonConfig; 
+
+  // check if the bot exists in any servers
+  if (client.guilds.cache.size === 0) {
+    console.log(`🤖 ${client.user.tag} is not in any servers. Skipping command registration.`);
+    return;
+  }
+
   // compare the local commands which our bot controls and creates against the commands within the guild/server
   try {
     // tells the language server the commands within the array are slash commands
@@ -39,7 +48,7 @@ export async function registerCommands(client: Client) {
     //const localCommands = await getLocalCommands();
     const applicationCommands = await getApplicationCommands(
       client,
-      testServer
+      guildId
     );
 
     // loop thru all local commands, compare them to applications commands, & check for differences
@@ -99,6 +108,10 @@ export async function registerCommands(client: Client) {
           }
 
           console.log(`🔄 Edited Command: ${name}`);
+        } else {
+          // skip execution of current loop since command is exactly the same as previous version
+          console.log(`Skipping registration as command is the same as previous version.`);
+          continue;
         }
       } else {
         // if localCommand is marked as deleted then skip it

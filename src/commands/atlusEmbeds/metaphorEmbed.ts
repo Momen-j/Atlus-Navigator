@@ -1,4 +1,4 @@
-import { EmbedBuilder, ApplicationCommandOptionType, Client, ChatInputCommandInteraction  } from "discord.js";
+import { EmbedBuilder, ApplicationCommandOptionType, Client, ChatInputCommandInteraction, MessageFlags  } from "discord.js";
 import { fetchMetaphorEnemyWeaknesses } from "../../queries/fetchMetaphorEnemyWeaknesses.js";
 import createMetaphorWeaknessChart from "../../createmetaphorWeaknessChart.js";
 import { fetchMetaphorEnemyStats } from "../../queries/fetchMetaphorEnemyStats.js";
@@ -71,7 +71,7 @@ export default {
 
       return interaction.reply({
         content: errorMessage,
-        ephemeral: true, // Ensures only the user who triggered the command sees the error
+        flags: MessageFlags.Ephemeral, // Ensures only the user who triggered the command sees the error
       });
     }
 
@@ -80,7 +80,7 @@ export default {
       return interaction.reply({
         content:
           "❌ This monster does not exist within the world of Metaphor: ReFantazio.",
-        ephemeral: true, // Sends a private message to the user
+        flags: MessageFlags.Ephemeral, // Sends a private message to the user
       });
     }
 

@@ -16,24 +16,65 @@ import { consoleLog } from "../events/ready/consoleLog.js";
  * @returns {void} Returns nothing but calls an event function.
  */
 export function eventHandler(client: Client) {
-  // Ready event (triggers when the bot starts)
+  // ✅ Ready event (triggers when the bot starts)
   client.once("ready", async () => {
-    await registerCommands(client); // Run this first
-    consoleLog(client); // Then log bot startup details
-  });
+    consoleLog(client); // Log bot startup details
 
-  // Interaction Create event (handles slash commands and autocomplete)
-  client.on("interactionCreate", async (interaction) => {
-    if (interaction.isAutocomplete()) {
-      await handleAutocomplete(client, interaction); // Handles autocomplete
-    } else if (interaction.isChatInputCommand()) {
-      await handleCommands(client, interaction); // Handles slash commands
+    try {
+      console.log("🚀 Bot is online. Cleaning up old commands...");
+
+      // Clear GLOBAL commands
+      const globalCommands = await client.application?.commands.fetch();
+      if (globalCommands) {
+        for (const command of globalCommands.values()) {
+          await client.application?.commands.delete(command.id);
+          //console.log(`🗑️ Deleted global command: ${command.name}`);
+        }
+      }
+
+      // Clear GUILD commands
+      for (const guild of client.guilds.cache.values()) {
+        const guildCommands = await guild.commands.fetch();
+        for (const command of guildCommands.values()) {
+          await guild.commands.delete(command.id);
+          //console.log(`🗑️ Deleted command in "${guild.name}": ${command.name}`);
+        }
+
+        // ✅ Register new commands for each guild
+        await registerCommands(client, guild.id);
+      }
+
+      console.log("✅ Commands cleaned and re-registered.");
+    } catch (error) {
+      console.error("❌ Error during command cleanup: ", error);
     }
   });
 
+  // ✅ Interaction Create event (handles slash commands and autocomplete)
+  client.on("interactionCreate", async (interaction) => {
+    if (interaction.isAutocomplete()) {
+      await handleAutocomplete(client, interaction); // Handle autocomplete
+    } else if (interaction.isChatInputCommand()) {
+      await handleCommands(client, interaction); // Handle slash commands
+    }
+  });
+
+  // ✅ Guild Create event (when the bot joins a new guild)
   client.on("guildCreate", async (guild: Guild) => {
     try {
-      // Find the first available text channel where the bot can send messages
+      console.log(`📥 Joined a new guild: ${guild.name}`);
+
+      // Clear old commands for the newly joined guild
+      const guildCommands = await guild.commands.fetch();
+      for (const command of guildCommands.values()) {
+        await guild.commands.delete(command.id);
+        //console.log(`🗑️ Deleted old command in new guild: ${command.name}`);
+      }
+
+      // ✅ Register new commands for this specific guild
+      await registerCommands(client, guild.id);
+
+      // ✅ Send a welcome message if the bot has permissions
       const welcomeChannel = guild.channels.cache.find(
         (channel) =>
           channel.type === 0 &&
@@ -42,23 +83,18 @@ export function eventHandler(client: Client) {
             ?.has("SendMessages")
       ) as TextChannel;
 
-      if (!welcomeChannel) {
-        console.warn(
-          `No valid channel found in ${guild.name} to send a welcome message.`
+      if (welcomeChannel) {
+        await welcomeChannel.send(
+          `👋 **Hello ${guild.name}!**\nThanks for adding Atlus Bot! It's here to assist you in tackling Persona & Metaphor enemies with the knowledge to impress all of your social links & confidants!\n\nGive Atlus Bot a rating on https://discordbotlist.com/ & https://top.gg/`
         );
-        return;
+        console.log(`✅ Welcome message sent to ${guild.name}`);
+      } else {
+        console.warn(
+          `⚠️ No valid channel found to send welcome message in ${guild.name}.`
+        );
       }
-
-      await registerCommands(client); // Run this first before sending welcome message
-
-      // Send the welcome message
-      await welcomeChannel.send(
-        `👋 **Hello, ${guild.name}!**\nThanks for adding Atlus Bot! It's here to assist you with tackling Persona & Metaphor enemies with the knowledge to impress all of your social links & confidants!\n\nGive Atlus Bot a rating on https://discordbotlist.com/ & https://top.gg/`
-      );
-
-      console.log(`✅ Welcome message sent to ${guild.name}`);
     } catch (error) {
-      console.error(`Error sending welcome message in ${guild.name}:`, error);
+      console.error(`❌ Error in guildCreate event for ${guild.name}:`, error);
     }
   });
 }
