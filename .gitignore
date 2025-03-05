@@ -5,5 +5,3 @@ config.json
 coverage/
 TODO.MD
 docs/
-src\utils\getAllFiles.ts
-src\utils\getLocalCommands.ts
