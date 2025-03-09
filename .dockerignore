@@ -1,0 +1,23 @@
+# Ignore node_modules (to be installed inside the container)
+node_modules/
+
+# Don't ignore dist folder (if you want to keep it)
+# You can comment out this line if you want to ignore dist
+# dist/
+
+# Ignore logs and temporary files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore IDE/editor files
+.vscode/
+.idea/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore test files
+**/*.test.ts
