@@ -104,3 +104,9 @@ CREATE TABLE p5_enemies (
     drops TEXT,
     appears TEXT
 );
+
+CREATE TABLE feedback (
+    id SERIAL PRIMARY KEY,
+    created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
+    description VARCHAR(255) NULL
+);

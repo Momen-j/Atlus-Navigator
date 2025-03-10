@@ -27,3 +27,8 @@ services:
     volumes:
       - ./sql:/docker-entrypoint-initdb.d
       - ./data:/data  # ✅ Ensure data is mounted correctly
+      - ./pgdata:/var/lib/postgresql/data  # Persist actual database files
+    restart: unless-stopped  # Auto-restart the database if it crashes
+
+volumes:
+  postgres_data:  # Named volume for persisting PostgreSQL data
