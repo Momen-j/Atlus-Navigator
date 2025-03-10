@@ -1,0 +1,214 @@
+1,Fool,75,Final Checkmate,6472,500,no,wk,no,no,no,no,no,no,no,no,Platinum Medal,Emp 1-7 10-17 20-25
+2,Fool,73,Glorious Hand,342,200,rp,rp,rp,rp,rp,rp,rp,rp,rp,no,Melancholic Coin,Emp 1-7 10-17 20-25
+3,Fool,67,Dutiful Checkmate,6265,400,no,no,no,no,no,no,wk,no,no,no,Gold Medal,Jud 1-6 9-15 18-24
+4,Fool,64,Miracle Hand,380,150,ab,ab,ab,ab,ab,ab,ab,ab,ab,no,Scintillating Coin,Jud 1-6 9-15 18-24
+5,Fool,59,Principled Checkmate,5572,320,no,no,no,no,no,wk,no,no,no,no,Gold Medal,Pto 1-6 9-15 18-24
+6,Fool,58,Luxury Hand,290,150,rs,rs,rs,nu,nu,nu,nu,nu,nu,no,Sumptuous Coin,Pto 1-6 9-15 18-24
+7,Fool,51,Reticent Checkmate,5264,240,no,no,no,no,no,no,no,wk,no,no,Silver Medal,Ant 1-8 11-18 21-24
+8,Fool,49,Ethereal Hand,620,120,no,no,no,no,no,no,no,no,no,no,Rustic Coin,Ant 1-8 11-18 21-24
+9,Fool,43,Bold Checkmate,5360,177,no,no,no,no,wk,no,no,no,no,no,Silver Medal,Cai 1-5 8-12 15-19
+10,Fool,41,Supreme Hand,500,100,no,no,no,nu,nu,nu,nu,nu,nu,no,Odd Coin,Cai 1-5 8-12 15-19
+11,Fool,35,Dignified Checkmate,5314,150,wk,no,no,no,no,no,no,no,wk,no,Bronze Medal,Coc 1-7 10-14
+12,Fool,33,Precious Hand,610,60,no,no,no,wk,no,no,no,no,no,no,Worldly Coin,Coc 1-7 10-14
+13,Fool,25,Wealth Hand,450,70,no,no,wk,no,no,no,no,no,no,no,Worldly Coin,Mal 1-6 9-14
+14,Magician,70,Grand Magus,909,200,no,nu,no,wk,rp,no,no,rp,rp,no,"Diamond, Opal",Emp 1-7 10-12
+15,Magician,68,Sleeping Table,800,200,rp,no,no,no,no,wk,nu,nu,no,no,"Platinum Cutlery, Emerald, Onyx",Emp 2-3 6 10
+16,Magician,62,Angry Table,661,200,wk,no,no,no,nu,no,wk,no,no,no,"Silver Cutlery, Onyx, Emerald",Jud 13-15 19 21
+17,Magician,55,Almighty Hand,665,150,nu,rp,no,no,no,no,nu,ab,wk,no,"Divine Adornment, Amethyst",Pto 14 18-19
+18,Magician,54,Magical Magus,698,150,no,wk,no,no,nu,nu,no,no,nu,no,"Cap of Wizardry, Topaz, Emerald",Pto 9 11
+19,Magician,49,Prime Magus,556,150,no,no,no,wk,ab,no,no,no,no,no,"Cap of Knowledge, Amethyst, Topaz",Ant 16 18
+20,Magician,44,Killing Hand,477,150,no,no,no,no,nu,no,wk,no,nu,no,"Assailant's Choker, Amethyst",Ant 1-8 11-12
+21,Magician,35,Dancing Hand,330,150,no,no,no,wk,no,no,nu,no,no,no,"Dancer's Necklace, Turquoise",Coc 10-14
+22,Magician,32,Laughing Table,340,140,no,no,rs,no,no,rs,wk,no,no,no,"Iron Cutlery, Malachite",Coc 4-5 7
+23,Magician,28,Magic Hand,288,84,no,no,no,wk,no,no,rs,no,no,no,"Hellish Bowtie, Turquoise",Mal 9-14
+24,Magician P,52,Grand Magus B,1643,999,no,wk,no,rs,nu,no,rs,nu,no,no,Cap of Eminence,Ant Door
+25,Magician P,37,Cowardly Maya,1300,500,no,rs,rs,no,no,wk,rs,no,no,no,Custom Parts,Coc 9
+26,Magician P,37,Crying Table,1500,500,rs,no,no,rs,wk,no,no,no,no,no,Black Quartz,Coc 9
+27,Magician P,37,Wondrous Magus,1700,500,no,no,no,wk,rp,rs,rs,no,no,no,Magician Tarot,Coc 9
+28,Priestess,58,Vehement Idol,738,150,no,no,no,rp,wk,no,nu,no,rp,no,Topaz,Pto 13-15 18-24
+29,Priestess,55,Writhing Tiara,698,150,no,wk,rp,no,wk,no,no,no,no,no,"Silencing Tiara, Turquoise, Topaz",Pto 14-15 19-20
+30,Priestess,54,Silent Book,620,150,wk,no,no,wk,nu,no,no,no,rs,no,"Book of Secrets, Emerald",Pto 13 15 20
+31,Priestess,47,Grieving Tiara,454,150,no,no,no,wk,nu,no,no,no,no,no,"Lamenting Tiara, Onyx, Emerald",Ant 13-14 16 18 22 24
+32,Priestess,47,Liberating Idol,469,150,no,no,no,no,rp,wk,nu,no,no,no,"Throne of Freedom, Emerald",Ant 6-8 11-12
+33,Priestess,45,Ruinous Idol,460,150,no,no,no,no,no,ab,wk,no,ab,no,"Throne of Ruin, Topaz",Cai 10-12 15-19
+34,Priestess,35,Maniacal Book,310,150,no,no,no,no,rs,no,wk,nu,no,no,"Book of Fanaticism, Malachite, Turquoise",Coc 10-11 13-14
+35,Priestess,33,Tranquil Idol,406,140,no,no,wk,nu,no,rs,wk,rs,no,no,"Throne of Serenity, Onyx, Topaz",Coc 6-7
+36,Priestess,31,Muttering Tiara,320,140,no,no,no,rs,no,no,wk,no,no,no,"Hushing Tiara, Malachite",Coc 1-4
+37,Priestess,25,Spurious Book,200,84,no,no,no,no,no,wk,no,nu,no,no,"Book of Fabrication, Turquoise",Mal 1-6
+38,Priestess P,91,Primitive Idol,7000,999,no,no,no,rs,rs,rs,rs,rp,rp,no,-,Mon 2
+39,Priestess P,68,Vehement Idol C,1999,999,no,no,rp,rp,wk,no,nu,no,rp,no,Throne of Mania,Jud Door
+40,Priestess P,30,Wrathful Book,1520,300,no,no,no,wk,rp,ab,no,nu,no,no,High Priestess Tarot,Mal 8
+41,Priestess P,29,Shouting Tiara,680,400,no,no,no,ab,wk,ab,no,no,no,no,Black Quartz,Mal 8
+42,Empress,74,Eternal Eagle,711,200,no,no,wk,no,wk,ab,ab,no,no,no,"Immortal Plume, Garnet, Ruby",Emp 14-15 17 20 24
+43,Empress,73,Change Relic,647,200,no,no,wk,nu,nu,nu,nu,nu,nu,no,"Orb of Flux, Emerald, Onyx",Emp 11-12
+44,Empress,73,Divine Mother,853,200,no,no,no,rs,rs,no,no,rp,wk,no,"Saint's Stool, Emerald, Onyx",Emp 13-17 20-25
+45,Empress,61,Growth Relic,781,200,no,no,wk,no,no,no,ab,no,no,no,"Orb of Growth, Garnet, Amethyst",Jud 4-5
+46,Empress,56,Jupiter Eagle,697,150,no,no,wk,no,rs,no,ab,no,wk,no,"Airy Plume, Onyx",Pto 18 20 24
+47,Empress,55,Pistil Mother,706,150,no,no,no,no,wk,no,rp,rp,no,no,"Leopardess Stool, Emerald, Amethyst",Pto 1-6 9-12
+48,Empress,51,Regal Mother,468,150,no,no,no,no,rs,no,ab,nu,wk,no,"Opulent Stool, Turquoise, Emerald",Ant 13-18 21-24
+49,Empress,49,Affection Relic,1125,200,no,no,ab,no,no,no,no,nu,wk,no,"Amethyst, Emerald",Ant 1-8 11-12
+50,Empress,48,Dark Eagle,459,150,no,no,wk,no,no,no,no,no,nu,no,"Jet-Black Plume, Onyx, Emerald",Ant 15-17
+51,Empress,38,Constancy Relic,468,150,no,no,no,no,wk,no,nu,no,no,no,"Orb of Continuity, Malachite, Onyx",Cai 3 5 8-9
+52,Empress,33,Elegant Mother,419,140,no,no,no,no,rs,no,nu,wk,ab,no,Topaz,Coc 4-5 7
+53,Empress,32,Venus Eagle,330,140,rs,no,wk,no,wk,no,rs,no,no,no,"Ostentatious Plume, Amethyst",Coc 2-3 5 7
+54,Empress,31,Creation Relic,324,130,no,wk,wk,no,rs,rs,nu,no,no,no,"Orb of Creation, Turquoise",Mal 12-14
+55,Empress P,95,Change Relic B,5000,999,no,no,no,rs,rs,wk,no,nu,nu,no,-,Mon 4
+56,Empress P,52,Frivolous Maya,1553,999,ab,ab,ab,no,no,no,no,nu,nu,no,Empress Tarot,Ant 10
+57,Empress P,44,Eternal Eagle B,1497,999,nu,nu,wk,no,no,no,no,no,no,no,Immortal Plume,Cai Door
+58,Empress P,36,Elegant Mother C,1198,999,no,no,no,wk,no,no,rs,no,nu,no,Lady's Stool,Coc Door
+59,Emperor,75,Emperor Beetle,644,200,no,no,nu,no,nu,no,no,no,no,no,Ruby,Emp 15 17 21 23
+60,Emperor,73,Intrepid Knight,899,200,no,no,rs,no,no,no,ab,nu,nu,no,"Saddle of Fortitude, Opal",Emp 10-12
+61,Emperor,70,King Castle,1300,200,rs,rs,rs,no,no,no,no,nu,wk,no,"White Wall Fragment, Emerald, Onyx",Emp 1-7 10-12
+62,Emperor,67,Power Castle,1124,200,no,no,no,rs,wk,no,rp,no,no,no,"Green Wall Fragment, Garnet",Jud 21-24
+63,Emperor,63,Golden Beetle,754,200,no,rs,no,no,nu,no,no,rp,wk,no,"Champion's Horn, Emerald, Garnet",Jud 13 15 20
+64,Emperor,58,Haughty Maya,650,200,no,no,no,rs,no,no,wk,no,no,no,"Mask of Pride, Emerald",Jud 1-6 9-12
+65,Emperor,52,Adamant Beetle,731,150,rs,no,nu,no,no,no,no,no,no,no,"Shogun's Horn, Amethyst",Pto 4 6 10
+66,Emperor,46,Hell Knight,504,150,nu,no,nu,no,no,rp,wk,no,no,no,"Saddle of Vengeance, Amethyst, Topaz",Ant 1-8 11-12
+67,Emperor,44,Burning Beetle,1050,200,no,rp,rp,ab,wk,no,no,no,no,no,"Onyx, Emerald",Cai 10-12 15-19
+68,Emperor,44,Grave Beetle,560,150,no,no,no,wk,no,rs,nu,no,no,no,"Vanguard's Horn, Amethyst",Cai 17-19
+69,Emperor,39,Champion Knight,436,150,rs,rs,rs,no,no,ab,no,no,wk,no,"Saddle of Merit, Topaz",Cai 4-5 8
+70,Emperor,38,Solid Castle,605,150,no,no,no,no,no,nu,wk,no,no,no,"Ashen Wall Fragment, Topaz",Cai 3 5
+71,Emperor,35,Avenger Knight,1666,300,no,no,nu,wk,nu,no,no,wk,no,no,"Malachite, Onyx",Coc 1-7
+72,Emperor P,76,Intrepid Knight C,2311,999,no,no,nu,no,rp,no,no,rp,rp,no,Saddle of Fortitude,Emp Door
+73,Emperor P,59,Death Castle B,1858,999,rs,no,nu,no,wk,no,no,no,rp,no,Red Wall Fragment,Pto Door
+74,Emperor P,58,Emperor Beetle B,1595,999,nu,nu,no,wk,no,no,no,no,no,no,Emperor's Horn,Pto Door
+75,Emperor P,55,Death Castle,2209,999,no,no,no,ab,ab,no,no,no,nu,no,Emperor Tarot,Ant 20
+76,Emperor P,54,Avenger Knight B,1275,999,no,no,rp,no,no,ab,no,no,no,no,Silver Quartz,Ant 20
+77,Hierophant,99,Indolent Maya B,1572,400,rs,rs,rs,rs,rs,rs,rs,rs,rs,no,"Opal, Diamond, Ruby",Emp 13-17 20-25
+78,Hierophant,73,Grudge Tower,1750,400,no,no,no,ab,ab,no,no,no,rp,no,"Opal, Diamond",Emp 1-7 10-12
+79,Hierophant,72,Crazy Twins,810,200,no,no,no,no,no,rp,wk,nu,no,no,Topaz,Emp 13 16 21 23
+80,Hierophant,72,Fanatic Tower,725,200,no,no,no,no,no,nu,no,wk,rp,no,"Crown of Servility, Opal",Emp 6-7
+81,Hierophant,71,White Sigil,825,400,wk,no,no,rs,no,ab,wk,no,no,no,"Pandemonium Charm, Emerald, Onyx",Emp 5 7
+82,Hierophant,66,Green Sigil,772,200,wk,no,no,no,no,wk,ab,no,no,no,"Whirlwind Charm, Opal, Turquoise",Jud 20 23-24
+83,Hierophant,54,Indolent Maya,552,150,no,no,no,no,no,nu,wk,no,no,no,"Mask of Sloth, Topaz",Pto 13-15 19 21
+84,Hierophant,53,Apostate Tower,800,150,no,no,no,wk,rs,ab,no,no,no,no,"Crown of Egoism, Turquoise, Garnet",Pto 10 12
+85,Hierophant,51,Death Twins,621,150,no,no,no,ab,wk,no,no,no,nu,no,"Shackles of Morbidity, Amethyst",Pto 1 3 5-6
+86,Hierophant,51,Red Sigil,520,150,wk,no,no,ab,wk,no,no,nu,no,no,"Inferno Charm, Topaz, Turquoise",Ant 13-18 21-24
+87,Hierophant,45,Killer Twins,481,150,no,no,no,no,no,nu,no,wk,nu,no,"Shackles of Depravity, Amethyst, Onyx",Ant 3 6 11
+88,Hierophant,38,Blue Sigil,410,150,wk,no,no,no,ab,no,no,no,no,no,"Hail Charm, Onyx",Coc 13-14
+89,Hierophant,37,Dogmatic Tower,480,150,no,wk,no,nu,no,no,no,nu,nu,no,"Crown of Obstinacy, Malachite, Amethyst",Coc 12-13
+90,Hierophant,32,Trance Twins,380,140,no,no,no,no,rs,wk,no,wk,no,no,"Shackles of Ecstasy, Turquoise",Coc 2-3 5-6
+91,Hierophant,26,Corrupt Tower,245,65,no,no,rs,no,wk,no,no,no,no,no,"Crown of Vice, Malachite",Mal 3-6
+92,Hierophant P,74,Fanatic Tower B,2345,999,no,no,wk,no,no,ab,nu,no,no,no,Crown of Servility,Emp Door
+93,Hierophant P,67,Killer Twins B,2577,999,no,no,ab,wk,no,rp,no,no,nu,no,Hierophant Tarot,Jud 8
+94,Hierophant P,65,Red Sigil C,2268,999,no,no,no,ab,wk,ab,no,no,no,no,Gold Quartz,Jud 8
+95,Hierophant P,57,Crazy Twins B,1758,999,wk,no,rs,nu,no,no,nu,rs,no,no,Shackles of Madness,Pto Door
+96,Hierophant P,38,Red Sigil B,1443,999,no,no,no,ab,wk,no,no,no,no,no,Inferno Charm,Coc Door
+97,Lovers,72,Natural Dancer,945,200,rs,no,nu,no,no,wk,no,no,no,no,"Balloon of Unity, Emerald, Diamond",Emp 10 12
+98,Lovers,68,Amorous Snake,852,200,no,no,no,ab,wk,no,no,rp,no,no,"Necklace of Fixation, Garnet",Emp 1-2 4 7
+99,Lovers,67,Gracious Cupid,670,200,no,wk,no,nu,no,no,no,no,no,no,"Arrowhead of Heart, Emerald, Onyx",Emp 1-7 10-12
+100,Lovers,65,Carnal Snake,793,200,no,wk,rs,no,wk,nu,no,no,no,no,"Necklace of Impulse, Diamond",Jud 18 20 24
+101,Lovers,61,Lustful Snake,730,200,no,no,no,ab,wk,no,no,no,no,no,"Necklace of Fantasy, Emerald, Garnet",Jud 6 10-12
+102,Lovers,53,Immoral Snake,600,150,wk,no,no,rs,no,no,nu,no,no,no,"Necklace of Craving, Emerald, Opal",Pto 1-6 9-12
+103,Lovers,52,Ardent Dancer,590,150,no,rs,no,wk,nu,no,no,nu,no,no,"Balloon of Feuds, Amethyst, Onyx",Pto 2 4-6 9 11
+104,Lovers,51,Devoted Cupid,574,150,no,no,rs,no,no,wk,nu,no,nu,no,"Arrowhead of Control, Amethyst",Pto 1-6 9-12
+105,Lovers,41,Royal Dancer,1033,200,nu,no,no,no,no,no,wk,no,no,no,"Amethyst, Topaz",Cai 1-5 8-9
+106,Lovers,37,Soul Dancer,435,150,no,no,no,no,nu,no,wk,no,no,no,"Balloon of Amity, Malachite",Cai 2-3 5 8
+107,Lovers,36,Jealous Cupid,436,150,no,no,no,no,wk,no,nu,no,no,no,"Arrowhead of Envy, Turquoise",Cai 1-2 5 9
+108,Lovers,31,Obsessed Cupid,320,140,wk,no,no,no,no,no,no,nu,wk,no,"Arrowhead of Desire, Malachite",Coc 1-3 5
+109,Lovers,30,Stoic Snake,450,156,no,no,no,no,ab,rp,no,wk,nu,no,"Malachite, Turquoise, Amethyst",Mal 1-6 9-14
+110,Lovers,26,Insidious Maya,220,58,no,no,no,wk,no,no,no,rs,no,no,"Mask of Betrayal, Malachite",Mal 1-6
+111,Lovers P,93,Amorous Snake B,4000,999,no,no,no,ab,no,no,wk,rp,no,no,-,Mon 3
+112,Lovers P,44,Harem Dancer,1680,999,rp,no,rs,no,ab,no,ab,no,no,no,Lovers Tarot,Cai 7
+113,Lovers P,43,Natural Dancer C,1050,999,no,no,no,rs,wk,rs,nu,no,no,no,Ergotite Shard,Cai 7
+114,Chariot,80,Rampage Drive,1230,200,no,no,rp,no,wk,ab,rs,no,no,no,"Diamond, Opal",Emp 23-24
+115,Chariot,73,Hallowed Turret,936,200,no,no,nu,no,no,no,no,rp,wk,no,"Purified Turret, Emerald, Onyx",Emp 11-12
+116,Chariot,69,Battle Wheel,1090,200,no,no,no,wk,ab,no,no,nu,no,no,"War Wheel, Garnet",Emp 2 4
+117,Chariot,55,Bestial Wheel,774,150,rs,nu,no,no,no,no,wk,no,no,no,"Steel Wheel, Amethyst",Pto 15 18 20 22-24
+118,Chariot,55,Scarlet Turret,1706,200,rp,nu,no,rs,no,wk,no,no,no,no,"Topaz, Garnet",Pto 1-6 9-12
+119,Chariot,52,Berserk Turret,1200,200,nu,nu,nu,ab,rs,wk,rs,no,no,no,"Onyx, Emerald",Ant 13-18 21-24
+120,Chariot,50,Wicked Turret,862,150,no,no,rp,rs,no,wk,no,no,no,no,"Ominous Turret, Amethyst, Topaz",Ant 21 24
+121,Chariot,46,Killer Drive,550,150,no,wk,no,no,nu,wk,no,nu,no,no,"Ruthless Rotary Leg, Amethyst, Topaz",Ant 5-6 8 12
+122,Chariot,43,Arcane Turret,498,150,nu,no,nu,no,no,wk,no,no,no,no,"Kill Shot Turret, Emerald",Cai 12 15-16 19
+123,Chariot,42,Wild Drive,555,150,rs,rs,rs,no,nu,wk,no,no,no,no,"Brutish Rotary Leg, Onyx, Amethyst",Cai 12 15-16
+124,Chariot,41,Mach Wheel,455,150,rs,nu,no,no,wk,no,no,no,no,no,"Rapid Wheel, Onyx",Cai 11 15 17
+125,Chariot,38,Ill-Fated Maya,449,150,wk,no,no,wk,no,no,no,no,no,no,"Mask of Concession, Malachite, Turquoise",Cai 10-11 15 17
+126,Chariot P,67,Rampage Drive C,2400,999,rs,rs,rs,no,no,no,no,no,no,no,Ruinous Rotary Leg,Jud Door
+127,Chariot P,60,Spastic Turret,3166,999,no,no,no,ab,wk,no,no,no,no,no,Chariot Tarot,Pto 8
+128,Chariot P,58,Slaughter Drive,1128,999,no,no,no,ab,ab,wk,no,no,no,no,-,Pto 8
+129,Justice,73,Doom Sword,802,200,rp,rs,rs,wk,no,no,no,no,no,no,"Tamahagane Blade, Opal, Garnet",Emp 13-14 17 21
+130,Justice,71,Void Giant,1300,200,ab,rs,rs,no,wk,no,no,nu,nu,no,"Diamond, Ruby",Emp 6-7 11-12
+131,Justice,68,Loss Giant,1654,300,nu,no,ab,nu,wk,no,no,no,no,no,"Emerald, Garnet, Diamond",Jud 13-15 18-24
+132,Justice,62,Harmony Giant,1147,200,no,nu,rp,no,no,rp,rp,no,no,no,"Immovable Balance, Opal, Topaz",Jud 1-6 9-12
+133,Justice,60,World Balance,598,200,no,no,no,rp,rp,rp,rp,rp,rp,no,"Emerald, Garnet",Jud 4 6 10
+134,Justice,51,Stasis Giant,685,150,rs,rs,no,no,nu,nu,wk,no,no,no,"Wavering Balance, Garnet",Ant 21-22
+135,Justice,45,Light Balance,505,150,no,no,no,wk,rs,rs,wk,rp,rp,no,"Platinum Plates, Topaz, Emerald",Ant 3-4 6-7 12
+136,Justice,43,Order Giant,633,150,rs,rs,rs,no,wk,rp,rp,no,no,no,"Warped Balance, Emerald",Cai 10-12 15-19
+137,Justice,40,Conviction Sword,507,150,rs,no,rs,no,no,no,no,no,wk,no,"Bronze Blade, Topaz, Garnet",Cai 10-12 16 19
+138,Justice,36,Bigoted Maya,411,150,no,no,no,no,no,nu,no,wk,no,no,"Mask of Prejudice, Turquoise, Onyx",Cai 1-5 8-9
+139,Justice,36,Heat Balance,380,150,no,no,no,rs,rs,wk,wk,no,no,no,"Red-Blue Plates, Turquoise, Amethyst",Coc 12 14
+140,Justice,30,Sky Balance,320,130,no,no,no,wk,wk,rp,rp,no,no,no,"Purple-Green Plates, Amethyst, Turquoise",Mal 10-14
+141,Justice,28,Justice Sword,238,104,rs,no,no,no,no,no,wk,no,no,no,"Rusty Blade, Turquoise",Mal 2-6
+142,Justice P,91,Heat Balance C,5000,999,rs,no,no,rp,rp,wk,wk,no,no,no,-,Mon 2
+143,Justice P,91,Sky Balance B,5000,999,rs,no,no,wk,wk,rp,rp,no,no,no,-,Mon 2
+144,Justice P,66,Void Giant B,1721,999,nu,rs,no,wk,no,no,rp,no,no,no,Equal Balance,Jud Door
+145,Justice P,60,World Balance B,1753,999,no,no,no,no,no,no,no,no,no,no,Golden Plates,Pto Door
+146,Justice P,50,Judgment Sword B,1522,999,no,no,nu,no,no,ab,wk,no,no,no,Steel Blade,Ant Door
+147,Justice P,47,Harmony Giant B,3000,999,no,nu,no,no,no,rp,rp,no,no,no,Black Quartz,Cai 14
+148,Justice P,46,Judgment Sword,2800,999,rp,no,nu,no,no,ab,wk,no,no,no,Justice Tarot,Cai 14
+149,Hermit,77,Phantom King,775,200,nu,nu,nu,rs,rs,rs,rs,wk,nu,no,"Diamond, Opal",Emp 21 24
+150,Hermit,67,Amenti Raven,711,200,no,no,no,rp,no,no,wk,no,rs,no,"Black Hole Lantern, Onyx, Garnet",Emp 1 3 5
+151,Hermit,65,Phantom Hero,666,300,rs,rs,rs,no,no,no,no,no,rp,no,"Topaz, Garnet, Opal",Jud 1-6 9-12
+152,Hermit,65,Phantom Mage,581,200,no,no,no,rs,no,no,no,wk,nu,no,"Wizard's Candlestick, Opal",Jud 19-20 22 24
+153,Hermit,63,Fate Seeker,650,200,no,no,wk,nu,nu,nu,nu,wk,rp,no,"Decaying Eyeball, Garnet",Jud 14 18-19
+154,Hermit,59,Noble Seeker,674,200,no,no,no,rs,no,wk,no,no,rp,no,"Coruscant Eyeball, Emerald, Garnet",Jud 3 5 12
+155,Hermit,56,Phantom Lord,649,150,no,no,no,no,rs,no,ab,wk,rp,no,"Leader's Candlestick, Onyx, Topaz",Pto 19 22 24
+156,Hermit,49,Death Seeker,537,150,no,no,no,nu,no,no,no,wk,rp,no,"Murky Eyeball, Topaz",Ant 17 21 23-24
+157,Hermit,48,Phantom Master,506,150,no,no,no,no,no,nu,no,wk,nu,no,"Lord's Candlestick, Onyx",Ant 13-18 21-24
+158,Hermit,47,Desirous Maya,440,150,no,no,no,no,no,nu,wk,no,no,no,"Mask of Greed, Garnet, Malachite",Ant 13-15 17 23
+159,Hermit,44,Black Raven,472,150,no,no,no,nu,no,no,no,wk,rs,no,"Dusk Lantern, Amethyst",Ant 2 4 8 12
+160,Hermit,29,Vicious Raven,312,104,no,no,no,ab,wk,no,rs,no,no,no,"Incandescent Lantern, Turquoise, Amethyst",Mal 9-14
+161,Hermit P,73,Phantom King B,2422,999,no,no,no,wk,no,no,no,rp,rp,no,Divine Candlestick,Emp Door
+162,Hermit P,63,Acheron Seeker,2503,999,no,wk,no,wk,rp,wk,rp,nu,nu,no,Ergotite Chunk,Pto 17
+163,Hermit P,61,Ice Raven,2188,999,wk,no,rp,no,ab,no,no,no,no,no,Hermit Tarot,Pto 17
+164,Hermit P,37,Phantom Mage B,1201,999,no,no,no,no,no,rs,wk,rp,no,no,Wizard's Candlestick,Coc Door
+165,Fortune,78,Reckoning Dice,830,200,ab,ab,ab,no,no,wk,no,no,no,no,"Ring of Retribution, Diamond, Opal",Emp 22 25
+166,Fortune,75,Eternal Sand,1056,200,wk,wk,wk,rp,rp,ab,ab,nu,nu,no,"Diamond, Opal",Emp 20 22 25
+167,Fortune,74,Platinum Dice,893,200,nu,no,no,no,nu,wk,no,no,no,no,"Platinum Dice, Diamond, Opal",Emp 14-16 20 25
+168,Fortune,64,Silver Dice,565,200,nu,nu,nu,no,no,no,no,wk,wk,no,"Silver Dice, Onyx, Emerald",Jud 14-15 19
+169,Fortune,58,Infinite Sand,536,200,no,wk,no,nu,nu,nu,nu,nu,nu,no,"Blue Sand, Opal, Garnet",Jud 1 3 5-6
+170,Fortune,58,Perpetual Sand,687,150,wk,wk,wk,nu,nu,nu,nu,nu,nu,no,"Orange Sand, Garnet, Amethyst",Pto 13-15 18-24
+171,Fortune,57,Iron Dice,705,150,rs,rs,rs,no,no,wk,no,no,no,no,"Steel Dice, Topaz, Emerald",Pto 13-15 18-24
+172,Fortune,57,Mind Dice,765,150,no,no,no,wk,nu,no,rs,no,no,no,"Ring of Anxiety, Turquoise, Onyx",Pto 13-15 18-24
+173,Fortune,50,Death Dice,642,150,no,no,no,no,nu,wk,rp,rs,rs,no,"Ring of Asphyxiation, Onyx, Emerald",Ant 18 24
+174,Fortune,47,Flowing Sand,445,150,wk,wk,wk,rp,rp,rp,rp,rp,rp,no,"Red Sand, Onyx, Topaz",Ant 7 12
+175,Fortune,39,Bronze Dice,415,150,no,nu,no,no,no,no,wk,no,no,no,"Copper Dice, Turquoise, Malachite",Cai 10-12 15-19
+176,Fortune,34,Imprudent Maya,450,50,no,no,no,nu,no,no,no,no,no,no,"Turquoise, Onyx",Coc 10-14
+177,Fortune,33,Curse Dice,345,140,rs,rs,rs,no,no,wk,no,wk,nu,no,"Ring of Resentment, Topaz, Turquoise",Coc 1-7
+178,Fortune P,75,Reckoning Dice B,1745,999,ab,ab,ab,no,no,no,no,no,no,no,Ring of Retribution,Emp Door
+179,Fortune P,71,Reckoning Dice C,3268,999,no,no,no,nu,nu,nu,nu,rp,nu,no,Fortune Tarot,Jud 17
+180,Fortune P,70,Eternal Sand C,3172,999,no,no,no,nu,nu,nu,ab,nu,nu,no,Gold Quartz,Jud 17
+181,Fortune P,65,Eternal Sand B,2000,999,wk,no,no,no,rp,rp,no,no,nu,no,White Sand,Jud Door
+182,Strength,76,Nemean Beast,981,200,no,nu,no,wk,nu,no,no,no,no,no,"Diamond, Opal",Emp 13-17 20-25
+183,Strength,68,Mythical Gigas,870,200,no,rp,nu,ab,no,no,no,nu,nu,no,"Holy Pants, Garnet",Jud 13-15 18-24
+184,Strength,64,Hakurou Musha,726,200,rp,no,no,wk,nu,no,no,no,no,no,"Samurai Helmet, Emerald, Topaz",Jud 13-15 18-24
+185,Strength,62,Daring Gigas,702,200,rs,rs,rs,no,no,no,wk,no,no,no,"Fighter's Pants, Opal",Jud 5
+186,Strength,59,Mighty Beast,744,200,no,no,no,wk,no,no,no,no,nu,no,"Wicked Fur, Garnet, Amethyst",Jud 2 4 6 9 11
+187,Strength,43,Enslaved Beast,485,150,no,no,no,wk,no,nu,no,no,no,no,"Servant's Fur, Onyx",Ant 1-3 5 12
+188,Strength,37,Furious Gigas,472,150,no,rs,no,rs,no,rs,no,no,wk,no,"Hero's Pants, Onyx, Amethyst",Cai 1-5 8-9
+189,Strength,35,Steel Gigas,570,150,no,rs,no,no,no,wk,no,no,no,no,"Iron-Lined Pants, Turquoise, Amethyst",Coc 10-14
+190,Strength,29,Wild Beast,283,52,no,no,rs,no,no,no,no,wk,wk,no,"Beastly Fur, Malachite, Amethyst",Mal 5-6
+191,Strength P,93,El Dorado Beast,13340,999,rs,rs,rs,rs,rs,rs,rs,rs,rs,no,-,Mon 3
+192,Strength P,90,Immortal Gigas,18000,999,rp,rp,rp,no,no,no,rs,nu,no,no,-,Mon 1
+193,Strength P,90,Visceral Maya B,12000,999,no,no,no,wk,rs,ab,rs,no,nu,no,-,Mon 1
+194,Strength P,73,Kaiden Musha,2630,999,no,no,no,no,rs,no,rs,nu,no,no,Strength Tarot,Emp 9
+195,Strength P,73,Onnen Musha,1900,999,no,no,no,ab,ab,ab,ab,no,nu,no,AS Refined Material,Emp 9
+196,Strength P,73,Tenjin Musha,2579,999,no,no,no,rs,no,rs,no,nu,nu,no,Gold Quartz,Emp 9
+197,Strength P,43,Nemean Beast B,1745,999,no,no,no,no,no,rs,wk,rs,no,no,Divine Fur,Cai Door
+198,Hanged,79,Jotun of Grief,2373,200,rs,rp,wk,no,no,rp,ab,no,rp,no,"Forlorn Wood Horse, Ruby",Emp 23 25
+199,Hanged,75,Chaos Cyclops,1373,400,no,no,no,ab,ab,ab,ab,no,no,no,"Garnet, Ruby",Emp 13-17 20-25
+200,Hanged,75,Minotaur I,974,200,rs,rs,rs,no,no,no,no,nu,nu,no,"Ver. I Restraints, Opal, Ruby",Emp 13-17 20-25
+201,Hanged,74,Mighty Cyclops,1400,400,ab,ab,ab,no,no,no,no,no,no,no,"Topaz, Opal",Emp 13-17 20-25
+202,Hanged,73,Mad Cyclops,1712,400,no,no,no,rs,rs,rs,rs,wk,no,no,"Emerald, Diamond",Emp 13-17 20-25
+203,Hanged,67,Devious Maya,631,200,no,no,no,nu,no,no,no,no,wk,no,"Mask of Sacrifice, Malachite, Diamond",Jud 21 23-24
+204,Hanged,63,Minotaur II,835,200,no,nu,no,no,wk,no,no,ab,no,no,"Ver. II Restraints, Emerald, Garnet",Jud 1-6 9-12
+205,Hanged,61,Minotaur III,2283,200,rs,nu,rs,no,no,no,no,rp,no,no,"Emerald, Garnet",Pto 13-15 18-24
+206,Hanged,60,Fierce Cyclops,591,200,wk,no,wk,ab,no,no,ab,no,no,no,"Cross of Resignation, Diamond, Ruby",Jud 9 11
+207,Hanged,52,Jotun of Evil,1337,150,no,no,wk,rp,rp,rp,rp,rp,rp,no,"Infernal Wood Horse, Garnet",Pto 1-6 9-12
+208,Hanged,47,Minotaur IV,656,150,no,no,no,nu,wk,no,no,no,nu,no,"Ver. IV Restraints, Onyx",Ant 1-8 11-12
+209,Hanged,40,Jotun of Power,530,150,no,no,wk,rs,rs,rs,rs,rs,rs,no,"Sadistic Wood Horse, Topaz",Cai 1-5 8-9
+210,Hanged P,95,Brilliant Cyclops,20000,999,no,rs,rs,no,ab,ab,ab,no,no,no,-,Mon 4
+211,Hanged P,75,Neo Minotaur,4400,999,rs,rs,rs,ab,nu,no,ab,no,no,no,Hanged Man Tarot,Emp 19
+212,Hanged P,75,Rebellious Cyclops,3200,999,no,no,no,nu,ab,no,ab,no,no,no,Gold Quartz,Emp 19
+213,Hanged P,51,Minotaur III B,1895,999,rs,rp,rp,wk,no,no,no,no,no,no,Ver. III Restraints,Ant Door
+214,Hanged P,45,Chaos Cyclops B,1612,999,no,no,nu,no,no,no,no,nu,no,no,Cross of Order,Cai Door

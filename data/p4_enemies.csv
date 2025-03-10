@@ -1,0 +1,266 @@
+1,Magician,79,Grand Magus,550,644,no,no,no,no,no,nu,wk,no,Living Metal,Yomotsu Hirasaka 1-4
+2,Magician,75,Gauntlet Hand,600,354,no,no,no,wk,no,no,no,no,-,"Hollow Forest 4-6, 8, Su"
+3,Magician,74,Reverent Table,200,231,rs,wk,wk,wk,wk,no,no,no,-,"Hollow Forest 2, 3, 5, 6, Su"
+4,Magician,73,Lying Hablerie A,125,328,no,wk,wk,wk,wk,wk,wk,no,-,"Hollow Forest 1, 2, 4, 5, Su"
+5,Magician,71,Sleeping Table,333,60,nu,wk,no,nu,no,rp,wk,no,"Thought Cross, Angelite","Magatsu Mandala 2, 3"
+6,Magician,66,Agitating Hablerie,238,280,no,wk,nu,ab,no,no,no,no,"Diamond Canine, Sphalerite","Magatsu Inaba 1, 2"
+7,Magician,62,Angry Table,345,270,rp,no,no,no,wk,no,no,no,"Divine Bark, Sphalerite",Heaven 5-7
+8,Magician,56,Prime Magus,364,472,no,rs,no,rs,no,wk,no,no,"Smart Clasp, Rose Quartz","Heaven 1, 2"
+9,Magician,47,Flattering Hablerie,324,199,no,rp,wk,no,no,no,no,no,"Sharp Premolar, Howlite",Secret Lab 1-4
+10,Magician,40,Almighty Hand,284,238,rs,no,wk,no,no,no,no,no,"Electric Rock, Milky Quartz","Void Quest 3, 4, 6-9, Su"
+11,Magician,32,Killing Hand,208,179,wk,no,no,no,no,no,no,no,"Glossy Clasp, Olive Stone",Marukyu Striptease 5-10
+12,Magician,31,Forgotten Hablerie,220,133,no,nu,no,wk,no,no,no,no,"Sturdy Molar, Lepidolite",Marukyu Striptease 5-10
+13,Magician,25,Wondrous Magus,165,269,no,no,no,no,no,no,no,no,"Smooth Fabric, Smoky Quartz",Steamy Bathhouse 5-10
+14,Magician,24,Crying Table,139,177,rs,rs,wk,rs,rs,no,no,no,"Brave Lumber, Fluorite",Steamy Bathhouse 8-10
+15,Magician,22,Selfish Basalt,168,80,no,wk,wk,wk,wk,wk,wk,rs,"Selfish Ornament, Fluorite",Steamy Bathhouse 5-7
+16,Magician,21,Rainy Sister 4,80,136,nu,nu,wk,nu,nu,nu,nu,no,"4th Girl's Talc, Fluorite, Smoky Quartz",Steamy Bathhouse 5-10 (Rain)
+17,Magician,20,Dancing Hand,135,121,no,rs,rs,rs,rs,no,no,no,"Thick Hide, Smoky Quartz","Steamy Bathhouse 1, 2, 5-8"
+18,Magician,14,Magical Magus,280,135,no,nu,no,no,rs,wk,no,no,"Supple Metal, Smoky Quartz",Yukiko's Castle 5-7
+19,Magician,10,Laughing Table,164,154,no,no,no,rs,wk,rs,rs,no,"Magic Cross, Iolite",Yukiko's Castle 3-6
+20,Magician,8,Magic Hand,130,10,rs,no,wk,no,rs,no,no,no,"Light Iron, Iolite","Yukiko's Castle 3, 4"
+21,Magician,5,Lying Hablerie,73,51,no,rs,wk,wk,no,no,no,no,Big Incisor,"Yukiko's Castle 1, 3"
+22,Magician P,82,Sleeping Table B,2000,2000,no,no,no,no,no,nu,nu,no,-,Yomotsu Hirasaka 6
+23,Magician P,80,Isolated Hand,550,999,rs,ab,ab,ab,ab,rp,rp,no,-,Hollow Forest (Chest)
+24,Magician P,78,Neo Minotaur B,4240,100,no,no,no,no,no,nu,nu,no,-,Yomotsu Hirasaka 3
+25,Magician P,77,Heaven's Giant,3333,3333,rs,nu,nu,nu,nu,nu,nu,rs,-,Hollow Forest 7
+26,Magician P,75,Envious Giant B,3333,3333,no,rs,rs,ab,rs,nu,nu,no,-,Magatsu Mandala 6
+27,Magician P,70,Chaos Fuzz B,600,124,no,no,no,no,no,nu,nu,no,-,Magatsu Mandala 3
+28,Magician P,70,Glorious Hand,9999,777,no,rp,rp,rp,rp,rs,rs,no,Magatsu Xandrite,"Magatsu Inaba 1, 2, Magatsu Mandala 1-6 (Rare)"
+29,Magician P,60,Luxury Hand,999,200,no,ab,ab,ab,rs,rp,rp,no,Magatsu Xandrite,Heaven 1-9 (Rare)
+30,Magician P,50,Opulent Hand,750,500,no,rs,ab,ab,ab,nu,nu,no,Magatsu Xandrite,Secret Lab 1-8 (Rare)
+31,Magician P,42,Killing Hand B,885,100,no,no,no,no,no,nu,nu,no,-,Void Quest 7
+32,Magician P,40,Supreme Hand,500,500,no,nu,rs,nu,nu,nu,nu,no,Magatsu Xandrite,Void Quest 1-9 (Rare)
+33,Magician P,30,Treasure Hand,400,450,no,nu,nu,rs,nu,rs,rs,no,Magatsu Xandrite,Marukyu Striptease 1-10 (Rare)
+34,Magician P,20,Wealth Hand,300,250,no,rs,rs,rs,rs,rs,rs,no,Magatsu Xandrite,Steamy Bathhouse 1-10 (Rare)
+35,Magician P,10,Happiness Hand,150,100,no,rs,rs,rs,rs,rs,rs,no,Magatsu Xandrite,Yukiko's Castle 3-7 (Rare)
+36,Priestess,78,Mistress Pot,150,218,rp,wk,wk,wk,wk,rp,rp,rs,Klein Bottle,Yomotsu Hirasaka 1-3
+37,Priestess,77,Primitive Idol,1000,523,no,rs,nu,ab,rp,nu,wk,no,Force Rock,"Yomotsu Hirasaka 2, 3"
+38,Priestess,76,Wrathful Book,341,445,wk,nu,nu,nu,nu,no,no,no,Prophecy Orb,Yomotsu Hirasaka 1-3
+39,Priestess,75,Cursed Woman's Pot,55,400,ab,wk,wk,wk,wk,wk,wk,no,-,Hollow Forest (Chest)
+40,Priestess,72,Silent Book,307,421,rs,no,no,no,no,wk,wk,no,"Word String, Moonstone","Magatsu Mandala 2, 3, Su"
+41,Priestess,70,Yearning Pot,298,230,ab,wk,no,no,nu,wk,rp,no,"Orb of Love, Moonstone","Magatsu Inaba 2, Magatsu Mandala 1-3, Su"
+42,Priestess,68,Vehement Idol,301,487,no,no,rp,no,rs,rp,wk,no,"Calm Marble, Sphalerite","Magatsu Inaba 1, 2"
+43,Priestess,63,Revelation Pesce,256,149,no,no,ab,wk,no,rp,no,no,"Oracle Textile, Sphalerite","Heaven 3, 4, 6-9"
+44,Priestess,58,Maniacal Book,305,411,wk,no,no,ab,rs,no,no,no,"Crimson Cover, Buffalo Stone",Heaven 2-4
+45,Priestess,53,Truth Pesce,212,138,no,ab,wk,ab,ab,no,no,no,"Guard Stationery, Meteorite",Secret Lab 6
+46,Priestess,43,Leading Idol,327,322,no,no,no,wk,no,no,no,no,"Trial Obsidian, Howlite","Void Quest 3, 4, 6, 7, 9"
+47,Priestess,41,Rainy Pot,62,178,ab,wk,ab,ab,ab,no,no,no,"Rare Poncho, Howlite, Milky Quartz, Bloodstone",Void Quest 5-9 (Rain)
+48,Priestess,39,Spurious Book,142,242,no,wk,wk,no,no,no,no,no,"Paleograph, Olive Stone",Void Quest 2-4
+49,Priestess,31,Liberating Idol,265,232,no,wk,no,no,no,wk,rp,no,"Heavy Iron Lump, Lepidolite",Marukyu Striptease 3-10
+50,Priestess,22,Tranquil Idol,185,165,no,no,no,no,no,no,wk,no,"Decorative Stone, Fluorite","Steamy Bathhouse 3, 4, 6-8"
+51,Priestess,18,Cloudgirl Pot,175,102,no,no,no,wk,no,no,no,no,"Curious Line, Fluorite, Smoky Quartz","Steamy Bathhouse 3-5, 8-10 (Rain)"
+52,Priestess,18,Pursuing Pesce,125,85,no,no,rp,no,no,wk,no,no,"Firm Cloth, Iolite","Steamy Bathhouse 1-5, 8"
+53,Priestess,16,Autonomic Basalt,161,13,rs,no,no,no,wk,no,no,no,"Powered Iron, Smoky Quartz",Steamy Bathhouse 1-4
+54,Priestess,16,Rainy Brother 4,92,131,nu,nu,wk,nu,nu,nu,nu,no,"4th Boy's Talc, Fluorite, Smoky Quartz","Steamy Bathhouse 1, 2, 8-10 (Rain)"
+55,Priestess,6,Calm Pesce,82,23,no,no,no,no,wk,no,no,no,Idea Paper,"Yukiko's Castle 1, 3"
+56,Empress,79,Eternal Eagle,200,262,no,rs,rs,rs,rs,rp,wk,no,Death Sentence,"Yomotsu Hirasaka 4, 5"
+57,Empress,76,Divine Mother,415,400,no,rs,no,nu,wk,no,nu,no,Silver Fox Fur,Yomotsu Hirasaka 1-3
+58,Empress,75,Wheeled Bambino,70,245,no,no,wk,wk,no,wk,wk,no,-,"Hollow Forest 1-3, 5, Su"
+59,Empress,74,Change Relic,279,485,rp,no,no,wk,no,rp,wk,no,"Silver Claw, Angelite","Magatsu Mandala 4, 5"
+60,Empress,73,Stupendous Relic,50,485,wk,ab,ab,ab,ab,nu,nu,no,-,"Hollow Forest 7, 9"
+61,Empress,69,Pistil Mother,370,483,no,rs,ab,rs,ab,no,no,no,"Queen's Nail, Angelite","Magatsu Inaba 1, 2, Magatsu Mandala 1-3"
+62,Empress,67,Jupiter Eagle,296,229,no,no,no,wk,ab,no,nu,no,"God Tailfeather, Aurora Quartz","Magatsu Inaba 1, 2"
+63,Empress,66,Free Bambino,254,170,no,no,wk,rp,rs,nu,nu,no,"Royal Blossom, Aurora Quartz",Magatsu Inaba Su
+64,Empress,60,Regal Mother,228,386,no,ab,no,wk,no,wk,no,no,"Mink Fur, Meteorite","Heaven 3, 4"
+65,Empress,57,Dark Eagle,312,197,no,wk,no,no,nu,wk,nu,no,"Jet Black Steel, Rose Quartz",Heaven 2-4
+66,Empress,56,Growth Relic,251,282,rs,wk,no,rs,no,no,no,no,"Porcelain Statue, Meteorite","Heaven 1-4, Su"
+67,Empress,54,Elegant Mother,250,455,no,wk,nu,rs,rs,rp,rp,no,"Fur Clasp, Meteorite",Secret Lab 8
+68,Empress,46,Constancy Relic,240,246,rs,no,no,no,no,no,wk,no,"Stone Hide, Howlite","Secret Lab 1, 2"
+69,Empress,42,Avarice Bambino,172,167,no,wk,no,no,no,no,no,no,"Alluring Lily, Milky Quartz",Void Quest 5-7
+70,Empress,33,Blooming Bambino,260,194,no,no,ab,no,no,no,no,no,"Quiet Bouquet, Lemon Quartz",Marukyu Striptease 5-9
+71,Empress,31,Venus Eagle,216,140,no,no,wk,no,rs,no,no,no,"Haori Iron, Lemon Quartz","Marukyu Striptease 2-8, 10"
+72,Empress,29,Idle Basalt,195,27,nu,wk,rs,wk,rs,no,no,no,"Idle Stone Iron, Lemon Quartz",Marukyu Striptease 1-4
+73,Empress,28,Rainy Sister 3,80,203,ab,ab,wk,ab,ab,nu,nu,no,"3rd Girl's Talc, Lepidolite, Lemon Quartz, Olive Stone,","Marukyu Striptease 1, 2, 7-10 (Rain)"
+74,Empress,27,Creation Relic,159,205,rs,no,no,wk,rs,no,no,no,"Hard Rock, Fluorite",Marukyu Striptease 1-4
+75,Empress,10,Secret Bambino,80,62,no,wk,wk,wk,wk,no,no,no,"Poison Flower, Blue Quartz",Yukiko's Castle Su
+76,Empress P,37,Momentary Child B,4500,1000,no,no,wk,no,no,nu,nu,no,-,Marukyu Striptease 11
+77,Emperor,81,Brilliant King,346,256,rs,no,no,wk,no,nu,nu,no,Silver String,"Yomotsu Hirasaka 6, 7"
+78,Emperor,77,Emperor Beetle,420,231,rs,no,no,no,no,nu,wk,no,Platinum Shell,"Yomotsu Hirasaka 1-3, Su"
+79,Emperor,69,King Castle,431,243,nu,wk,no,no,no,no,no,no,"Snow Stone, Rainbow Quartz",Magatsu Mandala 1-3
+80,Emperor,68,Great King,359,199,rs,no,no,no,no,wk,rp,no,"Dignified Lump, Sunstone","Magatsu Inaba 1, 2"
+81,Emperor,65,Intrepid Knight,562,140,rs,no,no,wk,no,nu,nu,rs,"Platinum Reins, Sphalerite","Heaven 5, 8, 9"
+82,Emperor,58,Raindrop Castle,399,309,ab,ab,ab,ab,wk,no,nu,no,"Rare Raincoat, Sphalerite, Aurora Quartz, Sunstone","Heaven 1, 2, 8, 9 (Rain)"
+83,Emperor,55,Hell Knight,520,153,no,no,no,no,no,no,no,no,"Black Reins, Meteorite","Secret Lab 7, 8"
+84,Emperor,54,Power Castle,299,385,rp,no,no,rp,wk,no,no,no,"Power Rock, Rose Quartz","Secret Lab 3, 4, 6, 7"
+85,Emperor,40,Strength Beetle,180,164,no,rp,rp,rp,rp,rp,wk,no,"Golden Horn, Howlite",Void Quest 5-9
+86,Emperor,37,Rainy Castle,220,296,ab,ab,wk,ab,ab,no,no,no,"Curious Boulder, Howlite, Milky Quartz, Bloodstone","Void Quest 1, 2, 8, 9 (Rain)"
+87,Emperor,34,Champion Knight,265,116,rs,no,no,no,no,no,no,no,"Steel Reins, Lepidolite",Marukyu Striptease 5-10
+88,Emperor,33,Adamant Beetle,140,116,rp,no,no,no,no,no,no,no,"Safety Angle, Fluorite",Marukyu Striptease 7-10
+89,Emperor,33,Large Basalt,200,29,rs,no,no,no,no,wk,wk,no,"Tortoise Shell, Lepidolite",Marukyu Striptease 3-8
+90,Emperor,32,Rainy Brother 3,99,20,ab,ab,ab,ab,wk,nu,nu,no,3rd Boy's Talc,"Marukyu Striptease (Rain) 5,6"
+91,Emperor,26,Grave Beetle,180,67,no,no,no,no,no,wk,rs,no,"Sharp Horn, Fluorite",Steamy Bathhouse 8-10
+92,Emperor,23,Egotistical King,206,105,no,wk,no,ab,no,rp,rp,no,"Beard Fiber, Fluorite",Steamy Bathhouse 5-10
+93,Emperor,15,Avenger Knight,300,87,no,wk,no,no,no,no,no,no,"Bronze Reins, Fluorite",Yukiko's Castle 7
+94,Emperor,13,Burning Beetle,132,51,rs,no,wk,no,no,wk,wk,no,"Hard Horn, Iolite",Yukiko's Castle 4-7
+95,Emperor,11,Positive King,350,43,no,no,no,no,no,wk,wk,no,"Moustache Fiber, Iolite",Yukiko's Castle 4-7
+96,Emperor P,77,Gorgeous King,4000,575,wk,rs,rs,rs,rs,nu,nu,no,-,Hollow Forest 4
+97,Emperor P,17,Contrarian King B,1600,500,no,ab,no,no,nu,nu,nu,no,-,Yukiko's Castle 8
+98,Emperor P,11,Avenger Knight B,900,87,no,wk,no,no,no,nu,nu,no,-,Yukiko's Castle 5
+99,Hierophant,78,Grudge Tower,300,475,no,ab,wk,no,ab,no,no,no,Crown of Truth,"Yomotsu Hirasaka 3, 4"
+100,Hierophant,76,Crazy Twins,385,169,no,wk,rs,no,nu,nu,no,no,Ill Will Claw,Yomotsu Hirasaka 1-3
+101,Hierophant,74,Lawless Fuzz,400,344,no,wk,rp,no,no,no,no,no,-,"Hollow Forest 6, 7"
+102,Hierophant,71,Purple Sigil,328,523,no,rs,rs,rs,rs,no,no,no,"Gold Signature, Moonstone","Magatsu Mandala 2, 3"
+103,Hierophant,69,Fanatic Tower,325,422,rs,no,wk,no,nu,nu,nu,no,"Ruinous Crown, Angelite",Magatsu Mandala 1-3
+104,Hierophant,63,Green Sigil,333,424,no,no,no,ab,ab,no,no,no,"Black Signature, Sunstone","Heaven 6, 7"
+105,Hierophant,59,Apostate Tower,286,327,no,no,no,ab,wk,no,wk,no,"Sacrilege Iron, Meteorite",Heaven 1-4
+106,Hierophant,51,Chaos Fuzz,341,133,no,wk,rp,rp,rp,rp,rp,no,"Platinum Lump, Meteorite",Secret Lab 5
+107,Hierophant,48,Dogmatic Tower,259,339,rs,no,no,no,wk,no,no,no,"Dogma Clasp, Howlite","Secret Lab 3, 4"
+108,Hierophant,48,Rainbow Twins,250,149,no,no,wk,ab,no,rp,no,no,"Cascade String, Meteorite, Rose Quartz, Buffalo Stone","Secret Lab 3, 4, 7, 8 (Rain)"
+109,Hierophant,48,Red Sigil,247,405,no,ab,wk,ab,no,rp,rp,no,"Silver Signature, Bloodstone","Secret Lab 3, 4"
+110,Hierophant,44,Monomaniac Fuzz,196,105,no,nu,ab,wk,rs,no,no,no,"Compacted Metal, Howlite",Void Quest 5-8
+111,Hierophant,42,Blue Sigil,339,329,wk,ab,ab,ab,ab,nu,nu,no,"Alloy Signature, Bloodstone",Void Quest 1-8
+112,Hierophant,40,Rainy Sister 2,42,40,rp,rp,rp,wk,rp,no,no,no,"2nd Girl's Talc, Howlite, Milky Quartz, Bloodstone","Void Quest 3, 4, 8, 9 (Rain)"
+113,Hierophant,36,Corrupt Tower,325,209,no,no,no,rs,wk,no,no,no,"Platinum Crown, Lepidolite","Void Quest 1, 3, 4"
+114,Hierophant,36,Dependent Basalt,162,23,no,rs,rs,rs,rs,wk,wk,no,"Dependent Iron, Olive Stone","Void Quest 1, 3, 4, Su"
+115,Hierophant,29,Persistent Fuzz,150,100,no,rp,rp,rp,rp,nu,nu,no,"Tanned Hide, Fluorite",Marukyu Striptease 1-6
+116,Hierophant,24,Killer Twins,160,48,rs,wk,no,rp,no,no,no,no,"Gray Shackle, Fluorite",Steamy Bathhouse 8-10
+117,Hierophant,17,Bribed Fuzz,152,88,no,wk,no,no,no,no,wk,no,"Tough Hide, Iolite",Steamy Bathhouse 1-4
+118,Hierophant,7,Trance Twins,222,22,no,wk,no,rs,no,no,no,no,"Wonder Cloth, Iolite","Yukiko's Castle 3, 4, 6"
+119,Hierophant P,27,Intolerant Officer B,3000,1000,no,no,no,wk,no,nu,nu,no,-,Steamy Bathhouse 11
+120,Lovers,81,Stoic Snake,441,259,no,wk,rs,ab,rs,nu,wk,no,Forbidden Scale,"Yomotsu Hirasaka 6, 7"
+121,Lovers,79,Gracious Cupid,300,252,no,no,no,no,no,no,no,no,Pure White Bead,"Yomotsu Hirasaka 3-5, Su"
+122,Lovers,76,Pure Papillon,325,511,no,nu,wk,rs,no,wk,no,no,Love Scale,Yomotsu Hirasaka 1-3
+123,Lovers,73,Harem Dancer,368,294,no,no,no,no,no,no,no,no,"Love Clasp, Rainbow Quartz","Magatsu Mandala 2, 3"
+124,Lovers,73,Praying Papillon,150,511,no,nu,nu,wk,wk,no,no,no,-,"Hollow Forest 5, 7, 9, Su"
+125,Lovers,69,Amorous Snake,268,183,no,no,wk,rs,rs,rp,wk,no,"Scaly Lump, Angelite","Magatsu Mandala 1-3, Su"
+126,Lovers,67,Fickle Papillon,224,100,no,rs,rs,rs,rs,no,no,no,"Miracle Scale, Aurora Quartz","Magatsu Inaba 1, 2, Su"
+127,Lovers,64,Natural Dancer,325,230,no,no,no,no,no,nu,wk,no,"Hemp Cloth, Aurora Quartz","Heaven 8, 9"
+128,Lovers,62,Devoted Cupid,258,274,no,nu,wk,no,no,no,no,no,"Crystal of Light, Aurora Quartz",Heaven 5-7
+129,Lovers,59,Carnal Snake,234,137,no,no,wk,no,rs,no,no,no,"Scorching Scale, Meteorite",Heaven 1-4
+130,Lovers,56,Finicky Papillon,227,331,no,rs,wk,no,no,no,no,no,"Flame Scale, Rose Quartz",Heaven 1-4
+131,Lovers,52,Immoral Snake,269,148,no,wk,no,ab,ab,no,no,no,"Venomous Fang, Meteorite",Secret Lab 6
+132,Lovers,47,Royal Dancer,282,210,no,rs,rs,rs,rs,wk,no,no,"Yellow Cord, Milky Quartz",Secret Lab 1-4
+133,Lovers,44,Ardent Dancer,163,231,no,wk,no,no,rs,no,no,no,"Blade Metal, Milky Quartz",Void Quest 5-9
+134,Lovers,43,Rainy Brother 2,89,190,rp,rp,wk,rp,rp,no,no,no,"2nd Boy's Talc, Howlite, Milky Quartz, Bloodstone",Void Quest 6-9 (Rain)
+135,Lovers,41,Anguish Basalt,122,19,rs,no,rs,wk,rs,wk,wk,no,"Anguish Stone, Olive Stone",Void Quest 5-7
+136,Lovers,40,Whimsical Papillon,223,334,no,no,wk,rs,no,no,no,no,"Shiny Scale, Lemon Quartz",Void Quest 5-7
+137,Lovers,38,Blind Cupid,210,6,no,no,no,rs,wk,no,no,no,"Chirping Wings, Lemon Quartz",Void Quest 2-4
+138,Lovers,37,Lustful Snake,255,157,no,rs,wk,no,no,no,no,no,"Jet Black Scale, Lepidolite",Void Quest 1-4
+139,Lovers,28,Soul Dancer,180,129,no,no,no,no,no,no,no,no,"Passion Clasp, Smoky Quartz",Marukyu Striptease 1-4
+140,Lovers,18,Monopolizing Cupid,100,88,no,no,wk,no,rs,no,no,no,"Cloth Wings, Blue Quartz","Steamy Bathhouse 1-4, Su"
+141,Lovers P,33,Amorous Snake B,1012,148,no,wk,no,no,no,nu,nu,no,-,Marukyu Striptease 7
+142,Chariot,81,Ptarmigan Panzer,1111,120,no,no,no,no,no,no,no,no,Unknown Barrel,"Yomotsu Hirasaka 5, 6, 8, Su"
+143,Chariot,81,Rampage Drive,385,169,no,rs,rs,wk,nu,no,no,no,Platinum Gear,"Yomotsu Hirasaka 5, 6, 8, Su"
+144,Chariot,80,Berserk Turret,621,174,rs,no,no,wk,ab,no,no,no,Bull's-Eye Shot,"Yomotsu Hirasaka 4, 5, 8, Su"
+145,Chariot,75,Conceited Panzer,320,254,nu,no,wk,no,wk,no,no,rs,"Golden Barrel, Moonstone","Magatsu Mandala 5, 6"
+146,Chariot,75,Spastic Turret,400,429,rs,wk,nu,no,no,no,no,rs,"Flame Sheet, Moonstone","Magatsu Mandala 5, 6"
+147,Chariot,75,Stone Panzer,300,666,rs,rp,no,no,wk,no,no,no,-,"Hollow Forest 6, 7"
+148,Chariot,74,Slaughter Drive,380,150,no,no,no,wk,wk,no,no,no,"Torrent Gear, Angelite",Magatsu Mandala 4-6
+149,Chariot,72,Battle Wheel,278,194,no,no,wk,rs,no,nu,wk,no,"Brilliant Armor, Rainbow Quartz","Magatsu Mandala 2, 3"
+150,Chariot,66,Hallowed Turret,776,146,rp,no,wk,no,rs,wk,nu,no,"Judgement Shot, Sunstone",Heaven 6-9
+151,Chariot,59,Killer Drive,389,95,no,wk,no,nu,no,no,no,no,"Fixing Bolt, Meteorite","Heaven 3, 4"
+152,Chariot,58,Rash Panzer,284,113,rs,no,no,wk,no,no,no,no,"Steel Barrel, Buffalo Stone",Heaven 2-4
+153,Chariot,57,Brave Wheel,368,173,no,rs,wk,no,ab,no,wk,no,"Flame Steel, Rose Quartz","Heaven 2-4, Su"
+154,Chariot,53,Wicked Turret,455,201,rs,no,no,wk,nu,wk,nu,no,"Black Sheet, Buffalo Stone",Secret Lab 5-8
+155,Chariot,52,Mach Wheel,240,151,no,rs,no,rs,wk,no,no,no,"Bushy Fur, Rose Quartz",Secret Lab 6
+156,Chariot,51,Wild Drive,270,120,rs,no,no,wk,no,nu,nu,no,"Iron Gear, Meteorite",Secret Lab 5
+157,Chariot,48,Dismayed Panzer,320,164,no,no,no,nu,nu,no,nu,no,"Iron Barrel, Bloodstone","Secret Lab 3, 4"
+158,Chariot,46,Scarlet Turret,355,246,rs,no,no,no,no,no,no,no,"Super-Alloy, Bloodstone","Void Quest 6-9, Su"
+159,Chariot,45,Insolent Basalt,300,25,no,rs,rs,rp,wk,no,no,no,"Insolence Steel, Bloodstone",Secret Lab 1-4
+160,Chariot,44,Rainy Sister 1,110,193,ab,wk,ab,ab,ab,nu,nu,no,"1st Girl's Talc, Meteorite, Rose Quartz, Buffalo Stone",Secret Lab 1-4 (Rain)
+161,Chariot,35,Arcane Turret,546,264,no,no,no,no,no,no,no,no,"Sheet Metal, Olive Stone",Marukyu Striptease 7-10
+162,Chariot,30,Rain Wheel,50,56,ab,ab,ab,wk,ab,nu,nu,no,"Zero Cloth, Lepidolite, Lemon Quartz, Olive Stone,","Marukyu Striptease 3, 4, 7-10 (Rain)"
+163,Chariot P,57,Extreme Vessel B,4800,3000,no,no,no,no,wk,nu,nu,no,-,Secret Lab 9
+164,Justice,83,Heartless Machine,100,130,rs,rs,rs,wk,rs,nu,nu,rs,Pyroxene Fiber,Yomotsu Hirasaka 5-8
+165,Justice,82,Void Giant,455,133,no,nu,nu,nu,wk,nu,nu,no,Soul-Death Steel,Yomotsu Hirasaka 5-8
+166,Justice,79,Doom Sword,437,149,no,rs,wk,rp,no,nu,wk,no,Holy Gold Lump,"Yomotsu Hirasaka 4, 5, 8"
+167,Justice,78,Solemn Machine,5486,133,no,no,no,no,no,nu,nu,no,"Orichalcum, Rainbow Quartz",Magatsu Mandala 6
+168,Justice,77,Harmony Giant,305,128,wk,rs,rs,rs,rs,no,no,no,"Diamond Sheet, Moonstone","Magatsu Mandala 5, 6"
+169,Justice,77,Indignant Machine,888,385,rs,rs,rs,rs,rs,nu,nu,no,-,"Hollow Forest 9, Su"
+170,Justice,76,Calm Machine,1000,310,rs,wk,wk,wk,wk,no,no,no,-,"Hollow Forest 1-3, 5, 7, 9, Su"
+171,Justice,76,Harmonious Giant,250,169,wk,no,no,no,no,no,no,no,-,Hollow Forest 8
+172,Justice,75,Execution Sword,777,234,rp,no,no,no,no,wk,nu,no,-,"Hollow Forest 8, 9"
+173,Justice,72,Judgement Sword,388,139,rs,no,nu,no,wk,no,no,no,"Spark Ornament, Moonstone","Magatsu Mandala 2, 3"
+174,Justice,64,Conviction Sword,320,125,no,no,no,rs,wk,no,no,no,"Perpetual Edge, Sunstone","Heaven 8, 9"
+175,Justice,63,Stasis Giant,456,96,rs,rs,rs,nu,wk,no,rp,no,"Prime Steel, Sunstone",Heaven 3-9
+176,Justice,62,Light Balance,333,363,no,no,no,no,no,rp,rp,no,"Blessed Dish, Sunstone",Heaven 5-7
+177,Justice,57,Dominating Machine,3500,112,no,no,no,no,no,nu,nu,no,"Damascus, Rose Quartz","Secret Lab 7, 8"
+178,Justice,53,Order Giant,470,87,rs,nu,no,wk,nu,wk,nu,no,"Fixed Lump, Buffalo Stone","Secret Lab 3, 4, 6, 7"
+179,Justice,52,World Balance,210,576,rs,rs,rs,rs,rs,wk,wk,no,"Shining Dish, Buffalo Stone","Secret Lab 5, 6"
+180,Justice,45,Steel Machine,65,55,rs,rs,rs,rs,rs,no,no,rs,"Tungsten, Milky Quartz","Void Quest 8, 9, Su"
+181,Justice,37,Justice Sword,205,76,no,no,rs,wk,no,no,no,no,"Nice Ornament, Olive Stone","Void Quest 1, 3, 4"
+182,Justice,30,Sky Balance,218,440,nu,no,no,rp,rp,nu,nu,no,"Fashionable Dish, Olive Stone","Marukyu Striptease 9, 10"
+183,Justice,15,Heat Balance,140,136,no,nu,nu,no,no,rs,no,no,"Golden Dish, Smoky Quartz","Yukiko's Castle 1, 6, 7"
+184,Justice P,63,World Balance B,1200,1000,no,no,no,no,no,nu,nu,no,-,Heaven 7
+185,Justice P,53,Dominating Machine B,3070,300,no,no,no,no,no,nu,nu,no,-,Secret Lab 4
+186,Justice P,47,Escapist Soldier B,3800,1000,rs,no,no,no,no,nu,nu,no,-,Void Quest 10
+187,Hermit,80,Moon Okina,445,383,rs,wk,rp,rp,no,no,no,no,Sephirot Staff,"Yomotsu Hirasaka 5, 6"
+188,Hermit,79,Acheron Seeker,346,208,no,wk,ab,ab,ab,wk,no,no,Mysterious Eye,"Yomotsu Hirasaka 4, 5, 8"
+189,Hermit,78,Phantom Hero,325,438,no,wk,rs,rs,rs,wk,nu,no,Demon Cloth,"Yomotsu Hirasaka 2, 3"
+190,Hermit,75,Phantom King,432,122,rs,no,no,wk,rs,wk,nu,no,"Prime Hide, Rainbow Quartz","Magatsu Mandala 5, 6"
+191,Hermit,74,Noble Seeker,550,634,rp,no,no,no,no,no,no,no,"Golden Film, Angelite","Magatsu Mandala 5, 6"
+192,Hermit,74,Spectral Raven,150,445,no,no,no,wk,wk,wk,wk,no,-,"Hollow Forest 1, 2, 4, 5"
+193,Hermit,74,Superstitious Okina,400,519,no,no,wk,no,wk,no,no,no,-,"Hollow Forest 4, 5, Su"
+194,Hermit,73,Reformed Okina,315,519,no,wk,rs,rs,no,no,no,no,"Knowledge Staff, Angelite","Magatsu Mandala 4, 5"
+195,Hermit,61,Phantom Lord,279,469,no,no,rs,rs,no,wk,nu,no,"Treasure Cloth, Aurora Quartz",Heaven 5-7
+196,Hermit,61,Reckless Okina,310,354,rs,no,no,wk,nu,nu,wk,no,"Practical Cloth, Sphalerite",Heaven 5-7
+197,Hermit,49,Shallow Okina,267,322,no,no,no,wk,ab,no,no,no,"Windcutter Cloth, Howlite","Secret Lab 3, 4"
+198,Hermit,40,Fate Seeker,200,333,nu,no,wk,no,no,no,no,no,"Gazing Clasp, Howlite",Void Quest 2-4
+199,Hermit,39,Amenti Raven,155,117,no,no,no,wk,ab,no,no,no,"Devilish Feather, Lemon Quartz",Void Quest 2-4
+200,Hermit,29,Sonic Raven,210,84,no,no,no,wk,ab,no,no,no,"Wrought Lamp, Smoky Quartz",Marukyu Striptease 1-6
+201,Hermit,28,Death Seeker,310,339,no,no,no,no,no,wk,nu,no,"Iron Eyeball, Fluorite",Marukyu Striptease 1-4
+202,Hermit,20,Phantom Master,162,189,no,no,no,no,wk,wk,nu,no,"Magic Cloth, Smoky Quartz","Steamy Bathhouse 5-8, Su"
+203,Hermit,20,Vicious Raven,150,98,no,no,no,wk,rs,no,no,no,"Karma Lamp, Blue Quartz",Steamy Bathhouse 3-10
+204,Hermit,13,Phantom Mage,124,152,rs,no,no,wk,no,wk,rs,no,"Golden Cloth, Blue Quartz",Yukiko's Castle 4-6
+205,Hermit,7,Black Raven,138,25,no,rs,no,wk,rs,no,no,no,"Black Lamp, Blue Quartz",Yukiko's Castle 3-5
+206,Hermit P,67,Lost Okina B,4000,500,nu,no,ab,no,no,nu,nu,no,-,Heaven 10
+207,Fortune,82,Reckoning Dice,777,77,no,no,no,no,no,no,no,no,Vengeance Steel,"Yomotsu Hirasaka 3-8, Su"
+208,Fortune,80,Next Gene,355,339,wk,ab,ab,ab,ab,no,no,no,Unknowable Fiber,"Yomotsu Hirasaka 5, 6"
+209,Fortune,77,Eternal Sand,337,243,no,no,ab,wk,rs,no,nu,no,Mobius Sand,Yomotsu Hirasaka 1-3
+210,Fortune,73,Death Dice,44,444,rs,rs,rs,rs,rs,no,no,no,"Death Lump, Moonstone","Magatsu Mandala 4, 5"
+211,Fortune,73,Happy Gene,193,354,wk,no,no,no,no,nu,nu,no,"Unthinkable Metal, Rainbow Quartz","Magatsu Mandala 4, 5"
+212,Fortune,67,Infinite Sand,256,197,no,no,no,nu,wk,nu,no,no,"Nightmare Sand, Aurora Quartz","Magatsu Inaba 1, 2"
+213,Fortune,60,Curse Dice,200,271,no,nu,nu,nu,nu,wk,wk,no,"Cursed Stone, Buffalo Stone","Heaven 1-4, Su"
+214,Fortune,55,Perpetual Sand,230,263,no,rs,no,wk,no,no,no,no,"Golden Sand, Rose Quartz",Heaven 1-4
+215,Fortune,53,Mind Dice,312,155,nu,no,no,no,no,wk,wk,no,"Mental Thread, Buffalo Stone",Secret Lab 5-8
+216,Fortune,52,Fail Gene,263,315,rp,no,no,no,no,no,no,no,"Stretchy Object, Rose Quartz","Secret Lab 5, 6"
+217,Fortune,47,Flowing Sand,274,351,no,no,wk,no,rp,no,no,no,"Illusionary Sand, Milky Quartz","Secret Lab 3, 4"
+218,Fortune,43,Platinum Dice,256,59,no,no,wk,no,no,no,no,no,"Light String, Bloodstone",Void Quest Su
+219,Fortune,31,Silver Dice,250,83,rs,no,no,no,no,no,no,no,"Silver Lump, Olive Stone","Marukyu Striptease 5-8, 10"
+220,Fortune,27,Miss Gene,186,30,no,rs,rs,wk,no,no,no,no,"Rubbery Object, Smoky Quartz",Marukyu Striptease 1-4
+221,Fortune,21,Iron Dice,178,44,no,no,no,wk,no,no,no,no,"Pure Iron Lump, Smoky Quartz","Steamy Bathhouse 1, 2, 5-7, 9, 10, Su"
+222,Fortune,10,Bronze Dice,180,34,rs,no,no,wk,no,no,no,no,"Power String, Blue Quartz","Yukiko's Castle 4, 5, 7, Su"
+223,Strength,82,El Dorado Beast,412,194,no,ab,wk,no,rs,rp,no,no,Merciless Cord,Yomotsu Hirasaka 3-8
+224,Strength,77,Silent Nyogo,1500,179,ab,no,no,no,no,no,no,no,Red-Gold Cord,"Yomotsu Hirasaka 2, 3"
+225,Strength,75,Clear Sky Musha,1000,555,no,no,no,no,no,rp,no,no,-,"Hollow Forest 8, 9"
+226,Strength,75,Praying Nyogo,175,256,no,wk,no,no,wk,wk,wk,no,-,"Hollow Forest 1, 2, 4-6, Su"
+227,Strength,73,Immortal Gigas,333,129,rs,no,no,no,no,no,no,no,"Formidable Proof, Angelite",Magatsu Mandala 4-6
+228,Strength,73,Snowfall Musha,330,129,rs,no,no,no,no,no,no,no,-,"Hollow Forest 3-5, 7-9"
+229,Strength,72,Valuing Nyogo,288,206,rp,rs,no,wk,no,wk,no,no,"Oguruma Brocade, Rainbow Quartz","Magatsu Mandala 2, 3"
+230,Strength,70,Nemean Beast,362,155,no,rp,rp,no,no,nu,wk,no,"Platinum Fur, Rainbow Quartz","Magatsu Inaba 1, 2, Magatsu Mandala 1-3, Su"
+231,Strength,65,Rain Wind Musha,694,126,no,rp,ab,rp,ab,no,no,no,"Cascade Metal, Sphalerite, Aurora Quartz, Sunstone",Heaven 3-9 (Rain)
+232,Strength,63,Blossom Nyogo,205,188,no,no,wk,rp,nu,no,no,no,"Ayanishiki, Aurora Quartz","Heaven 3, 4, 6-9"
+233,Strength,57,Mythical Gigas,344,94,no,no,rs,no,rs,no,wk,no,"Claw of Myth, Meteorite","Heaven 1, 2, Su"
+234,Strength,51,Raindrop Musha,1050,119,no,wk,ab,ab,ab,nu,nu,no,"Rain Metal, Meteorite, Rose Quartz, Buffalo Stone",Secret Lab 5-8 (Rain)
+235,Strength,50,Furious Gigas,318,117,no,rp,no,no,rp,no,no,no,"Proof of Passion, Howlite",Secret Lab 1-4
+236,Strength,50,Mighty Beast,364,127,no,no,wk,rs,rs,wk,rp,no,"Demon Collar, Rose Quartz","Secret Lab 1, 2, 5"
+237,Strength,47,Inviting Nyogo,358,174,no,wk,no,no,rp,no,no,no,"Azalea Cord, Milky Quartz","Secret Lab 1, 2"
+238,Strength,45,Beastly Gigas,234,94,no,no,wk,no,no,no,no,no,"Proof of Fight, Howlite","Void Quest 8, 9"
+239,Strength,45,Source Basalt,270,44,no,wk,rp,rs,rs,no,no,no,"Source Lump, Bloodstone","Secret Lab 1, 2"
+240,Strength,44,Rainy Brother 1,110,193,ab,ab,ab,wk,ab,nu,nu,no,"1st Boy's Talc, Meteorite, Rose Quartz, Buffalo Stone","Secret Lab 1, 2, 5, 6 (Rain)"
+241,Strength,42,Rain End Musha,566,73,no,rp,rp,rp,rp,no,no,no,"Rain Steel, Howlite, Milky Quartz, Bloodstone","Void Quest 3-5, 8, 9 (Rain)"
+242,Strength,34,Rain Leg Musha,265,79,no,rs,rs,rs,rs,nu,nu,no,"Zero Board, Lepidolite, Lemon Quartz, Olive Stone,","Marukyu Striptease 5, 6, 9, 10 (Rain)"
+243,Strength,32,Enslaved Beast,250,91,no,no,no,rs,wk,no,no,no,"Steel Collar, Lemon Quartz",Marukyu Striptease 3-10
+244,Strength,19,Daring Gigas,225,46,rs,no,no,no,no,wk,wk,no,"Proof of Spirit, Fluorite","Steamy Bathhouse 2-4, 6-8"
+245,Strength,18,Nizam Beast,288,57,no,no,no,no,no,no,no,no,"Life Collar, Smoky Quartz",Steamy Bathhouse 1-7
+246,Strength P,24,Daring Gigas B,928,100,no,no,no,no,no,nu,nu,no,-,Steamy Bathhouse 7
+247,Hanged,82,Neo Minotaur,5100,379,rs,wk,no,no,no,no,no,no,Tyrannical Hide,"Yomotsu Hirasaka 3, 4, 7, 8, Su"
+248,Hanged,82,Successful Junecy,307,300,rs,rs,ab,nu,wk,no,no,rs,Invincible Felt,"Yomotsu Hirasaka 5-8, Su"
+249,Hanged,81,Rebellious Cyclops,525,428,nu,rs,wk,rs,rs,wk,nu,no,Bloody Thorn,Yomotsu Hirasaka 6-8
+250,Hanged,80,Jotun of Grief,505,298,no,rp,no,rs,wk,wk,nu,no,Ripper Horse,"Yomotsu Hirasaka 4, 5, 8"
+251,Hanged,77,Minotaur I,590,310,no,rs,ab,wk,rp,rp,rp,no,"Platinum Hide, Moonstone",Magatsu Mandala 2-6
+252,Hanged,76,Minotaur II,845,583,rs,rp,wk,no,ab,no,nu,no,"Golden Chains, Rainbow Quartz",Magatsu Mandala 2-6
+253,Hanged,75,Minotaur III,680,234,no,wk,rp,ab,rs,nu,no,no,"Strength Claw, Angelite",Magatsu Mandala 1-6
+254,Hanged,74,Earnest Calocy,420,629,no,no,no,no,no,wk,wk,no,"Activated Felt, Moonstone","Magatsu Mandala 5, 6"
+255,Hanged,74,Emaciated Garcy,500,629,no,wk,wk,wk,wk,no,rp,no,-,"Hollow Forest 7, 8"
+256,Hanged,73,Brilliant Cyclops,324,285,no,rp,wk,rp,rp,no,no,no,"Cruel Thorn, Angelite",Magatsu Mandala 4-6
+257,Hanged,73,Jotun of Evil,560,344,wk,no,rp,rp,nu,no,no,no,"Thunder Bead, Rainbow Quartz","Magatsu Mandala 2, 3"
+258,Hanged,66,Minotaur IV,424,143,no,no,no,no,no,no,no,no,"Heavy Chains, Sunstone",Heaven 6-9
+259,Hanged,65,Jotun of Blood,346,158,no,rs,rs,no,no,no,no,no,"Bloody Hide, Aurora Quartz","Heaven 8, 9"
+260,Hanged,63,Chaos Cyclops,587,318,no,wk,no,no,no,rp,wk,no,"Blade Thorn, Sphalerite",Heaven 5-9
+261,Hanged,61,Dry Dexy,265,439,rs,wk,ab,no,no,no,no,no,"Thirsty Claw, Sunstone",Heaven 5-7
+262,Hanged,54,Jotun of Power,321,203,rp,ab,no,wk,no,no,no,no,"Riveted Hide, Rose Quartz",Secret Lab 8
+263,Hanged,53,Fierce Cyclops,300,397,wk,ab,ab,ab,ab,no,no,no,"Hard Thorn, Meteorite",Secret Lab 5-8
+264,Hanged,46,Protective Lexy,153,451,no,rs,rs,rs,rs,no,no,no,"Guard Cloth, Bloodstone","Void Quest 5, 8, 9"
+265,Hanged,38,Mad Cyclops,134,245,no,wk,rs,no,rs,no,no,no,"Steel Thorn, Lepidolite",Void Quest 1-4
+266,Hanged,35,Mighty Cyclops,220,330,no,nu,wk,no,no,no,no,no,"Sharp Thorn, Lepidolite",Marukyu Striptease 7-10

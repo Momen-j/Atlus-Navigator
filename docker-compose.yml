@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  bot:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: atlus-discord-bot
+    env_file:
+      - .env 
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@db:5432/atlusdata
+    depends_on:
+      - db
+    volumes: 
+      - ./:/app
+
+  db:
+    image: postgres:13  # Or whichever version of PostgreSQL you prefer
+    container_name: postgres-db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=atlusdata
+    ports:
+      - "5433:5432"  # 2nd port -> host container 
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d
+      - ./data:/data  # ✅ Ensure data is mounted correctly
