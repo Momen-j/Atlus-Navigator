@@ -14,162 +14,154 @@ import { SlashCommand } from "src/interfaces";
  * @module registerCommands
  */
 
+// Cache of local commands to avoid re-creating on every function call
+const localCommands = [
+  metaphorEmbed as unknown,
+  p3eEmbed as unknown,
+  p3Embed as unknown,
+  p4Embed as unknown,
+  p5Embed as unknown,
+  feedback as unknown,
+] as SlashCommand[];
+
+// Keep track of command signatures to avoid unnecessary updates
+const commandSignatures = new Map<string, string>();
+
 /**
- * Runs when ready event is called by eventHandler. <br>
- * Function checks between local & existing (Discord/Server) commands to determine whether to update Atlus Discord Bot commands. <br>
- * If no commands need to be updated, then a new command is created.
- *
+ * Registers commands for the bot, optimized to only update when necessary.
+ * 
  * @async
- * @param {Client} client Represents the instance of the Atlus Discord Bot.
- * @param {string} guildId Represents the guild/server the bot is in/added to
+ * @param {Client} client Bot client instance
+ * @param {string} guildId Guild ID to register commands for
  * @see {@link module:eventHandler}
  */
 export async function registerCommands(client: Client, guildId?: string) {
-  //! Code used to only access the test server
-  //!const { testServer } = jsonConfig; 
-
-  // check if the bot exists in any servers
+  // Check if the bot exists in any servers
   if (client.guilds.cache.size === 0) {
     console.log(`🤖 ${client.user.tag} is not in any servers. Skipping command registration.`);
     return;
   }
 
-  // compare the local commands which our bot controls and creates against the commands within the guild/server
   try {
-    // tells the language server the commands within the array are slash commands
-    const localCommands = [
-      metaphorEmbed as unknown,
-      p3eEmbed as unknown,
-      p3Embed as unknown,
-      p4Embed as unknown,
-      p5Embed as unknown,
-      feedback as unknown,
-    ] as SlashCommand[];
-    //const localCommands = await getLocalCommands();
-    const applicationCommands = await getApplicationCommands(
-      client,
-      guildId
-    );
-
-    // loop thru all local commands, compare them to applications commands, & check for differences
+    const applicationCommands = await getApplicationCommands(client, guildId);
+    const existingCommandMap = new Map();
+  applicationCommands.cache.forEach(cmd => {
+    existingCommandMap.set(cmd.name, cmd);
+  });
+    
+    // Track which commands need updating
+    const commandsToUpdate = [];
+    const commandsToCreate = [];
+    const commandsToDelete = [];
+    
+    // Process all local commands
     for (const localCommand of localCommands) {
       const { name, description, options } = localCommand;
-
-      const existingCommand = await applicationCommands.cache.find((cmd) => {
-        // check is application command name is equal to our local command name
-        return cmd.name === name;
-      });
+      const existingCommand = existingCommandMap.get(name);
+      
+      // Generate a signature for this command's current state
+      const currentSignature = JSON.stringify({ name, description, options });
+      const previousSignature = commandSignatures.get(name);
+      
+      // Skip if this exact command has been processed before and hasn't changed
+      if (previousSignature === currentSignature && existingCommand) {
+        continue;
+      }
+      
+      // Update command signature cache
+      commandSignatures.set(name, currentSignature);
 
       // Check if any option has autocomplete enabled
       const hasAutocomplete = localCommand.options?.some(
-        (option) => option.autocomplete === true
+        option => option.autocomplete === true
       );
 
-      // if existingCommand is truthy/has value AKA local command exists within applicationCommands
       if (existingCommand) {
-        // check if deleted key has been marked as true.
+        // Handle deletion if marked as deleted
         if (localCommand.deleted) {
-          // if so: delete command and log it
-          await applicationCommands.delete(existingCommand.id);
-          console.log(`👺 Deleted command ${name}`);
+          commandsToDelete.push(existingCommand.id);
           continue;
         }
 
-        // if commands aren't different, take the existing command and update it to match the localCommand version
+        // Check if command needs updating
         if (areChoicesDifferent(existingCommand, localCommand)) {
-          // if the local command has autocomplete (is an embed)
-          if (hasAutocomplete) {
-            await applicationCommands.edit(existingCommand.id, {
-              description,
-              options: [
-                {
-                  name: "monster-name",
-                  description: "Name of monster",
-                  type: ApplicationCommandOptionType.String,
-                  required: true,
-                  autocomplete: true,
-                },
-              ],
-            });
-          } else {
-            // else if the local command doesn't have autocomplete (not an embed) and is a feedback command for now
-            await applicationCommands.edit(existingCommand.id, {
-              description,
-              options: [
-                {
-                  name: "message",
-                  description:
-                    "Submit feedback, suggestions, or report issues.",
-                  type: ApplicationCommandOptionType.String,
-                  required: true, // This makes the description field required
-                },
-              ],
-            });
-          }
-
-          console.log(`🔄 Edited Command: ${name}`);
-        } else {
-          // skip execution of current loop since command is exactly the same as previous version
-          console.log(`Skipping registration as command is the same as previous version.`);
-          continue;
-        }
-      } else {
-        // if localCommand is marked as deleted then skip it
-        if (localCommand.deleted) {
-          console.log(
-            `Skipping registering command "${name}" as it is set to delete.`
-          );
-          continue;
-        }
-
-        // code below only runs if command doesn't exist & isn't set to be deleted
-        // sets the name, description, & option to the ones object destructured at the beginning of the for loop
-
-        /* OLD LOGIC OF applicationCommands.create for discord bot commands
-        // when we first grabbed the localCommand
-        // await applicationCommands.create({
-        //   name,
-        //   description,
-        //   ...options,
-        // });
-        */
-
-        // if the local command has autocomplete (is an embed)
-        if (hasAutocomplete) {
-          await applicationCommands.create({
-            name,
-            description,
-            options: [
-              {
+          const commandOptions = hasAutocomplete 
+            ? [{
                 name: "monster-name",
                 description: "Name of monster",
                 type: ApplicationCommandOptionType.String,
                 required: true,
                 autocomplete: true,
-              },
-            ],
-          });
-        } else {
-          // else if the local command doesn't have autocomplete (not an embed) and is a feedback command for now
-          await applicationCommands.create({
-            name,
-            description,
-            options: [
-              {
+              }] 
+            : [{
                 name: "message",
-                description:
-                  "Submit feedback, suggestions, or report issues.",
+                description: "Submit feedback, suggestions, or report issues.",
                 type: ApplicationCommandOptionType.String,
-                required: true, // This makes the description field required
-              },
-            ],
+                required: true,
+              }];
+              
+          commandsToUpdate.push({
+            id: existingCommand.id,
+            data: { description, options: commandOptions }
           });
         }
-
-        console.log(`👍 Registed command "${name}"`);
+      } else {
+        // Skip deleted commands
+        if (localCommand.deleted) {
+          continue;
+        }
+        
+        // Prepare command creation data
+        const commandOptions = hasAutocomplete 
+          ? [{
+              name: "monster-name",
+              description: "Name of monster",
+              type: ApplicationCommandOptionType.String,
+              required: true,
+              autocomplete: true,
+            }] 
+          : [{
+              name: "message",
+              description: "Submit feedback, suggestions, or report issues.",
+              type: ApplicationCommandOptionType.String,
+              required: true,
+            }];
+            
+        commandsToCreate.push({
+          name,
+          description,
+          options: commandOptions
+        });
       }
     }
+    
+    // Execute the batch operations
+    if (commandsToDelete.length > 0) {
+      await Promise.all(
+        commandsToDelete.map(id => applicationCommands.delete(id))
+      );
+      console.log(`👺 Deleted ${commandsToDelete.length} commands`);
+    }
+    
+    if (commandsToUpdate.length > 0) {
+      await Promise.all(
+        commandsToUpdate.map(cmd => applicationCommands.edit(cmd.id, cmd.data))
+      );
+      console.log(`🔄 Edited ${commandsToUpdate.length} commands`);
+    }
+    
+    if (commandsToCreate.length > 0) {
+      await Promise.all(
+        commandsToCreate.map(cmd => applicationCommands.create(cmd))
+      );
+      console.log(`👍 Registered ${commandsToCreate.length} new commands`);
+    }
+    
+    if (commandsToDelete.length === 0 && commandsToUpdate.length === 0 && commandsToCreate.length === 0) {
+      console.log(`✅ All commands are up to date, no changes needed`);
+    }
+    
   } catch (error) {
-    console.log(`There was an error ${error}`);
+    console.log(`❌ Error during command registration: ${error}`);
   }
 }

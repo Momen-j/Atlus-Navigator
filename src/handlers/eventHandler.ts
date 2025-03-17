@@ -9,44 +9,36 @@ import { consoleLog } from "../events/ready/consoleLog.js";
  */
 
 /**
- * Function listens for the specific event and once it occurs, the bot calls the imported functions from the folder corresponding to the occuring event.  <br>
+ * Function listens for specific events and handles them appropriately.  <br>
  * Allows for automation of running event functions everytime the bot comes online.
  *
  * @param {Client} client Represents the instance of the Atlus Discord Bot. Listens on events and is used as a param for the current event function
  * @returns {void} Returns nothing but calls an event function.
  */
 export function eventHandler(client: Client) {
+  // Cache to track which guilds have already had commands registered
+  const registeredGuilds = new Set<string>();
+
   // ✅ Ready event (triggers when the bot starts)
   client.once("ready", async () => {
     consoleLog(client); // Log bot startup details
 
     try {
-      console.log("🚀 Bot is online. Cleaning up old commands...");
+      console.log("🚀 Bot is online. Beginning command registration...");
 
-      // Clear GLOBAL commands
-      const globalCommands = await client.application?.commands.fetch();
-      if (globalCommands) {
-        for (const command of globalCommands.values()) {
-          await client.application?.commands.delete(command.id);
-          //console.log(`🗑️ Deleted global command: ${command.name}`);
-        }
-      }
+      // Process guilds in parallel for faster startup
+      const guilds = Array.from(client.guilds.cache.values());
+      await Promise.all(
+        guilds.map(async (guild) => {
+          await registerCommands(client, guild.id);
+          registeredGuilds.add(guild.id);
+          console.log(`✅ Commands registered for "${guild.name}"`);
+        })
+      );
 
-      // Clear GUILD commands
-      for (const guild of client.guilds.cache.values()) {
-        const guildCommands = await guild.commands.fetch();
-        for (const command of guildCommands.values()) {
-          await guild.commands.delete(command.id);
-          //console.log(`🗑️ Deleted command in "${guild.name}": ${command.name}`);
-        }
-
-        // ✅ Register new commands for each guild
-        await registerCommands(client, guild.id);
-      }
-
-      console.log("✅ Commands cleaned and re-registered.");
+      console.log(`✅ Commands registered for ${guilds.length} guilds.`);
     } catch (error) {
-      console.error("❌ Error during command cleanup: ", error);
+      console.error("❌ Error during command registration: ", error);
     }
   });
 
@@ -64,15 +56,12 @@ export function eventHandler(client: Client) {
     try {
       console.log(`📥 Joined a new guild: ${guild.name}`);
 
-      // Clear old commands for the newly joined guild
-      const guildCommands = await guild.commands.fetch();
-      for (const command of guildCommands.values()) {
-        await guild.commands.delete(command.id);
-        //console.log(`🗑️ Deleted old command in new guild: ${command.name}`);
+       // Only register commands if we haven't already
+       if (!registeredGuilds.has(guild.id)) {
+        await registerCommands(client, guild.id);
+        registeredGuilds.add(guild.id);
+        console.log(`✅ Commands registered for new guild: ${guild.name}`);
       }
-
-      // ✅ Register new commands for this specific guild
-      await registerCommands(client, guild.id);
 
       // ✅ Send a welcome message if the bot has permissions
       const welcomeChannel = guild.channels.cache.find(
@@ -96,5 +85,12 @@ export function eventHandler(client: Client) {
     } catch (error) {
       console.error(`❌ Error in guildCreate event for ${guild.name}:`, error);
     }
+  });
+
+  // GuildDelete event (when bot is deleted from a server)
+  client.on("guildDelete", (guild: Guild) => {
+    // Remove the guild from our tracking set when the bot is removed
+    registeredGuilds.delete(guild.id);
+    console.log(`🚫 Removed from guild: ${guild.name}`);
   });
 }
