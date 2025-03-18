@@ -56,8 +56,8 @@ export function eventHandler(client: Client) {
     try {
       console.log(`📥 Joined a new guild: ${guild.name}`);
 
-       // Only register commands if we haven't already
-       if (!registeredGuilds.has(guild.id)) {
+      // Only register commands if we haven't already
+      if (!registeredGuilds.has(guild.id)) {
         await registerCommands(client, guild.id);
         registeredGuilds.add(guild.id);
         console.log(`✅ Commands registered for new guild: ${guild.name}`);
