@@ -7,13 +7,14 @@ jest.mock("../drizzleconfig", () => {
     from: jest.fn().mockReturnThis(),
     where: jest.fn().mockResolvedValue([
       {
-        slash: "weak",
-        pierce: "resist",
-        strike: "null",
+        phys: "weak",
+        gun: "resist",
         fire: "absorb",
         ice: "weak",
         elec: "null",
         wind: "resist",
+        psy: "neutral",
+        nuke: "neutral",
         light: "null",
         dark: "null",
         almighty: "neutral",
@@ -33,13 +34,14 @@ jest.mock("../drizzleconfig", () => {
     // all column keys are assigned null b/c the values within the table don't matter as long as we have the same fields
     // null = we don't care about the values just that the fields exist
     p5EnemyStats: {
-      slash: null,
-      pierce: null,
-      strike: null,
+      phys: null,
+      gun: null,
       fire: null,
       ice: null,
       elec: null,
       wind: null,
+      psy: null,
+      nuke: null,
       light: null,
       dark: null,
       almighty: null,
@@ -53,13 +55,14 @@ describe("fetchP5EnemyWeaknesses", () => {
 
     expect(result).toEqual([
       {
-        slash: "weak",
-        pierce: "resist",
-        strike: "null",
+        phys: "weak",
+        gun: "resist",
         fire: "absorb",
         ice: "weak",
         elec: "null",
         wind: "resist",
+        psy: "neutral",
+        nuke: "neutral",
         light: "null",
         dark: "null",
         almighty: "neutral",
