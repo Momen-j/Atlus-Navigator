@@ -1,6 +1,5 @@
 import { fetchMetaphorEnemyStats } from "./fetchMetaphorEnemyStats";
 import { db, metaphorEnemyStats } from "../drizzleconfig.js";
-//TODO: ADD COMMENTS TO THIS FILE + CREATE EXCEPTION HANDLERS IN QUERY FUNCTIONS TO HANDLE NO MONSTER IN DB OR DB CONNECTION ERRORS
 
 // Mock the database
 jest.mock("../drizzleconfig", () => {
