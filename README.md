@@ -4,7 +4,7 @@
 
 The Atlus Games Discord Bot is designed to help players quickly identify the weaknesses of enemies in popular Atlus RPGs, including Persona 3 Reload (including Episode Aigis), Persona 4 Golden, Persona 5 Royal, and Metaphor: ReFantazio. Instead of searching through multiple tabs or wikis to find enemy weaknesses, simply tell the bot the game and enemy you're facing, and it will provide a detailed weakness chart. Plan your strategy in advance or uncover unexpected vulnerabilities mid-battle, all without leaving Discord!
 
-## Watch the video to get a feeling of how the Atlus Games Discord bot works!
+## Watch the video to see the Atlus Games Discord Bot in action!
 
 Has this ever happened to you? -> (Last time before save: 2 hours maybe) Video will be a party from metaphor/persona walking up to an enemy they haven't seen before and completely getting deflected by a move killing the protag. 
 
@@ -17,22 +17,23 @@ Click this link and you should get directed to Discord with the app asking for p
 
 ## How to run this project for your own uses (or to potentially help me 👀)
 
+### Prerequisites
+* Install Node v20
+* Install [Docker](https://docs.docker.com/engine/install/) 
+* Get a token for a Discord bot through the [Discord Developer Portal](https://discord.com/developers/).
+
+### Build Guide
 1. Clone the project repository.
-2. Install the version of Node the project was built on (v. 20.15.0). You can use nvm (Node Version Manager) to install and switch to the recommended version of Node.
-3. Run npm install to install the necessary dependencies.
+2. Run npm install to install the necessary dependencies.
 ```
 npm install
 ```
-4. Create a ```.env``` file in the project's root directory and add the required values into the file (TOKEN being the discord bot token). 
+3. Create a ```.env``` file in the project's root directory and add the required values into the file (TOKEN being the discord bot token). 
 ```
 TOKEN = XXX
 DATABASE_URL = XXX
 ```
-5. Adjust the ```docker-compose.yml``` file to use your database credentials.
-6. Run the below docker command in order to start the bot. If you don't have docker installed, download it using the [official guide](https://docs.docker.com/engine/install/).   
-```
-docker compose up -d --build
-``` 
+4. Run ```docker compose up -d --build```.
 
 ## Find a bug?
 
