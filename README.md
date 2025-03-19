@@ -29,7 +29,7 @@ TOKEN = XXX
 DATABASE_URL = XXX
 ```
 5. Adjust the ```docker-compose.yml``` file to use your database credentials.
-6. Run the docker command in order to start the bot. If you don't have docker installed, download it using the [official guide](https://docs.docker.com/engine/install/).   
+6. Run the below docker command in order to start the bot. If you don't have docker installed, download it using the [official guide](https://docs.docker.com/engine/install/).   
 ```
 docker compose up -d --build
 ``` 
