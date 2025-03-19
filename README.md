@@ -1,4 +1,4 @@
-# Atlus Games Discord bot Project
+# Atlus-Discord-Bot Project
 
 ## A TypeScript-Powered Discord bot for discovering enemy weaknesses in Atlus Games
 
@@ -13,21 +13,37 @@ NOW INTRODUCING The Atlus Games discord bot where you simply type in the name of
 ## How to add the Atlus Games bot to your Discord Server
 
 Click this link and you should get directed to Discord with the app asking for permission to add the bot to a server of your choosing.<br>
-Be sure to rate the bot on these sites <a href="https://discordbotlist.com/">discordbotlist.com<a> & <a href="https://top.gg/">Top.gg<a> (add the bot to these sits)
+Be sure to rate the bot on these sites [discordbotlist.com](https://discordbotlist.com/) & [Top.gg](https://top.gg/) (add the bot to these sites)
 
-## How to tweak this project for your own uses (or to potentially help me 👀)
+## How to run this project for your own uses (or to potentially help me 👀)
 
-Clone the project...use the scraping scripts to get data for Persona 3 Reload, Persona 3 Reload: Episode Aigis, Persona 4 Golden, Persona 5 Royal and this google sheet for Metaphor: Refantazio to set up your local DB
+1. Clone the project repository.
+2. Install the version of Node the project was built on (v. 20.15.0). You can use nvm (Node Version Manager) to install and switch to the recommended version of Node.
+3. Run npm install to install the necessary dependencies.
+```
+npm install
+```
+4. Create a ```.env``` file in the project's root directory and add the required values into the file (TOKEN being the discord bot token). 
+```
+TOKEN = XXX
+DATABASE_URL = XXX
+```
+5. Adjust the ```docker-compose.yml``` file to use your database credentials.
+6. Run the docker command in order to start the bot. If you don't have docker installed, download it using the [official guide](https://docs.docker.com/engine/install/).   
+```
+docker compose up -d --build
+``` 
 
 ## Find a bug?
 
-You can report a bug by either using the feedback command in Discord or submitting an issue on GitHub with a detailed description of the problem.
+You can report a bug by either using ```/feedback``` in Discord or submitting an issue on GitHub with a detailed description of the problem.
 
 ## Credits
 
-* GitHub User <a href="https://github.com/aqiu384/aqiu384.github.io">aqiu384<a> for the <a href="https://aqiu384.github.io/megaten-fusion-tool/home">Persona Game Data<a>
-* Garrett Haines for the <a href="https://docs.google.com/spreadsheets/d/1FDC6T6tr__-AU18tY--4-ZUSzkeaMM_Kg_Crqu6VrcM/edit?pli=1&gid=2052374500#gid=2052374500">Metaphor: Refantazio Game Data<a>
+* GitHub user [aqiu384](https://github.com/aqiu384/aqiu384.github.io) for the [Persona Game Data](https://aqiu384.github.io/megaten-fusion-tool/home)
+* Garrett Haines for the [Metaphor: Refantazio Game Data](https://docs.google.com/spreadsheets/d/1FDC6T6tr__-AU18tY--4-ZUSzkeaMM_Kg_Crqu6VrcM/edit?pli=1&gid=2052374500#gid=2052374500)
 
 ## Like this project?
 
 If you're feeling generous, buy me a coffee! - https://buymeacoffee.com/momojo
+
