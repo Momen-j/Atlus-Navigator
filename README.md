@@ -13,7 +13,7 @@ NOW INTRODUCING The Atlus Games discord bot where you simply type in the name of
 ## How to add the Atlus Games bot to your Discord Server
 
 Click this link and you should get directed to Discord with the app asking for permission to add the bot to a server of your choosing.<br>
-<br>Be sure to rate the bot on these sites [discordbotlist.com](https://discordbotlist.com/) & [Top.gg](https://top.gg/) (add the bot to these sites)
+<br>Be sure to rate the bot on [discordbotlist.com](https://discordbotlist.com/) & [Top.gg](https://top.gg/)! (add the bot to these sites)
 
 ## How to run this project for your own uses (or to potentially help me 👀)
 
