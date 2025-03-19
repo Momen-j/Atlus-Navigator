@@ -14,7 +14,6 @@ async function scrapeData() {
   });
 
   // Extract table data using Puppeteer since site renders table using JS, not HTML
-  //! REVIEW ENTIRE FUNCTION BELOW ESCPECIALLY EVALUATE AND QUERY SELECTOR ALL TABLE TR & TD
   const data = await page.evaluate(() => {
     const rows = Array.from(document.querySelectorAll("table tr"));
     return rows.slice(5).map((row) => {
