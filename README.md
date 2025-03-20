@@ -12,15 +12,18 @@ NOW INTRODUCING The Atlus Games discord bot where you simply type in the name of
 
 ## How to add the Atlus Games bot to your Discord Server
 
-Click this link and you should get directed to Discord with the app asking for permission to add the bot to a server of your choosing.<br>
-<br>Be sure to rate the bot on [discordbotlist.com](https://discordbotlist.com/) & [Top.gg](https://top.gg/)! (add the bot to these sites)
+Click the link below to invite the bot to your server. You’ll be redirected to Discord, where you can choose a server and grant the necessary permissions.<br>
+
+👉 Invite the [Atlus Games Discord Bot](https://github.com/Momen-j)
+
+⭐ If you enjoy using the bot, consider rating it on [discordbotlist.com](https://discordbotlist.com/) & [Top.gg](https://top.gg/)! (add the bot to these sites)
 
 ## How to run this project for your own uses (or to potentially help me 👀)
 
 ### Prerequisites
 * Install Node v20
 * Install [Docker](https://docs.docker.com/engine/install/) 
-* Get a token for a Discord bot through the [Discord Developer Portal](https://discord.com/developers/)
+* Get a **Discord bot token** through the [Discord Developer Portal](https://discord.com/developers/)
 
 ### Build Guide
 1. Clone the project repository. 
