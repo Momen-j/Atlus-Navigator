@@ -23,11 +23,11 @@ Click this link and you should get directed to Discord with the app asking for p
 * Get a token for a Discord bot through the [Discord Developer Portal](https://discord.com/developers/)
 
 ### Build Guide
-1. Clone the project repository.
+1. Clone the project repository. 
 2. Run `npm install` to install the necessary dependencies.
-3. Create a `.env` file in the project's root directory and add a global var representing the discord bot token value into the file (ex. `TOKEN = XXX`).
-4. Change the environment sections for both the bot and db services within `docker-compose.yml` to use your own db.
-4. Run `docker compose build`.
+3. Create a `.env` file in the project's root directory and add a global var representing the discord bot token value (ex. `DISCORD_BOT_TOKEN = XXX`).
+4. Change the mappings of the custom key `x-db-env` within `docker-compose.yml` to use your own db.
+5. Run `docker compose build`.
 
 ## Find a bug?
 
