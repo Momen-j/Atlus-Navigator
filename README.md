@@ -25,11 +25,8 @@ Click this link and you should get directed to Discord with the app asking for p
 ### Build Guide
 1. Clone the project repository.
 2. Run `npm install` to install the necessary dependencies.
-3. Create a `.env` file in the project's root directory and add the required values into the file (TOKEN being the discord bot token). 
-```
-TOKEN = XXX
-DATABASE_URL = postgresql://postgres:postgres@db:5432/atlusdata
-```
+3. Create a `.env` file in the project's root directory and add a global var representing the discord bot token value into the file (ex. `TOKEN = XXX`).
+4. Change the environment sections for both the bot and db services within `docker-compose.yml` to use your own db.
 4. Run `docker compose build`.
 
 ## Find a bug?
