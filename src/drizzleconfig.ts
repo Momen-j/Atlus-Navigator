@@ -8,7 +8,7 @@ const { Pool } = pkg;
 
 //! Create connection to the DB
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
+  connectionString: `postgresql://${process.env.POSTGRES_USER}:${process.env.POSTGRES_PASSWORD}@${process.env.POSTGRES_HOST}:${process.env.POSTGRES_PORT}/${process.env.POSTGRES_DB}`,
 });
 
 // Initialize Drizzle ORM
