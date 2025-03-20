@@ -1,3 +1,10 @@
+x-db-env: &db-env
+  POSTGRES_USER: postgres
+  POSTGRES_PASSWORD: postgres
+  POSTGRES_DB: atlusdata
+  POSTGRES_HOST: db  # This should match the service name of the database container
+  POSTGRES_PORT: 5432
+
 services:
   bot:
     build: 
@@ -7,23 +14,17 @@ services:
     env_file:
       - .env 
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: atlusdata
-      POSTGRES_HOST: db  # This should match the service name of the database container
-      POSTGRES_PORT: 5432
+      <<: *db-env
     depends_on:
       - db
     volumes: 
       - ./:/app
 
   db:
-    image: postgres:13  # Or whichever version of PostgreSQL you prefer
+    image: postgres:13  
     container_name: postgres-db
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=atlusdata
+      <<: *db-env
     ports:
       - "5433:5432"  # 2nd port -> host container 
     volumes:
