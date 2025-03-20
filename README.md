@@ -28,8 +28,8 @@ Click the link below to invite the bot to your server. You’ll be redirected to
 ### Build Guide
 1. Clone the project repository. 
 2. Run `npm install` to install the necessary dependencies.
-3. Create a `.env` file in the project's root directory and add a global var representing the discord bot token value (ex. `DISCORD_BOT_TOKEN = XXX`).
-4. Modify the mappings of the section `x-db-env` within `docker-compose.yml` to match your database credentials.
+3. Create a `.env` file in the project's root directory and add an environment variable representing the Discord bot token value (ex. `DISCORD_BOT_TOKEN = XXX`).
+4. If you want to change the default database credentials, modify the values in `x-db-env` within `docker-compose.yml`. These credentials will be used by the Postgres container when it starts.
 5. Run `docker compose build`.
 
 ## Find a bug?
