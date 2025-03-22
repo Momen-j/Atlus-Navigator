@@ -1,4 +1,4 @@
-# Atlus-Discord-Bot Project
+# Atlus-Navigator Project
 
 ## A TypeScript-Powered Discord bot for discovering enemy weaknesses in Atlus Games
 
