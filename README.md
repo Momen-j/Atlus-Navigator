@@ -1,4 +1,4 @@
-# Atlus-Navigator
+# Atlus Navigator
 
 ## A TypeScript-Powered Discord bot for discovering enemy weaknesses in Atlus Games
 
