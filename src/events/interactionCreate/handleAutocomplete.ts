@@ -43,7 +43,7 @@ export default async function handleAutocomplete(
   // Filter names that start with the user's input (case-insensitive)
   const filteredChoices = allMonsterNames
     .filter((name) =>
-      name.toLowerCase().startsWith(focusedOption.toLowerCase()) //! Contains
+      name.toLowerCase().includes(focusedOption.toLowerCase()) //! Contains
     )
     .slice(0, 25); // Limit to 25 choices (Discord API max)
 
