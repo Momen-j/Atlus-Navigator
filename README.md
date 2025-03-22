@@ -4,9 +4,9 @@
 
 The Atlus Navigator is designed to help players quickly identify the weaknesses of enemies in popular Atlus RPGs, including Persona 3 Reload (and Episode Aigis), Persona 4 Golden, Persona 5 Royal, and Metaphor: ReFantazio. Instead of searching through multiple tabs or wikis to find enemy weaknesses, simply tell the bot the game and enemy you're facing, and it will provide a detailed weakness chart. Plan your strategy in advance or uncover unexpected vulnerabilities mid-battle, all without leaving Discord!
 
-## Watch the video to see the Atlus Games Discord Bot in action!
+## Watch the video below to see the Atlus Navigator in action!
 
-Video Link
+<video controls src="Altus Navigator Demo.mp4" title="Title"></video>
 
 ## How to add Atlus Navigator to your Discord Server
 
@@ -38,6 +38,9 @@ You can report a bug by either using ```/feedback``` in Discord or submitting an
 
 * GitHub user [aqiu384](https://github.com/aqiu384/aqiu384.github.io) for the [Persona Game Data](https://aqiu384.github.io/megaten-fusion-tool/home)
 * Garrett Haines for the [Metaphor: Refantazio Game Data](https://docs.google.com/spreadsheets/d/1FDC6T6tr__-AU18tY--4-ZUSzkeaMM_Kg_Crqu6VrcM/edit?pli=1&gid=2052374500#gid=2052374500)
+
+## Miscellaneous Links
+* [Demo Video YouTube Link](https://youtu.be/i62492cbECA?si=jpDOksmlX7zupvJG)
 
 ## Like this project?
 
