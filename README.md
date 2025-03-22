@@ -12,7 +12,7 @@ Click the image below to watch the demo on YouTube. *(Right-click → "Open link
 
 ## How to add Atlus Navigator to your Discord Server
 
-Click the link below to invite the bot to your server. You’ll be redirected to Discord, where you can choose a server to add Atlus Navigator into and grant the necessary permissions.<br>
+Click the link below to invite Atlus Navigator to your server. You’ll be redirected to Discord, where you can select a server and grant the necessary permissions.<br>
 
 👉 Invite [Atlus Navigator](https://discord.com/oauth2/authorize?client_id=1328884093777350696&permissions=2048&integration_type=0&scope=applications.commands+bot)!
 
