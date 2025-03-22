@@ -6,7 +6,9 @@ The Atlus Navigator is designed to help players quickly identify the weaknesses 
 
 ## Watch the video below to see the Atlus Navigator in action!
 
-[![Atlus Navigator Demo](https://img.youtube.com/vi/i62492cbECA/maxresdefault.jpg)](https://youtu.be/i62492cbECA)
+<a href="https://youtu.be/i62492cbECA" target="_blank">
+  <img src="https://img.youtube.com/vi/i62492cbECA/maxresdefault.jpg" alt="Atlus Navigator Demo">
+</a>
 
 ## How to add Atlus Navigator to your Discord Server
 
