@@ -2,19 +2,17 @@
 
 ## A TypeScript-Powered Discord bot for discovering enemy weaknesses in Atlus Games
 
-The Atlus Games Discord Bot is designed to help players quickly identify the weaknesses of enemies in popular Atlus RPGs, including Persona 3 Reload (and Episode Aigis), Persona 4 Golden, Persona 5 Royal, and Metaphor: ReFantazio. Instead of searching through multiple tabs or wikis to find enemy weaknesses, simply tell the bot the game and enemy you're facing, and it will provide a detailed weakness chart. Plan your strategy in advance or uncover unexpected vulnerabilities mid-battle, all without leaving Discord!
+The Atlus Navigator is designed to help players quickly identify the weaknesses of enemies in popular Atlus RPGs, including Persona 3 Reload (and Episode Aigis), Persona 4 Golden, Persona 5 Royal, and Metaphor: ReFantazio. Instead of searching through multiple tabs or wikis to find enemy weaknesses, simply tell the bot the game and enemy you're facing, and it will provide a detailed weakness chart. Plan your strategy in advance or uncover unexpected vulnerabilities mid-battle, all without leaving Discord!
 
 ## Watch the video to see the Atlus Games Discord Bot in action!
 
-Has this ever happened to you? -> (Last time before save: 2 hours maybe) Video will be a party from metaphor/persona walking up to an enemy they haven't seen before and completely getting deflected by a move killing the protag. 
+Video Link
 
-NOW INTRODUCING The Atlus Games discord bot where you simply type in the name of the game and the enemy and you'll never run into a situation like that again. Show a seal of approval then the logo of the bot (link in description)
-
-## How to add the Atlus Games bot to your Discord Server
+## How to add Atlus Navigator to your Discord Server
 
 Click the link below to invite the bot to your server. You’ll be redirected to Discord, where you can choose a server and grant the necessary permissions.<br>
 
-👉 Invite the [Atlus Games Discord Bot](https://github.com/Momen-j)!
+👉 Invite [Atlus Navigator](https://github.com/Momen-j)!
 
 ⭐ If you enjoy using the bot, consider rating it on [discordbotlist.com](https://discordbotlist.com/) & [Top.gg](https://top.gg/)! (add the bot to these sites)
 
