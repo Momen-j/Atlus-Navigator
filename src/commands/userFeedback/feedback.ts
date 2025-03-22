@@ -100,7 +100,7 @@ export default {
 
       // Reply to the user confirming the submission
       await interaction.reply({
-        content: `Your feedback 👇 **\n\n${description}** \n\nhas been submitted successfully! You can submit feedback again in the next **${(cooldownTime / 1000 / 60 / 60).toFixed(1)} hours!** If you like the bot, rate Atlus Navigator on https://discordbotlist.com/ & https://top.gg/`,
+        content: `Your feedback 👇 **\n\n${description}** \n\nhas been submitted successfully! You can submit feedback again in the next **${(cooldownTime / 1000 / 60 / 60).toFixed(1)} hours!** Enjoying Atlus Navigator? Leave us a rating on https://discordbotlist.com/ & https://top.gg/`,
         flags: MessageFlags.Ephemeral, // This ensures the reply is only visible to the user who issued the command
       });
     } catch (error: any) {
