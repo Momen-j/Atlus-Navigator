@@ -4,7 +4,13 @@ import dotenv from "dotenv";
 dotenv.config();
 
 /**
- * @file this is the root
+ * @file <strong>Atlus Navigator Codebase Documentation</strong>
+ * 
+ * <br><br> <strong>Atlus Navigator</strong> is a TypeScript-powered Discord bot designed to help users discover enemy and Persona weaknesses in Atlus games.  
+ * To better understand the codebase, please refer to this documentation.  
+ * 
+ * <br><br> For a full overview of Atlus Navigator's features, visit the {@link https://github.com/Momen-j/Atlus-Navigator Atlus Navigator README}!
+ * 
  * @author Moses Joseph
  */
 

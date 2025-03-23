@@ -6,8 +6,7 @@
   },
   "opts": {
     "destination": "./docs",
-    "recurse": true,
-    "template": "node_modules/docdash"
+    "recurse": true
   },
   "tags": {
     "allowUnknownTags": true

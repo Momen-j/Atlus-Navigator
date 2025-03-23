@@ -1,6 +1,6 @@
 # Atlus Navigator
 
-## A TypeScript-Powered Discord bot for discovering enemy weaknesses in Atlus Games
+## A TypeScript-Powered Discord bot for discovering enemy & persona weaknesses in Atlus Games
 
 Atlus Navigator is designed to help players quickly identify the weaknesses of enemies in popular Atlus RPGs, including Persona 3 Reload (and Episode Aigis), Persona 4 Golden, Persona 5 Royal, and Metaphor: ReFantazio. Instead of searching through multiple tabs or wikis to find enemy weaknesses, simply tell the bot the game and enemy you're facing, and it will provide a detailed weakness chart. Plan your strategy in advance or uncover unexpected vulnerabilities mid-battle, all without leaving Discord!
 
