@@ -1,5 +1,5 @@
 CREATE TABLE metaphor_enemies (
-    id SERIAL PRIMARY KEY,
+    id INTEGER,
     "Enemy Name Internal" TEXT,
     "Enemy Name" TEXT,
     level INTEGER,
@@ -23,7 +23,7 @@ CREATE TABLE metaphor_enemies (
 );
 
 CREATE TABLE p3_enemies (
-    id SERIAL PRIMARY KEY,
+    id INTEGER,
     race TEXT,
     level INTEGER,
     name TEXT,
@@ -44,7 +44,7 @@ CREATE TABLE p3_enemies (
 );
 
 CREATE TABLE p3e_enemies (
-    id SERIAL PRIMARY KEY,
+    id INTEGER,
     race TEXT,
     level INTEGER,
     name TEXT,
@@ -65,7 +65,7 @@ CREATE TABLE p3e_enemies (
 );
 
 CREATE TABLE p4_enemies (
-    id SERIAL PRIMARY KEY,
+    id INTEGER,
     race TEXT,
     level INTEGER,
     name TEXT,
@@ -84,7 +84,7 @@ CREATE TABLE p4_enemies (
 );
 
 CREATE TABLE p5_enemies (
-    id SERIAL PRIMARY KEY,
+    id INTEGER,
     race TEXT,
     level INTEGER,
     name TEXT,
