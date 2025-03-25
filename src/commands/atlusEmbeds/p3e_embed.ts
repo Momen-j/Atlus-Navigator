@@ -16,7 +16,7 @@ import { P3EnemyWeaknesses } from "src/interfaces.js";
 export default {
   name: "p3r-aigis",
   description:
-    "Provides info on a monster/persona/persona within Persona 3 Reload: Episode Aegis",
+    "Provides info on a monster/persona within Persona 3 Reload: Episode Aegis",
   options: [
     {
       name: "monster-name",
@@ -82,6 +82,8 @@ export default {
 
     // Create an embed and set the image attachment link
     let embed;
+
+    console.log(enemyStats[0].hp);
 
     if (enemyStats[0].hp === "0") {
       embed = new EmbedBuilder()
