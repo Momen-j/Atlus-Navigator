@@ -58,6 +58,7 @@ export interface P3EnemyStats {
   level: string;
   hp: string;
   appears: string;
+  race: string;
 }
 
 export interface P4EnemyWeaknesses {
@@ -75,6 +76,7 @@ export interface P4EnemyStats {
   level: string;
   hp: string;
   appears: string;
+  race: string;
 }
 
 export interface P5EnemyWeaknesses {
@@ -95,4 +97,5 @@ export interface P5EnemyStats {
   level: string;
   hp: string;
   appears: string;
+  race: string;
 }

@@ -26,11 +26,11 @@ import { MetaphorEnemyWeaknesses } from "src/interfaces.js";
  */
 export default {
   name: "metaphor",
-  description: "Provides info on a monster within Metaphor: ReFantazio",
+  description: "Provides info on a monster/persona within Metaphor: ReFantazio",
   options: [
     {
       name: "monster-name",
-      description: "Name of monster",
+      description: "Name of monster/persona",
       type: ApplicationCommandOptionType.String,
       required: true,
       autocomplete: true,

@@ -25,6 +25,7 @@ export async function fetchP4EnemyStats(
         level: p4EnemyStats.level,
         hp: p4EnemyStats.hp,
         appears: p4EnemyStats.appears,
+        race: p4EnemyStats.race,
       })
       .from(p4EnemyStats)
       .where(eq(p4EnemyStats.enemyName, enemyName));

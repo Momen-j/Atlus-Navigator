@@ -3,7 +3,7 @@ import {
   ApplicationCommandOptionType,
   Client,
   ChatInputCommandInteraction,
-  MessageFlags
+  MessageFlags,
 } from "discord.js";
 import { fetchP5EnemyWeaknesses } from "../../queries/fetchp5EnemyWeaknesses.js";
 import createP5WeaknessChart from "../../createP5WeaknessChart.js";
@@ -15,11 +15,11 @@ import { P5EnemyWeaknesses } from "src/interfaces.js";
 //! name inputted by the user
 export default {
   name: "p5r",
-  description: "Provides info on a monster within Persona 5 Royal",
+  description: "Provides info on a monster/persona within Persona 5 Royal",
   options: [
     {
       name: "monster-name",
-      description: "Name of monster",
+      description: "Name of monster/persona",
       type: ApplicationCommandOptionType.String,
       required: true,
       autocomplete: true,
@@ -80,13 +80,25 @@ export default {
     const weaknessChart = await createP5WeaknessChart(dbResult[0]);
 
     // Create an embed and set the image attachment link
-    const embed = new EmbedBuilder()
+    let embed;
+
+    if (enemyStats[0].hp === "0") {
+      embed = new EmbedBuilder()
+      .setTitle(`**${monsterName}**`)
+      .setDescription(
+        `**Persona 5 Royal** \n**Level:** ${enemyStats[0]?.level ?? "Unknown"}\n**Arcana:** ${enemyStats[0]?.race ?? "Unknown"}`
+      )
+      .setColor("Red")
+      .setImage("attachment://elements.png");
+    } else {
+      embed = new EmbedBuilder()
       .setTitle(`**${monsterName}**`)
       .setDescription(
         `**Persona 5 Royal** \n**Level:** ${enemyStats[0]?.level ?? "Unknown"}\n**HP:** ${enemyStats[0]?.hp ?? "Unknown"}\n**Located:** ${enemyStats[0]?.appears ?? "Unknown"}`
       )
       .setColor("Red")
       .setImage("attachment://elements.png");
+    }
 
     // Send the embed with the weakness chart as an attachment
     await interaction.reply({

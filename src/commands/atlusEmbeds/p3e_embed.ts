@@ -3,7 +3,7 @@ import {
   ApplicationCommandOptionType,
   Client,
   ChatInputCommandInteraction,
-  MessageFlags
+  MessageFlags,
 } from "discord.js";
 import { fetchP3E_EnemyWeaknesses } from "../../queries/fetchp3eEnemyWeaknesses.js";
 import createP3WeaknessChart from "../../createP3WeaknessChart.js";
@@ -16,11 +16,11 @@ import { P3EnemyWeaknesses } from "src/interfaces.js";
 export default {
   name: "p3r-aigis",
   description:
-    "Provides info on a monster within Persona 3 Reload: Episode Aegis",
+    "Provides info on a monster/persona/persona within Persona 3 Reload: Episode Aegis",
   options: [
     {
       name: "monster-name",
-      description: "Name of monster",
+      description: "Name of monster/persona/persona",
       type: ApplicationCommandOptionType.String,
       required: true,
       autocomplete: true,
@@ -81,13 +81,25 @@ export default {
     const weaknessChart = await createP3WeaknessChart(dbResult[0]);
 
     // Create an embed and set the image attachment link
-    const embed = new EmbedBuilder()
+    let embed;
+
+    if (enemyStats[0].hp === "0") {
+      embed = new EmbedBuilder()
+      .setTitle(`**${monsterName}**`)
+      .setDescription(
+        `**Persona 3 Reload: Episode Aigis** \n**Level:** ${enemyStats[0]?.level ?? "Unknown"}\n**Arcana:** ${enemyStats[0]?.race ?? "Unknown"}`
+      )
+      .setColor("#5354AE")
+      .setImage("attachment://elements.png");
+    } else {
+      embed = new EmbedBuilder()
       .setTitle(`**${monsterName}**`)
       .setDescription(
         `**Persona 3 Reload: Episode Aigis** \n**Level:** ${enemyStats[0]?.level ?? "Unknown"}\n**HP:** ${enemyStats[0]?.hp ?? "Unknown"}\n**Located:** ${enemyStats[0]?.appears ?? "Unknown"}`
       )
       .setColor("#5354AE")
       .setImage("attachment://elements.png");
+    }
 
     // Send the embed with the weakness chart as an attachment
     await interaction.reply({

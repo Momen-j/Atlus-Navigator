@@ -91,7 +91,7 @@ export async function registerCommands(client: Client, guildId?: string) {
             ? [
                 {
                   name: "monster-name",
-                  description: "Name of monster",
+                  description: "Name of monster/persona",
                   type: ApplicationCommandOptionType.String,
                   required: true,
                   autocomplete: true,
@@ -123,7 +123,7 @@ export async function registerCommands(client: Client, guildId?: string) {
           ? [
               {
                 name: "monster-name",
-                description: "Name of monster",
+                description: "Name of monster/persona",
                 type: ApplicationCommandOptionType.String,
                 required: true,
                 autocomplete: true,
