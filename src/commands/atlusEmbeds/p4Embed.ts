@@ -82,7 +82,7 @@ export default {
     // Create an embed and set the image attachment link
     let embed;
 
-    if (enemyStats[0].hp === "0") {
+    if (Number(enemyStats[0].hp) === 0) {
       embed = new EmbedBuilder()
       .setTitle(`**${monsterName}**`)
       .setDescription(

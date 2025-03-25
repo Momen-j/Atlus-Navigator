@@ -85,7 +85,7 @@ export default {
 
     console.log(enemyStats[0].hp);
 
-    if (enemyStats[0].hp === "0") {
+    if (Number(enemyStats[0].hp) === 0) {
       embed = new EmbedBuilder()
       .setTitle(`**${monsterName}**`)
       .setDescription(
