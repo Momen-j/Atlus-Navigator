@@ -28,15 +28,19 @@ export function eventHandler(client: Client) {
 
       // Process guilds in parallel for faster startup
       const guilds = Array.from(client.guilds.cache.values());
-      await Promise.all(
-        guilds.map(async (guild) => {
+      
+      // Register commands only for guilds not yet registered
+      const pendingRegistrations = guilds
+        .filter(guild => !registeredGuilds.has(guild.id))
+        .map(async (guild) => {
           await registerCommands(client, guild.id);
           registeredGuilds.add(guild.id);
           console.log(`✅ Commands registered for "${guild.name}"`);
-        })
-      );
+        });
 
-      console.log(`✅ Commands registered for ${guilds.length} guilds.`);
+      await Promise.all(pendingRegistrations);
+      
+      console.log(`✅ Commands registered for ${pendingRegistrations.length} guilds.`);
     } catch (error) {
       console.error("❌ Error during command registration: ", error);
     }
