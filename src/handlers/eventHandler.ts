@@ -16,8 +16,8 @@ import { consoleLog } from "../events/ready/consoleLog.js";
  * @returns {void} Returns nothing but calls an event function.
  */
 export function eventHandler(client: Client) {
-  // Cache to track which guilds have already had commands registered
-  const registeredGuilds = new Set<string>();
+  // Keep track of whether global commands have been registered
+  let globalCommandsRegistered = false;
 
   // ✅ Ready event (triggers when the bot starts)
   client.once("ready", async () => {
@@ -26,21 +26,12 @@ export function eventHandler(client: Client) {
     try {
       console.log("🚀 Bot is online. Beginning command registration...");
 
-      // Process guilds in parallel for faster startup
-      const guilds = Array.from(client.guilds.cache.values());
-      
-      // Register commands only for guilds not yet registered
-      const pendingRegistrations = guilds
-        .filter(guild => !registeredGuilds.has(guild.id))
-        .map(async (guild) => {
-          await registerCommands(client, guild.id);
-          registeredGuilds.add(guild.id);
-          console.log(`✅ Commands registered for "${guild.name}"`);
-        });
-
-      await Promise.all(pendingRegistrations);
-      
-      console.log(`✅ Commands registered for ${pendingRegistrations.length} guilds.`);
+       // Register commands globally ONCE
+       if (!globalCommandsRegistered) {
+        await registerCommands(client); // No guildId means global registration
+        globalCommandsRegistered = true;
+        console.log("✅ Commands registered globally");
+      }
     } catch (error) {
       console.error("❌ Error during command registration: ", error);
     }
@@ -59,13 +50,6 @@ export function eventHandler(client: Client) {
   client.on("guildCreate", async (guild: Guild) => {
     try {
       console.log(`📥 Joined a new guild: ${guild.name}`);
-
-      // Only register commands if we haven't already
-      if (!registeredGuilds.has(guild.id)) {
-        await registerCommands(client, guild.id);
-        registeredGuilds.add(guild.id);
-        console.log(`✅ Commands registered for new guild: ${guild.name}`);
-      }
 
       // ✅ Send a welcome message if the bot has permissions
       const welcomeChannel = guild.channels.cache.find(
@@ -93,8 +77,6 @@ export function eventHandler(client: Client) {
 
   // GuildDelete event (when bot is deleted from a server)
   client.on("guildDelete", (guild: Guild) => {
-    // Remove the guild from our tracking set when the bot is removed
-    registeredGuilds.delete(guild.id);
     console.log(`🚫 Removed from guild: ${guild.name}`);
   });
 }

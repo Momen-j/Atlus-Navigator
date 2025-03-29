@@ -177,6 +177,14 @@ export async function registerCommands(client: Client, guildId?: string) {
     ) {
       console.log(`✅ All commands are up to date, no changes needed`);
     }
+
+
+    // Log what type of registration we're doing
+    if (guildId) {
+      console.log(`✅ Commands processed for guild: ${guildId}`);
+    } else {
+      console.log(`✅ Commands processed globally`);
+    }
   } catch (error) {
     console.log(`❌ Error during command registration: ${error}`);
   }
