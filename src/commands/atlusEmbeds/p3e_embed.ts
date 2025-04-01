@@ -16,7 +16,7 @@ import { P3EnemyWeaknesses } from "src/interfaces.js";
 export default {
   name: "p3r-aigis",
   description:
-    "Provides info on a monster/persona within Persona 3 Reload: Episode Aegis",
+    "Provides info on a monster/persona within Persona 3 Reload: Episode Aigis",
   options: [
     {
       name: "monster-name",
@@ -72,7 +72,7 @@ export default {
     if (dbResult.length === 0) {
       return interaction.reply({
         content:
-          "❌ This shadow does not exist within the world of Persona 3 Reload: Episode Aegis.",
+          "❌ This shadow does not exist within the world of Persona 3 Reload: Episode Aigis.",
         flags: MessageFlags.Ephemeral, // Sends a private message to the user
       });
     }

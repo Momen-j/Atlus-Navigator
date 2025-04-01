@@ -49,10 +49,10 @@ __Game Commands__
 Display a weakness chart for a monster within Metaphor: ReFantazio
 
 **/p3r**
-Display a weakness chart for a monster/persona within Persona 3 Reload (not including Aegis)
+Display a weakness chart for a monster/persona within Persona 3 Reload (not including Aigis)
 
 **/p3r-aigis**
-Display a weakness chart for a monster/persona within Persona 3 Reload: Episode Aegis
+Display a weakness chart for a monster/persona within Persona 3 Reload: Episode Aigis
 
 **/p4g**
 Display a weakness chart for a monster/persona within Persona 4 Golden
