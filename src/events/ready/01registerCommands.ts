@@ -8,6 +8,7 @@ import p3Embed from "../../commands/atlusEmbeds/p3embed.js";
 import p4Embed from "../../commands/atlusEmbeds/p4Embed.js";
 import p5Embed from "../../commands/atlusEmbeds/p5Embed.js";
 import feedback from "../../commands/userFeedback/feedback.js";
+import help from "../../commands/userFeedback/help.js";
 import { SlashCommand } from "src/interfaces";
 
 /**
@@ -22,6 +23,7 @@ const localCommands = [
   p4Embed as unknown,
   p5Embed as unknown,
   feedback as unknown,
+  help as unknown,
 ] as SlashCommand[];
 
 /**
@@ -89,32 +91,38 @@ export async function registerCommands(client: Client, guildId?: string) {
         continue;
       }
 
-      const { name, description } = localCommand;
-      
-      // Check if any option has autocomplete enabled
-      const hasAutocomplete = localCommand.options?.some(
-        (option) => option.autocomplete === true
-      );
+      const { name, description, options = [] } = localCommand;
 
-      // Prepare command creation data with appropriate options
-      const commandOptions = hasAutocomplete
-        ? [
-            {
-              name: "monster-name",
-              description: "Name of monster/persona",
-              type: ApplicationCommandOptionType.String,
-              required: true,
-              autocomplete: true,
-            },
-          ]
-        : [
-            {
-              name: "message",
-              description: "Submit feedback, suggestions, or report issues.",
-              type: ApplicationCommandOptionType.String,
-              required: true,
-            },
-          ];
+      // Use the command's own options if available, otherwise create default options
+      let commandOptions = options;
+      
+      // If no options are provided and it's not the help command, apply the default logic
+      if (options.length === 0 && name !== "help") {
+        // Check if any option has autocomplete enabled (for backward compatibility)
+        const hasAutocomplete = localCommand.options?.some(
+          (option) => option.autocomplete === true
+        );
+
+        // Prepare command creation data with appropriate options
+        commandOptions = hasAutocomplete
+          ? [
+              {
+                name: "monster-name",
+                description: "Name of monster/persona",
+                type: ApplicationCommandOptionType.String,
+                required: true,
+                autocomplete: true,
+              },
+            ]
+          : [
+              {
+                name: "message",
+                description: "Submit feedback, suggestions, or report issues.",
+                type: ApplicationCommandOptionType.String,
+                required: true,
+              },
+            ];
+      }
 
       commandsToRegister.push({
         name,

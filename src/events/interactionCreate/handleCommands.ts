@@ -6,6 +6,7 @@ import p3Embed from "../../commands/atlusEmbeds/p3embed.js";
 import p4Embed from "../../commands/atlusEmbeds/p4Embed.js";
 import p5Embed from "../../commands/atlusEmbeds/p5Embed.js";
 import feedback from "../../commands/userFeedback/feedback.js";
+import help from "../../commands/userFeedback/help.js";
 import { SlashCommand } from "src/interfaces";
 
 /**
@@ -38,6 +39,7 @@ export default async function (
     p4Embed as unknown,
     p5Embed as unknown,
     feedback as unknown,
+    help as unknown,
   ] as SlashCommand[];
 
   // try to check if the command by the user matches one of our local commands
