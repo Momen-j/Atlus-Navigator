@@ -1,11 +1,16 @@
+id,Enemy Name Internal,Enemy Name,level,hp,mp,strength,magic,endurance,agility,luck,slash,pierce,strike,fire,ice,elec,wind,light,dark,almighty
+8,@EnemyName_Minotaur02,Guptauron,55,3660,350,60,37,60,45,35,Neutral,Weak (1.5x),Neutral,Null,Weak (1.5x),Neutral,Neutral,Neutral,Neutral,Neutral
+237,@EnemyName_Tooth02,Ochre Homo Tenta,21,400,288,17,17,17,17,17,Neutral,Weak (1.5x),Resist (0.5x),Repel,Weak (1.5x),Null,Neutral,Neutral,Neutral,Neutral
+542,@EnemyName_BOSS_RELLA02,Rella,52,7000,500,35,40,35,35,35,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Null,Neutral,Neutral
+112,@EnemyName_Manticore02,Crag Manjula,45,4500,350,50,50,60,38,28,Resist (0.5x),Resist (0.5x),Weak (1.5x),Neutral,Null,Neutral,Neutral,Neutral,Neutral,Neutral
 59,@EnemyName_lancer_Skeleton08,Spear Noble Malmorta,25,442,285,20,18,20,21,16,Resist (0.5x),Resist (0.5x),Weak (1.5x),Neutral,Neutral,Null,Neutral,Neutral,Weak (1.5x),Neutral
 60,@EnemyName_arrow_Skeleton01,Bow Malmorta,6,150,116,5,6,5,9,4,Neutral,Resist (0.5x),Weak (1.5x),Neutral,Neutral,Null,Neutral,Weak (1.5x),Resist (0.1x),Neutral
 61,@EnemyName_arrow_Skeleton02,Bow Soldier Malmorta,19,364,102,15,12,16,19,11,Resist (0.5x),Resist (0.5x),Weak (1.5x),Neutral,Neutral,Null,Neutral,Weak (1.5x),Resist (0.1x),Neutral
 119,@EnemyName_Griffon03,Leogrophon A,72,7000,450,72,72,65,65,60,Neutral,Weak (1.5x),Neutral,Resist (0.5x),Resist (0.5x),Neutral,Repel,Resist (0.5x),Neutral,Neutral
 163,@EnemyName_Bee03,Leginovesp,53,1032,368,47,36,44,56,40,Neutral,Weak (1.5x),Neutral,Neutral,Neutral,Repel,Weak (1.5x),Neutral,Neutral,Neutral
-238,@EnemyName_Tooth03,Azure Homo Tenta A,15,300,188,12,12,12,12,12,Neutral,Weak (1.5x),Resist (0.5x),Weak (1.5x),Repel,Null,Neutral,Neutral,Neutral,Neutral
-239,@EnemyName_Tooth04,Golden Homo Tenta A,40,500,388,30,30,30,30,30,Resist (0.3x),Resist (0.3x),Resist (0.3x),Resist (0.3x),Resist (0.3x),Resist (0.3x),Resist (0.3x),Resist (0.3x),Resist (0.3x),Neutral
-240,@EnemyName_Tooth05,Platinum Homo Tenta A,62,1000,488,55,55,55,55,55,Neutral,Neutral,Neutral,Drain,Drain,Drain,Drain,Drain,Drain,Neutral
+240,@EnemyName_Tooth05,Platinum Homo Tenta,62,1000,488,55,55,55,55,55,Neutral,Neutral,Neutral,Drain,Drain,Drain,Drain,Drain,Drain,Neutral
+238,@EnemyName_Tooth03,Azure Homo Tenta,15,300,188,12,12,12,12,12,Neutral,Weak (1.5x),Resist (0.5x),Weak (1.5x),Repel,Null,Neutral,Neutral,Neutral,Neutral
+239,@EnemyName_Tooth04,Golden Homo Tenta,40,500,388,30,30,30,30,30,Resist (0.3x),Resist (0.3x),Resist (0.3x),Resist (0.3x),Resist (0.3x),Resist (0.3x),Resist (0.3x),Resist (0.3x),Resist (0.3x),Neutral
 241,@EnemyName_Mjem_M,Melancholia Crystal,99,9999,999,99,99,99,99,99,Repel,Repel,Repel,Repel,Repel,Repel,Repel,Repel,Repel,Resist (0.1x)
 281,@EnemyName_BANDIT_03,Bandit Chief Cistus,67,8000,399,65,65,60,51,51,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Weak (1.5x),Null,Neutral
 282,@EnemyName_SOLDIER_LANCE_11,Louisian Spear Soldier B,8,200,150,13,6,7,6,7,Neutral,Neutral,Neutral,Weak (2x),Neutral,Neutral,Neutral,Neutral,Neutral,Neutral
@@ -54,7 +59,6 @@
 5,@EnemyName_Cyclops02,Psyocropos A,50,3500,300,60,40,55,35,30,Neutral,Weak (1.5x),Neutral,Neutral,Neutral,Drain,Weak (1.5x),Neutral,Neutral,Neutral
 6,@EnemyName_Cyclops03,Ziocropos A,58,5000,450,65,45,65,37,32,Neutral,Weak (1.5x),Neutral,Neutral,Neutral,Drain,Weak (1.5x),Neutral,Neutral,Neutral
 7,@EnemyName_Minotaur01,Guptauros,35,2800,300,40,27,30,27,19,Neutral,Weak (1.5x),Neutral,Resist (0.5x),Weak (1.5x),Neutral,Neutral,Neutral,Neutral,Neutral
-8,@EnemyName_Minotaur02,Guptauron A,55,3660,350,60,37,60,45,35,Neutral,Weak (1.5x),Neutral,Null,Weak (1.5x),Neutral,Neutral,Neutral,Neutral,Neutral
 9,@EnemyName_Minotaur03,Gupdetron A,71,6500,450,75,58,65,62,60,Neutral,Weak (1.5x),Neutral,Repel,Weak (1.5x),Neutral,Neutral,Neutral,Neutral,Neutral
 10,@EnemyName_Cyclops03,Ziocropos B,70,6000,450,72,60,65,57,52,Neutral,Weak (1.5x),Neutral,Neutral,Neutral,Drain,Weak (1.5x),Neutral,Neutral,Neutral
 16,@EnemyName_thief_Goblin01,Goborn,9,200,80,14,12,12,10,11,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral
@@ -117,7 +121,6 @@
 109,@EnemyName_Chimera02,Grotesque Chimenzahn A,70,6000,450,70,60,65,60,55,Neutral,Neutral,Neutral,Drain,Weak (1.5x),Null,Weak (1.5x),Neutral,Neutral,Neutral
 110,@EnemyName_Chimera03,Icebeast Chimenzahn,56,5500,450,50,50,65,48,37,Neutral,Neutral,Neutral,Weak (1.5x),Drain,Null,Weak (1.5x),Neutral,Neutral,Neutral
 111,@EnemyName_Manticore01,Manjula,35,3500,300,40,38,29,30,23,Neutral,Neutral,Weak (1.5x),Null,Weak (1.5x),Neutral,Neutral,Neutral,Neutral,Neutral
-112,@EnemyName_Manticore02,Crag Manjula A,45,4500,350,50,50,60,38,28,Resist (0.5x),Resist (0.5x),Weak (1.5x),Neutral,Null,Neutral,Neutral,Neutral,Neutral,Neutral
 113,@EnemyName_Manticore03,Lava Manjula,64,9500,450,65,60,70,48,40,Resist (0.5x),Resist (0.5x),Weak (1.5x),Repel,Weak (1.5x),Neutral,Neutral,Neutral,Repel,Neutral
 117,@EnemyName_Griffon01,Leogryph,46,4500,300,55,55,50,42,32,Neutral,Weak (1.5x),Neutral,Neutral,Neutral,Neutral,Repel,Resist (0.5x),Neutral,Neutral
 118,@EnemyName_Griffon02,Leogron,55,5500,350,62,62,55,47,37,Neutral,Weak (1.5x),Neutral,Weak (1.5x),Drain,Neutral,Repel,Resist (0.5x),Neutral,Neutral
@@ -200,8 +203,6 @@
 233,@EnemyName_Muttsuri04,Voidblack Homo Oppo,74,5500,350,70,65,70,65,60,Neutral,Repel,Weak (1.5x),Resist (0.5x),Neutral,Repel,Weak (1.5x),Neutral,Neutral,Neutral
 234,@EnemyName_Ishiki_takai03,Voidblack Homo Fulquilo,74,5500,400,72,72,65,63,55,Neutral,Weak (1.5x),Repel,Neutral,Resist (0.5x),Neutral,Neutral,Repel,Weak (1.5x),Neutral
 235,@EnemyName_Kamatte03,Voidblack Homo Pento,74,5500,400,70,70,68,63,63,Neutral,Neutral,Resist (0.5x),Neutral,Neutral,Neutral,Repel,Weak (1.5x),Repel,Neutral
-236,@EnemyName_Tooth01,Homo Tenta A,2,60,80,3,3,2,2,2,Neutral,Weak (1.5x),Neutral,Resist (0.5x),Neutral,Null,Neutral,Neutral,Neutral,Neutral
-237,@EnemyName_Tooth02,Ochre Homo Tenta A,21,400,288,17,17,17,17,17,Neutral,Weak (1.5x),Resist (0.5x),Repel,Weak (1.5x),Null,Neutral,Neutral,Neutral,Neutral
 245,@EnemyName_EC_Generator,Trance Crystal,99,10,999,99,99,99,99,99,Resist (0.1x),Resist (0.1x),Resist (0.1x),Resist (0.1x),Resist (0.1x),Resist (0.1x),Resist (0.1x),Resist (0.1x),Resist (0.1x),Resist (0.1x)
 246,@EnemyName_Mjem_LL,King's Servant,99,9999,999,99,99,99,99,99,Repel,Repel,Repel,Repel,Repel,Repel,Repel,Repel,Repel,Resist (0.1x)
 247,@EnemyName_Tooth06,Or-Crown Homo Tenta,88,6666,588,88,88,88,88,88,Repel,Repel,Repel,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Resist (0.1x)
@@ -210,6 +211,7 @@
 252,@EnemyName_SOLDIER_LANCE_02,State Spear Soldier,2,100,100,4,3,3,3,3,Neutral,Neutral,Neutral,Weak (1.5x),Weak (1.5x),Neutral,Neutral,Neutral,Neutral,Neutral
 254,@EnemyName_SOLDIER_LANCE_04,Rudolf's Partisan,54,6000,200,65,40,50,40,40,Resist (0.5x),Resist (0.5x),Resist (0.5x),Neutral,Neutral,Neutral,Weak (1.5x),Neutral,Neutral,Neutral
 255,@EnemyName_SOLDIER_LANCE_05,Guard Spear Soldier,10,200,100,11,11,11,11,11,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral
+236,@EnemyName_Tooth01,Homo Tenta,2,60,80,3,3,2,2,2,Neutral,Weak (1.5x),Neutral,Resist (0.5x),Neutral,Null,Neutral,Neutral,Neutral,Neutral
 256,@EnemyName_SOLDIER_LANCE_06,Mercenary Pikeman,64,8000,200,68,60,65,60,60,Neutral,Neutral,Neutral,Weak (1.5x),Neutral,Resist (0.5x),Neutral,Neutral,Neutral,Neutral
 257,@EnemyName_SOLDIER_LANCE_07,Spearmonk A,48,900,200,45,38,38,38,38,Resist (0.5x),Resist (0.5x),Resist (0.5x),Weak (1.5x),Weak (1.5x),Neutral,Neutral,Neutral,Neutral,Neutral
 258,@EnemyName_SOLDIER_LANCE_08,Louisian Spear Soldier A,10,500,100,10,10,9,7,7,Neutral,Neutral,Neutral,Weak (1.5x),Neutral,Neutral,Neutral,Neutral,Neutral,Neutral
@@ -305,7 +307,6 @@
 512,@EnemyName_BOSS_HEISITYO,Captain Klinger,5,530,500,4,4,4,4,4,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Weak (1.5x),Neutral,Neutral
 513,@EnemyName_BOSS_HEISI,Mage Soldier,4,220,500,3,4,3,3,3,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral
 514,@EnemyName_BOSS_MOOSELK,Undead Grius,11,1900,500,11,11,13,11,11,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Weak (1.5x),Resist (0.5x),Neutral
-515,@EnemyName_BOSS_ZORQUE01,Zorba A,19,2500,500,12,20,15,15,13,Neutral,Neutral,Neutral,Resist (0.5x),Resist (0.5x),Resist (0.5x),Resist (0.5x),Neutral,Resist (0.5x),Neutral
 516,@EnemyName_BOSS_RESSENT,Homo Avades,20,1920,500,14,14,15,15,15,Neutral,Neutral,Neutral,Resist (0.3x),Resist (0.3x),Resist (0.3x),Resist (0.3x),Resist (0.3x),Resist (0.3x),Neutral
 520,@EnemyName_BOSS_WORM,Greatworm Homo Butera A,25,2000,500,19,19,19,19,19,Neutral,Neutral,Neutral,Neutral,Weak (1.5x),Neutral,Neutral,Neutral,Neutral,Neutral
 521,@EnemyName_BOSS_HAIZAME01,Heismay A,22,2000,500,25,17,15,25,10,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral
@@ -320,7 +321,6 @@
 536,@EnemyName_BOSS_DRAGON01,Fire Dragon Mauna,12,3500,500,12,12,11,9,4,Neutral,Neutral,Neutral,Repel,Weak (2x),Neutral,Neutral,Neutral,Neutral,Neutral
 537,@EnemyName_BOSS_DRAGON02,Devourer of Nations,70,25000,500,75,55,70,55,55,Neutral,Neutral,Neutral,Repel,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral
 540,@EnemyName_BOSS_GUIDO,Monk Captain Gideaux,19,1000,500,16,16,16,16,16,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null
-542,@EnemyName_BOSS_RELLA02,Rella A,52,7000,500,35,40,35,35,35,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Null,Neutral,Neutral
 543,@EnemyName_BOSS_RYUJIN02,Sogne the Icebound,52,7000,500,65,60,60,50,50,Neutral,Neutral,Neutral,Weak (1.5x),Neutral,Neutral,Neutral,Neutral,Neutral,Neutral
 544,@EnemyName_BOSS_LOUIS01,Louis Guiabern B,60,12000,500,75,75,60,50,50,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral
 545,@EnemyName_BOSS_ZORQUE03,Melancholia Zorba A,74,20000,500,70,70,70,70,70,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral
@@ -331,6 +331,7 @@
 553,@EnemyName_BOSS_BANKEN,Hellhound Diabundo B,20,600,146,18,16,16,21,16,Neutral,Neutral,Neutral,Weak (1.5x),Weak (1.5x),Neutral,Neutral,Neutral,Neutral,Neutral
 554,@EnemyName_BOSS_HAIZAME03,Heismay B,22,2000,500,25,17,15,25,10,Null,Null,Null,Null,Null,Null,Null,Null,Null,Resist (0.1x)
 529,@EnemyName_KRAKEN,Sea Horror Homo Sabara,39,8000,500,35,35,35,30,27,Neutral,Neutral,Neutral,Neutral,Neutral,Weak (1.5x),Neutral,Neutral,Neutral,Neutral
+515,@EnemyName_BOSS_ZORQUE01,Zorba,19,2500,500,12,20,15,15,13,Neutral,Neutral,Neutral,Resist (0.5x),Resist (0.5x),Resist (0.5x),Resist (0.5x),Neutral,Resist (0.5x),Neutral
 555,@EnemyName_BOSS_ZORQUE03,Melancholia Zorba B,74,20000,500,70,70,70,70,70,Resist (0.5x),Resist (0.5x),Resist (0.5x),Resist (0.1x),Resist (0.1x),Resist (0.1x),Resist (0.1x),Resist (0.1x),Resist (0.1x),Resist (0.1x)
 556,@EnemyName_BOSS_MONSTER_LOUIS_DOMEN,Mask of Ire,82,28000,500,77,77,70,70,75,Resist (0.1x),Resist (0.1x),Resist (0.1x),Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Resist (0.5x)
 563,@EnemyName_NEEDYA_EX,Diabolus Jaluzo,77,25000,500,73,73,73,73,73,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral
