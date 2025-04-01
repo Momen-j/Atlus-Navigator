@@ -35,7 +35,7 @@ import {
       try {
         // Reply with help information using markdown formatting
         await interaction.reply({
-          content: "```md\n# Atlus Navigator Help\n\n## General Commands\n- /help - Display this help message\n- /feedback - Submit feedback or report issues\n\n## Game Commands\n- /metaphor - Get information about Metaphor\n- /p3e - Get information about Persona 3 Eternal\n- /p3 - Get information about Persona 3\n- /p4 - Get information about Persona 4\n- /p5 - Get information about Persona 5\n```",
+          content: "```md\n# Atlus Navigator Help\n\n## General Commands\n- /help - Display this help message\n- /feedback - Submit feedback or report issues\n\n## Game Commands\n- /metaphor - Display a weakness chart for a monster/persona within Metaphor: ReFantazio\n- /p3r - Display a weakness chart for a monster/persona within Persona 3 Reload (not including Aegis)\n- /p3e - Display a weakness chart for a monster/persona within Persona 3 Reload: Episode Aegis\n- /p4g - Display a weakness chart for a monster/persona within Persona 4 Golden\n- /p5g - Display a weakness chart for a monster/persona within Persona 5 Royal\n```",
         });
       } catch (error: any) {
         console.error("Error displaying help:", error);
