@@ -24,9 +24,6 @@ const localCommands = [
   feedback as unknown,
 ] as SlashCommand[];
 
-// Keep track of command signatures to avoid unnecessary updates
-const commandSignatures = new Map<string, string>();
-
 /**
  * Registers commands for the bot, optimized to only update when necessary.
  *
