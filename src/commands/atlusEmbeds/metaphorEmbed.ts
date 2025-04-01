@@ -26,7 +26,7 @@ import { MetaphorEnemyWeaknesses } from "src/interfaces.js";
  */
 export default {
   name: "metaphor",
-  description: "Provides info on a monster/persona within Metaphor: ReFantazio",
+  description: "Provides info on a monster within Metaphor: ReFantazio",
   options: [
     {
       name: "monster-name",
