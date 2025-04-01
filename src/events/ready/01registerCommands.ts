@@ -25,7 +25,7 @@ const localCommands = [
 ] as SlashCommand[];
 
 /**
- * Registers commands for the bot, optimized to only update when necessary.
+ * Registers commands for the bot, deleting then adding the commands globally on restart.
  *
  * @async
  * @param {Client} client Bot client instance
