@@ -32,6 +32,12 @@ Click the link below to invite Atlus Navigator to your server. You’ll be redir
 4. If you want to change the default database credentials, modify the values in `x-db-env` within `docker-compose.yml`. These credentials will be used by the Postgres container when it starts.
 5. Run `docker compose build`.
 
+## Documentation
+
+Click the link below to view the documentation for this project!
+
+👉 https://momen-j.github.io/Atlus-Navigator/
+
 ## Find a bug?
 
 You can report a bug by either using ```/feedback``` in Discord or submitting an issue on GitHub with a detailed description of the problem.
