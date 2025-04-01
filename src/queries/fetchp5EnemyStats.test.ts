@@ -10,6 +10,7 @@ jest.mock("../drizzleconfig", () => {
         level: "10",
         hp: "500",
         appears: "Dungeon",
+        race: "Fool",
       },
     ]),
   };
@@ -29,6 +30,7 @@ jest.mock("../drizzleconfig", () => {
       level: null,
       hp: null,
       appears: null,
+      race: null,
     },
   };
 });
@@ -42,6 +44,7 @@ describe("fetchP5EnemyStats", () => {
         level: "10",
         hp: "500",
         appears: "Dungeon",
+        race: "Fool",
       },
     ]);
 
