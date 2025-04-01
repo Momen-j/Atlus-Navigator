@@ -16,8 +16,10 @@
   "type": "module",
   "scripts": {
     "start": "npm run build && npm run dev",
+    "cleanwin": "if exist dist rmdir /s /q dist",
     "clean": "rm -rf dist",
     "build": "npm run clean && tsc",
+    "buildwin": "npm run cleanwin && tsc",
     "dev": "nodemon dist/index.js",
     "test": "jest --coverage --verbose",
     "doc": "jsdoc -c jsdoc.json --debug"
