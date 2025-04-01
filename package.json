@@ -16,7 +16,8 @@
   "type": "module",
   "scripts": {
     "start": "npm run build && npm run dev",
-    "build": "tsc",
+    "clean": "rm -rf dist",
+    "build": "npm run clean && tsc",
     "dev": "nodemon dist/index.js",
     "test": "jest --coverage --verbose",
     "doc": "jsdoc -c jsdoc.json --debug"

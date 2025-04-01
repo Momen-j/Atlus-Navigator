@@ -1,4 +1,4 @@
-import { Client, ApplicationCommandOptionType } from "discord.js";
+import { Client, ApplicationCommandOptionType, Routes, Collection, ApplicationCommand } from "discord.js";
 //import jsonConfig from "../../../config.json" assert { type: "json" };
 import { areChoicesDifferent } from "../../utils/areCommandsDifferent.js";
 import { getApplicationCommands } from "../../utils/getApplicationCommands.js";
@@ -45,147 +45,113 @@ export async function registerCommands(client: Client, guildId?: string) {
   }
 
   try {
-    const applicationCommands = await getApplicationCommands(client, guildId);
-    const existingCommandMap = new Map();
-    applicationCommands.cache.forEach((cmd) => {
-      existingCommandMap.set(cmd.name, cmd);
+    console.log(`🔍 Checking existing commands ${guildId ? `for guild ${guildId}` : 'globally'}...`);
+    
+    // Get existing commands
+    let existingCommands: Collection<string, ApplicationCommand>;
+    if (guildId) {
+      existingCommands = await client.application.commands.fetch({ guildId });
+    } else {
+      existingCommands = await client.application.commands.fetch();
+    }
+    
+    // Check for duplicates (commands with the same name)
+    const commandNames = new Set();
+    const duplicateCommands = [];
+    
+    existingCommands.forEach(cmd => {
+      if (commandNames.has(cmd.name)) {
+        duplicateCommands.push(cmd.id);
+      } else {
+        commandNames.add(cmd.name);
+      }
     });
-
-    // Track which commands need updating
-    const commandsToUpdate = [];
-    const commandsToCreate = [];
-    const commandsToDelete = [];
+    
+    // If duplicates exist, delete them
+    if (duplicateCommands.length > 0) {
+      console.log(`⚠️ Found ${duplicateCommands.length} duplicate commands. Cleaning up...`);
+      
+      for (const cmdId of duplicateCommands) {
+        if (guildId) {
+          await client.application.commands.delete(cmdId, guildId);
+        } else {
+          await client.application.commands.delete(cmdId);
+        }
+      }
+      
+      console.log(`✅ Successfully removed ${duplicateCommands.length} duplicate commands.`);
+    }
+    
+    // Prepare all commands to register
+    const commandsToRegister = [];
 
     // Process all local commands
     for (const localCommand of localCommands) {
-      const { name, description, options } = localCommand;
-      const existingCommand = existingCommandMap.get(name);
-
-      // Generate a signature for this command's current state
-      const currentSignature = JSON.stringify({ name, description, options });
-      const previousSignature = commandSignatures.get(name);
-
-      // Skip if this exact command has been processed before and hasn't changed
-      if (previousSignature === currentSignature && existingCommand) {
+      // Skip deleted commands
+      if (localCommand.deleted) {
         continue;
       }
 
-      // Update command signature cache
-      commandSignatures.set(name, currentSignature);
-
+      const { name, description } = localCommand;
+      
       // Check if any option has autocomplete enabled
       const hasAutocomplete = localCommand.options?.some(
         (option) => option.autocomplete === true
       );
 
-      if (existingCommand) {
-        // Handle deletion if marked as deleted
-        if (localCommand.deleted) {
-          commandsToDelete.push(existingCommand.id);
-          continue;
-        }
+      // Prepare command creation data with appropriate options
+      const commandOptions = hasAutocomplete
+        ? [
+            {
+              name: "monster-name",
+              description: "Name of monster/persona",
+              type: ApplicationCommandOptionType.String,
+              required: true,
+              autocomplete: true,
+            },
+          ]
+        : [
+            {
+              name: "message",
+              description: "Submit feedback, suggestions, or report issues.",
+              type: ApplicationCommandOptionType.String,
+              required: true,
+            },
+          ];
 
-        // Check if command needs updating
-        if (areChoicesDifferent(existingCommand, localCommand)) {
-          const commandOptions = hasAutocomplete
-            ? [
-                {
-                  name: "monster-name",
-                  description: "Name of monster/persona",
-                  type: ApplicationCommandOptionType.String,
-                  required: true,
-                  autocomplete: true,
-                },
-              ]
-            : [
-                {
-                  name: "message",
-                  description:
-                    "Submit feedback, suggestions, or report issues.",
-                  type: ApplicationCommandOptionType.String,
-                  required: true,
-                },
-              ];
+      commandsToRegister.push({
+        name,
+        description,
+        options: commandOptions,
+      });
+    }
 
-          commandsToUpdate.push({
-            id: existingCommand.id,
-            data: { description, options: commandOptions },
-          });
-        }
+    if (commandsToRegister.length > 0) {
+      console.log(`🔄 Registering ${commandsToRegister.length} commands...`);
+      
+      // Use REST API to set all commands at once (this will overwrite existing commands)
+      const rest = client.rest;
+      
+      if (guildId) {
+        // Guild-specific commands
+        await rest.put(
+          Routes.applicationGuildCommands(client.user.id, guildId),
+          { body: commandsToRegister }
+        );
+        console.log(`✅ Successfully registered ${commandsToRegister.length} commands in guild ${guildId}`);
       } else {
-        // Skip deleted commands
-        if (localCommand.deleted) {
-          continue;
-        }
-
-        // Prepare command creation data
-        const commandOptions = hasAutocomplete
-          ? [
-              {
-                name: "monster-name",
-                description: "Name of monster/persona",
-                type: ApplicationCommandOptionType.String,
-                required: true,
-                autocomplete: true,
-              },
-            ]
-          : [
-              {
-                name: "message",
-                description: "Submit feedback, suggestions, or report issues.",
-                type: ApplicationCommandOptionType.String,
-                required: true,
-              },
-            ];
-
-        commandsToCreate.push({
-          name,
-          description,
-          options: commandOptions,
-        });
+        // Global commands
+        await rest.put(
+          Routes.applicationCommands(client.user.id),
+          { body: commandsToRegister }
+        );
+        console.log(`✅ Successfully registered ${commandsToRegister.length} global commands`);
       }
-    }
-
-    // Execute the batch operations
-    if (commandsToDelete.length > 0) {
-      await Promise.all(
-        commandsToDelete.map((id) => applicationCommands.delete(id))
-      );
-      console.log(`👺 Deleted ${commandsToDelete.length} commands`);
-    }
-
-    if (commandsToUpdate.length > 0) {
-      await Promise.all(
-        commandsToUpdate.map((cmd) =>
-          applicationCommands.edit(cmd.id, cmd.data)
-        )
-      );
-      console.log(`🔄 Edited ${commandsToUpdate.length} commands`);
-    }
-
-    if (commandsToCreate.length > 0) {
-      await Promise.all(
-        commandsToCreate.map((cmd) => applicationCommands.create(cmd))
-      );
-      console.log(`👍 Registered ${commandsToCreate.length} new commands`);
-    }
-
-    if (
-      commandsToDelete.length === 0 &&
-      commandsToUpdate.length === 0 &&
-      commandsToCreate.length === 0
-    ) {
-      console.log(`✅ All commands are up to date, no changes needed`);
-    }
-
-
-    // Log what type of registration we're doing
-    if (guildId) {
-      console.log(`✅ Commands processed for guild: ${guildId}`);
     } else {
-      console.log(`✅ Commands processed globally`);
+      console.log(`⚠️ No commands to register`);
     }
+
   } catch (error) {
-    console.log(`❌ Error during command registration: ${error}`);
+    console.log(`❌ Error during command registration:`, error);
   }
 }

@@ -20,7 +20,7 @@ export default {
   options: [
     {
       name: "monster-name",
-      description: "Name of monster/persona/persona",
+      description: "Name of monster/persona",
       type: ApplicationCommandOptionType.String,
       required: true,
       autocomplete: true,
