@@ -16,7 +16,7 @@ Click the link below to invite Atlus Navigator to your server. You’ll be redir
 
 👉 Invite [Atlus Navigator](https://discord.com/oauth2/authorize?client_id=1328884093777350696&permissions=2048&integration_type=0&scope=applications.commands+bot)!
 
-⭐ If you enjoy using Atlus Navigator, consider rating it on [discordbotlist.com](https://discordbotlist.com/) & [Top.gg](https://top.gg/)! (add the bot to these sites)
+⭐ If you enjoy using Atlus Navigator, consider rating it on [discordbotlist.com](https://discordbotlist.com/bots/atlus-navigator) & [Top.gg](https://top.gg/)! (add the bot to these sites)
 
 ## How to run this project for your own uses (or to potentially help me 👀)
 
