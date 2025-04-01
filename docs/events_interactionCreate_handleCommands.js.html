@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: events/interactionCreate/handleCommands.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: events/interactionCreate/handleCommands.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { MessageFlags } from "discord.js";
+import jsonConfig from "../../../config.json" with { type: "json" };
+import metaphorEmbed from "../../commands/atlusEmbeds/metaphorEmbed.js";
+import p3eEmbed from "../../commands/atlusEmbeds/p3e_embed.js";
+import p3Embed from "../../commands/atlusEmbeds/p3embed.js";
+import p4Embed from "../../commands/atlusEmbeds/p4Embed.js";
+import p5Embed from "../../commands/atlusEmbeds/p5Embed.js";
+import feedback from "../../commands/userFeedback/feedback.js";
+/**
+ * @module handleCommands
+ */
+/**
+ * Function that handles each command object &amp; checks a couple of conditions to ensure that the &lt;br>
+ * command object callback function can be called properly.
+ *
+ * @async
+ * @param {Client} client Represents an instance of the Atlus Discord Bot.
+ * @param {ChatInputCommandInteraction} interaction Current instance of the chat input command inputted by user.
+ * @returns {Promise&lt;void>} Returns nothing but calls a callback function if all checks pass.
+ */
+export default async function (client, interaction) {
+    // if not a slash command, end function call
+    //if (!interaction.isChatInputCommand()) return;
+    const { testServer, devs } = jsonConfig;
+    // get local commands
+    const localCommands = [
+        metaphorEmbed,
+        p3eEmbed,
+        p3Embed,
+        p4Embed,
+        p5Embed,
+        feedback,
+    ];
+    // try to check if the command by the user matches one of our local commands
+    try {
+        const commandObject = localCommands.find((cmd) => cmd.name === interaction.commandName);
+        // if command object doesn't exist, end function call
+        // otherwise
+        if (!commandObject)
+            return;
+        // if the command's devOnly value is true, check if the user who typed command is a dev
+        // if not, return a stern message
+        if (commandObject.devOnly) {
+            if (!interaction.member ||
+                !("id" in interaction.member) ||
+                !devs.includes(interaction.member.id)) {
+                interaction.reply({
+                    content: "You don't have enough Charm for this task, only the developer does.",
+                    flags: MessageFlags.Ephemeral,
+                });
+                return;
+            }
+        }
+        // if the command's testOnly value is true, check if the interaction's server matches the test server
+        // if not, return a stern message
+        //! Very good when I need to add new features to the discord bot
+        if (commandObject.testOnly) {
+            if (!(interaction.guild.id === testServer)) {
+                interaction.reply({
+                    content: "You don't have enough Courage for this task.",
+                    flags: MessageFlags.Ephemeral,
+                });
+                return;
+            }
+        }
+        // check if the person running the command has the appropriate permissions
+        if (commandObject.permissionsRequired?.length) {
+            for (const permission of commandObject.permissionsRequired) {
+                if (!interaction.memberPermissions.has(permission)) {
+                    // if not, reply to interaction
+                    interaction.reply({
+                        content: "Not enough permissions",
+                        flags: MessageFlags.Ephemeral,
+                    });
+                    break;
+                }
+            }
+        }
+        // check if bot running the command has the appropriate permissions
+        if (commandObject.botPermissions?.length) {
+            for (const permission of commandObject.botPermissions) {
+                const bot = interaction.guild.members.me;
+                // if not, reply to interaction
+                if (!bot.permissions.has(permission)) {
+                    interaction.reply({
+                        content: "Not enough permissions",
+                        flags: MessageFlags.Ephemeral,
+                    });
+                    break;
+                }
+            }
+        }
+        // if all checks pass then call command callback function
+        await commandObject.callback(client, interaction);
+    }
+    catch (error) {
+        console.log(`There was an error running this command: ${error}`);
+    }
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-consoleLog.html">consoleLog</a></li><li><a href="module-eventHandler.html">eventHandler</a></li><li><a href="module-feedbackCommand.html">feedbackCommand</a></li><li><a href="module-handleCommands.html">handleCommands</a></li><li><a href="module-registerCommands.html">registerCommands</a></li><li><a href="module-weaknessChartCommand.html">weaknessChartCommand</a></li></ul><h3>Namespaces</h3><ul><li><a href="DatabaseQueries.html">DatabaseQueries</a></li><li><a href="UtilityFunctions.html">UtilityFunctions</a></li><li><a href="WeaknessChartFunctions.html">WeaknessChartFunctions</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Tue Apr 01 2025 11:57:10 GMT-0400 (Eastern Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

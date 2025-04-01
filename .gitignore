@@ -4,6 +4,5 @@ dist/
 config.json
 coverage/
 TODO.MD
-docs/
 .nvmrc
 pgdata/

@@ -1,0 +1,2337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Namespace: DatabaseQueries</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Namespace: DatabaseQueries</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>DatabaseQueries</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description">Functions that query the database.</div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="nameSpaces.js.html">nameSpaces.js</a>, <a href="nameSpaces.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".exports.fetchMetaphorEnemyStats"><span class="type-signature">(async, static) </span>exports.fetchMetaphorEnemyStats<span class="signature">(enemyName)</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;MetaphorEnemyStats>>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Fetches the general stats of a Metaphor: Refantazio enemy from the database.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>enemyName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The name of the enemy given by the user.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="queries_fetchMetaphorEnemyStats.js.html">queries/fetchMetaphorEnemyStats.js</a>, <a href="queries_fetchMetaphorEnemyStats.js.html#line16">line 16</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        Throws an error if there is a database connection issue or a query failure.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">Error</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    A promise that resolves to an array of objects containing general stats as keys and the accompnaying data as values
+If the enemy is not found, the array will be empty.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;Array.&lt;MetaphorEnemyStats>></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>export interface MetaphorEnemyStats {
+  level: string;
+  hp: string;
+}</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".exports.fetchMetaphorEnemyWeaknesses"><span class="type-signature">(async, static) </span>exports.fetchMetaphorEnemyWeaknesses<span class="signature">(enemyName)</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;MetaphorEnemyWeaknesses>>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Fetches the weaknesses of a Metaphor: Refantazio enemy from the database.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>enemyName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The name of the enemy given by the user.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="queries_fetchMetaphorEnemyWeaknesses.js.html">queries/fetchMetaphorEnemyWeaknesses.js</a>, <a href="queries_fetchMetaphorEnemyWeaknesses.js.html#line24">line 24</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        Throws an error if there is a database connection issue or a query failure.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">Error</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    A promise that resolves to an array of objects containing elements as keys and enemy weaknesses/reactions as values
+If the enemy is not found, the array will be empty.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;Array.&lt;MetaphorEnemyWeaknesses>></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>export interface MetaphorEnemyWeaknesses {
+  slash: string;
+  pierce: string;
+  strike: string;
+  fire: string;
+  ice: string;
+  elec: string;
+  wind: string;
+  light: string;
+  dark: string;
+  almighty: string;
+}</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".exports.fetchP3E_EnemyStats"><span class="type-signature">(async, static) </span>exports.fetchP3E_EnemyStats<span class="signature">(enemyName)</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;P3EnemyStats>>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Fetches the general stats of a Persona 3 Reload: Episode Aigis shadow from the database.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>enemyName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The name of the enemy given by the user.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="queries_fetchp3eEnemyStats.js.html">queries/fetchp3eEnemyStats.js</a>, <a href="queries_fetchp3eEnemyStats.js.html#line17">line 17</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        Throws an error if there is a database connection issue or a query failure.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">Error</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    A promise that resolves to an array of objects containing general stats as keys and the accompnaying data as values
+If the enemy is not found, the array will be empty.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;Array.&lt;P3EnemyStats>></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>export interface P3EnemyStats {
+  level: string;
+  hp: string;
+  appears: string;
+}</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".exports.fetchP3E_EnemyWeaknesses"><span class="type-signature">(async, static) </span>exports.fetchP3E_EnemyWeaknesses<span class="signature">(enemyName)</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;P3EnemyWeaknesses>>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Fetches the weaknesses of a Persona 3 Reload: Episode Aigis shadow from the database.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>enemyName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The name of the enemy given by the user.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="queries_fetchp3eEnemyWeaknesses.js.html">queries/fetchp3eEnemyWeaknesses.js</a>, <a href="queries_fetchp3eEnemyWeaknesses.js.html#line24">line 24</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        Throws an error if there is a database connection issue or a query failure.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">Error</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    A promise that resolves to an array of objects containing elements as keys and enemy weaknesses/reactions as values
+If the enemy is not found, the array will be empty.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;Array.&lt;P3EnemyWeaknesses>></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>export interface P3EnemyWeaknesses {
+  slash: string;
+  pierce: string;
+  strike: string;
+  fire: string;
+  ice: string;
+  elec: string;
+  wind: string;
+  light: string;
+  dark: string;
+  almighty: string;
+}</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".exports.fetchP3EnemyStats"><span class="type-signature">(async, static) </span>exports.fetchP3EnemyStats<span class="signature">(enemyName)</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;P3EnemyStats>>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Fetches the general stats of a Persona 3 Reload shadow from the database.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>enemyName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The name of the enemy given by the user.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="queries_fetchp3EnemyStats.js.html">queries/fetchp3EnemyStats.js</a>, <a href="queries_fetchp3EnemyStats.js.html#line17">line 17</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        Throws an error if there is a database connection issue or a query failure.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">Error</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    A promise that resolves to an array of objects containing general stats as keys and the accompnaying data as values
+If the enemy is not found, the array will be empty.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;Array.&lt;P3EnemyStats>></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>export interface P3EnemyStats {
+  level: string;
+  hp: string;
+  appears: string;
+}</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".exports.fetchP3EnemyWeaknesses"><span class="type-signature">(async, static) </span>exports.fetchP3EnemyWeaknesses<span class="signature">(enemyName)</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;P3EnemyWeaknesses>>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Fetches the weaknesses of a Persona 3 Reload shadow from the database.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>enemyName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The name of the enemy given by the user.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="queries_fetchp3EnemyWeaknesses.js.html">queries/fetchp3EnemyWeaknesses.js</a>, <a href="queries_fetchp3EnemyWeaknesses.js.html#line24">line 24</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        Throws an error if there is a database connection issue or a query failure.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">Error</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    A promise that resolves to an array of objects containing elements as keys and enemy weaknesses/reactions as values
+If the enemy is not found, the array will be empty.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;Array.&lt;P3EnemyWeaknesses>></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>export interface P3EnemyWeaknesses {
+  slash: string;
+  pierce: string;
+  strike: string;
+  fire: string;
+  ice: string;
+  elec: string;
+  wind: string;
+  light: string;
+  dark: string;
+  almighty: string;
+}</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".exports.fetchP4EnemyStats"><span class="type-signature">(async, static) </span>exports.fetchP4EnemyStats<span class="signature">(enemyName)</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;P4EnemyStats>>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Fetches the general stats of a Persona 4 Golden shadow from the database.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>enemyName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The name of the enemy given by the user.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="queries_fetchp4EnemyStats.js.html">queries/fetchp4EnemyStats.js</a>, <a href="queries_fetchp4EnemyStats.js.html#line17">line 17</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        Throws an error if there is a database connection issue or a query failure.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">Error</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    A promise that resolves to an array of objects containing general stats as keys and the accompnaying data as values
+If the enemy is not found, the array will be empty.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;Array.&lt;P4EnemyStats>></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>export interface P4EnemyStats {
+  level: string;
+  hp: string;
+  appears: string;
+}</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".exports.fetchP4EnemyWeaknesses"><span class="type-signature">(async, static) </span>exports.fetchP4EnemyWeaknesses<span class="signature">(enemyName)</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;P4EnemyWeaknesses>>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Fetches the weaknesses of a Persona 4 Golden shadow from the database.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>enemyName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The name of the enemy given by the user.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="queries_fetchp4EnemyWeaknesses.js.html">queries/fetchp4EnemyWeaknesses.js</a>, <a href="queries_fetchp4EnemyWeaknesses.js.html#line22">line 22</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        Throws an error if there is a database connection issue or a query failure.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">Error</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    A promise that resolves to an array of objects containing elements as keys and enemy weaknesses/reactions as values
+If the enemy is not found, the array will be empty.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;Array.&lt;P4EnemyWeaknesses>></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>export interface P4EnemyWeaknesses {
+  phys: string;
+  fire: string;
+  ice: string;
+  elec: string;
+  wind: string;
+  light: string;
+  dark: string;
+  almighty: string;
+}</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".exports.fetchP5EnemyStats"><span class="type-signature">(async, static) </span>exports.fetchP5EnemyStats<span class="signature">(enemyName)</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;P5EnemyStats>>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Fetches the general stats of a Persona 5 Royal shadow from the database.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>enemyName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The name of the enemy given by the user.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="queries_fetchp5EnemyStats.js.html">queries/fetchp5EnemyStats.js</a>, <a href="queries_fetchp5EnemyStats.js.html#line17">line 17</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        Throws an error if there is a database connection issue or a query failure.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">Error</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    A promise that resolves to an array of objects containing general stats as keys and the accompnaying data as values
+If the enemy is not found, the array will be empty.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;Array.&lt;P5EnemyStats>></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>export interface P5EnemyStats {
+  level: string;
+  hp: string;
+  appears: string;
+}</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".exports.fetchP5EnemyWeaknesses"><span class="type-signature">(async, static) </span>exports.fetchP5EnemyWeaknesses<span class="signature">(enemyName)</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;P5EnemyWeaknesses>>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Fetches the weaknesses of a Persona 5 Royal shadow from the database.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>enemyName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The name of the enemy given by the user.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="queries_fetchp5EnemyWeaknesses.js.html">queries/fetchp5EnemyWeaknesses.js</a>, <a href="queries_fetchp5EnemyWeaknesses.js.html#line25">line 25</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        Throws an error if there is a database connection issue or a query failure.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">Error</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    A promise that resolves to an array of objects containing elements as keys and enemy weaknesses/reactions as values
+If the enemy is not found, the array will be empty.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;Array.&lt;P5EnemyWeaknesses>></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>export interface P5EnemyWeaknesses {
+  phys: string;
+  gun: string;
+  fire: string;
+  ice: string;
+  elec: string;
+  wind: string;
+  psy: string;
+  nuke: string;
+  light: string;
+  dark: string;
+  almighty: string;
+}</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".exports.insertFeedback"><span class="type-signature">(async, static) </span>exports.insertFeedback<span class="signature">(description)</span><span class="type-signature"> &rarr; {Promise.&lt;void>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Inserts feedback into the database.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>description</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The feedback description submitted by the user.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="queries_insertFeedback.js.html">queries/insertFeedback.js</a>, <a href="queries_insertFeedback.js.html#line10">line 10</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        Throws an error if there is a database connection issue or insertion failure.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">Error</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    A promise that resolves once the insertion is complete.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;void></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-consoleLog.html">consoleLog</a></li><li><a href="module-eventHandler.html">eventHandler</a></li><li><a href="module-feedbackCommand.html">feedbackCommand</a></li><li><a href="module-handleCommands.html">handleCommands</a></li><li><a href="module-registerCommands.html">registerCommands</a></li><li><a href="module-weaknessChartCommand.html">weaknessChartCommand</a></li></ul><h3>Namespaces</h3><ul><li><a href="DatabaseQueries.html">DatabaseQueries</a></li><li><a href="UtilityFunctions.html">UtilityFunctions</a></li><li><a href="WeaknessChartFunctions.html">WeaknessChartFunctions</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Tue Apr 01 2025 11:57:10 GMT-0400 (Eastern Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

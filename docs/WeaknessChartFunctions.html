@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Namespace: WeaknessChartFunctions</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Namespace: WeaknessChartFunctions</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>WeaknessChartFunctions</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description">Functions create the weakness charts of a specified shadow/monster within Persona 3 Reload,
+Persona 3 Reload: Episode Aigis, Persona 4 Golden, Persona 5 Royal, & Metaphor: ReFantazio.</div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="nameSpaces.js.html">nameSpaces.js</a>, <a href="nameSpaces.js.html#line5">line 5</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".createMetaphorWeaknessChart"><span class="type-signature">(async, static) </span>createMetaphorWeaknessChart<span class="signature">(data)</span><span class="type-signature"> &rarr; {Promise.&lt;Buffer>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Generates a Metaphor: ReFantazio weakness chart as an image buffer given a specific monster's weakness data within an object.
+The chart visually represents a monster's reaction to every element within the game.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">MetaphorEnemyWeaknesses</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">An object mapping element names to their respective weaknesses/reactions for a specific monster.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="createmetaphorWeaknessChart.js.html">createmetaphorWeaknessChart.js</a>, <a href="createmetaphorWeaknessChart.js.html#line3">line 3</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="DatabaseQueries.html#.exports.fetchMetaphorEnemyWeaknesses">DatabaseQueries.exports.fetchMetaphorEnemyWeaknesses</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    A Promise that resolves to an image buffer containing the generated Metaphor: ReFantazio weakness chart.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;Buffer></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".createP3WeaknessChart"><span class="type-signature">(async, static) </span>createP3WeaknessChart<span class="signature">(data)</span><span class="type-signature"> &rarr; {Promise.&lt;Buffer>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Generates a Persona 3 Reload (including Episode Aigis) weakness chart as an image buffer given a specific shadow's weakness data within an object.
+The chart visually represents a shadow's reaction to every element within the game.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">P3EnemyWeaknesses</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">An object mapping element names to their respective weaknesses/reactions for a specific shadow.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="createP3WeaknessChart.js.html">createP3WeaknessChart.js</a>, <a href="createP3WeaknessChart.js.html#line3">line 3</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="DatabaseQueries.html#.exports.fetchP3EnemyWeaknesses">DatabaseQueries.exports.fetchP3EnemyWeaknesses</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    A Promise that resolves to an image buffer containing the generated Persona 3 Reload (including Episode Aigis) weakness chart.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;Buffer></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".createP4WeaknessChart"><span class="type-signature">(async, static) </span>createP4WeaknessChart<span class="signature">(data)</span><span class="type-signature"> &rarr; {Promise.&lt;Buffer>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Generates a Persona 4 Golden weakness chart as an image buffer given a specific shadow's weakness data within an object.
+The chart visually represents a shadow's reaction to every element within the game.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">P4EnemyWeaknesses</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">An object mapping element names to their respective weaknesses/reactions for a specific shadow.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="createP4WeaknessChart.js.html">createP4WeaknessChart.js</a>, <a href="createP4WeaknessChart.js.html#line3">line 3</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="DatabaseQueries.html#.exports.fetchP4EnemyWeaknesses">DatabaseQueries.exports.fetchP4EnemyWeaknesses</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    A Promise that resolves to an image buffer containing the generated Persona 4 Golden weakness chart.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;Buffer></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".createP5WeaknessChart"><span class="type-signature">(async, static) </span>createP5WeaknessChart<span class="signature">(data)</span><span class="type-signature"> &rarr; {Promise.&lt;Buffer>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Generates a Persona 5 Royal weakness chart as an image buffer given a specific shadow's weakness data within an object.
+The chart visually represents a shadow's reaction to every element within the game.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">P5EnemyWeaknesses</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">An object mapping element names to their respective weaknesses/reactions for a specific shadow.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="createP5WeaknessChart.js.html">createP5WeaknessChart.js</a>, <a href="createP5WeaknessChart.js.html#line3">line 3</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="DatabaseQueries.html#.exports.fetchP5EnemyWeaknesses">DatabaseQueries.exports.fetchP5EnemyWeaknesses</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    A Promise that resolves to an image buffer containing the generated Persona 5 Royal weakness chart.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;Buffer></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-consoleLog.html">consoleLog</a></li><li><a href="module-eventHandler.html">eventHandler</a></li><li><a href="module-feedbackCommand.html">feedbackCommand</a></li><li><a href="module-handleCommands.html">handleCommands</a></li><li><a href="module-registerCommands.html">registerCommands</a></li><li><a href="module-weaknessChartCommand.html">weaknessChartCommand</a></li></ul><h3>Namespaces</h3><ul><li><a href="DatabaseQueries.html">DatabaseQueries</a></li><li><a href="UtilityFunctions.html">UtilityFunctions</a></li><li><a href="WeaknessChartFunctions.html">WeaknessChartFunctions</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Tue Apr 01 2025 11:57:10 GMT-0400 (Eastern Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
