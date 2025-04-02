@@ -50,25 +50,28 @@ export function eventHandler(client: Client) {
   client.on("guildCreate", async (guild: Guild) => {
     try {
       console.log(`📥 Joined a new guild: ${guild.name}`);
-
-      // ✅ Send a welcome message if the bot has permissions
-      const welcomeChannel = guild.channels.cache.find(
-        (channel) =>
-          channel.type === 0 &&
-          (channel as TextChannel)
-            .permissionsFor(guild.members.me!)
-            ?.has("SendMessages")
-      ) as TextChannel;
-
+  
+      // Find the first text channel where the bot has permission to send messages
+      const welcomeChannel = guild.channels.cache
+        .filter(channel => 
+          channel.type === 0 && // Text channel
+          channel.permissionsFor(guild.members.me!)?.has(["SendMessages", "ViewChannel"])
+        )
+        .first() as TextChannel | undefined;
+  
       if (welcomeChannel) {
-        await welcomeChannel.send(
-          `👋 **Hello ${guild.name}!**\nThanks for adding Atlus Navigator! It's here to assist you in tackling Persona & Metaphor enemies with the knowledge to impress all of your social links & confidants!\n\nIf you like Atlus Navigator, consider rating it on https://discordbotlist.com/ & https://top.gg/`
-        );
-        console.log(`✅ Welcome message sent to ${guild.name}`);
+        try {
+          await welcomeChannel.send(
+            `👋 **Hello ${guild.name}!**\nThanks for adding Atlus Navigator! It's here to assist you in tackling Persona & Metaphor enemies with the knowledge to impress all of your social links & confidants!\n\nIf you like Atlus Navigator, consider rating it on https://discordbotlist.com/ & https://top.gg/`
+          );
+          console.log(`✅ Welcome message sent to ${guild.name} in #${welcomeChannel.name}`);
+        } catch (messageError) {
+          // Handle specific permission errors or rate limits
+          console.warn(`⚠️ Could not send welcome message in ${guild.name} (${welcomeChannel.name}):`, messageError);
+        }
       } else {
-        console.warn(
-          `⚠️ No valid channel found to send welcome message in ${guild.name}.`
-        );
+        // No suitable channel found with proper permissions
+        console.log(`ℹ️ No suitable channel found to send welcome message in ${guild.name}`);
       }
     } catch (error) {
       console.error(`❌ Error in guildCreate event for ${guild.name}:`, error);
