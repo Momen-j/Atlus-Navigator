@@ -62,7 +62,7 @@ export function eventHandler(client: Client) {
       if (welcomeChannel) {
         try {
           await welcomeChannel.send(
-            `👋 **Hello ${guild.name}!**\nThanks for adding Atlus Navigator! It's here to assist you in tackling Persona & Metaphor enemies with the knowledge to impress all of your social links & confidants!\n\nIf you like Atlus Navigator, consider rating it on [discordbotlist.com](https://discordbotlist.com/bots/atlus-navigator) & [top.gg](https://top.gg/bot/1328884093777350696) 😉`
+            `👋 **Hello ${guild.name}!**\nThanks for adding Atlus Navigator! It's here to assist you in tackling Persona & Metaphor enemies with the knowledge to impress all of your social links & confidants!\n\nIf you like Atlus Navigator, consider rating it and voting for it on [discordbotlist.com](https://discordbotlist.com/bots/atlus-navigator) & [top.gg](https://top.gg/bot/1328884093777350696) 😉`
           );
           console.log(`✅ Welcome message sent to ${guild.name} in #${welcomeChannel.name}`);
         } catch (messageError) {
