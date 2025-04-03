@@ -4,8 +4,7 @@ import {
     MessageFlags,
     AttachmentBuilder
   } from "discord.js";
-  import path from "path";
-  import { fileURLToPath } from "url";
+import path from "path";
   
   /**
    * @module helpCommand
@@ -37,11 +36,12 @@ import {
     ) => {
       try {
         // Get the directory name for the current module
-        const __filename = fileURLToPath(import.meta.url);
-        const __dirname = path.dirname(__filename);
+        // const __filename = fileURLToPath(import.meta.url);
+        // const __dirname = path.dirname(__filename);
 
-        // create an attachment using the reactions explanation file
-        const imagePath = path.join(__dirname, "../../../assets/reactions/Reaction Explanation.jpg");
+        // Import reaction explanation
+        const reactionsFolder = path.resolve("./src/assets/reactions");
+        const imagePath = path.join(reactionsFolder, "Reaction Explanation.jpg");
         const attachment = new AttachmentBuilder(imagePath);
 
         // Reply with help information using markdown formatting
@@ -69,7 +69,9 @@ Display a weakness chart for a monster/persona within Persona 3 Reload: Episode 
 Display a weakness chart for a monster/persona within Persona 4 Golden
 
 **/p5g**
-Display a weakness chart for a monster/persona within Persona 5 Royal`,
+Display a weakness chart for a monster/persona within Persona 5 Royal
+
+__Reaction Symbol Explanation__`,
 files: [attachment]
         });
       } catch (error: any) {
