@@ -33,6 +33,7 @@ import p3Embed from "../../commands/atlusEmbeds/p3embed.js";
 import p4Embed from "../../commands/atlusEmbeds/p4Embed.js";
 import p5Embed from "../../commands/atlusEmbeds/p5Embed.js";
 import feedback from "../../commands/userFeedback/feedback.js";
+import help from "../../commands/userFeedback/help.js";
 /**
  * @module registerCommands
  */
@@ -44,9 +45,10 @@ const localCommands = [
     p4Embed,
     p5Embed,
     feedback,
+    help,
 ];
 /**
- * Registers commands for the bot, optimized to only update when necessary.
+ * Registers commands for the bot, deleting then adding the commands globally on restart.
  *
  * @async
  * @param {Client} client Bot client instance
@@ -101,28 +103,33 @@ export async function registerCommands(client, guildId) {
             if (localCommand.deleted) {
                 continue;
             }
-            const { name, description } = localCommand;
-            // Check if any option has autocomplete enabled
-            const hasAutocomplete = localCommand.options?.some((option) => option.autocomplete === true);
-            // Prepare command creation data with appropriate options
-            const commandOptions = hasAutocomplete
-                ? [
-                    {
-                        name: "monster-name",
-                        description: "Name of monster/persona",
-                        type: ApplicationCommandOptionType.String,
-                        required: true,
-                        autocomplete: true,
-                    },
-                ]
-                : [
-                    {
-                        name: "message",
-                        description: "Submit feedback, suggestions, or report issues.",
-                        type: ApplicationCommandOptionType.String,
-                        required: true,
-                    },
-                ];
+            const { name, description, options = [] } = localCommand;
+            // Use the command's own options if available, otherwise create default options
+            let commandOptions = options;
+            // If no options are provided and it's not the help command, apply the default logic
+            if (options.length === 0 &amp;&amp; name !== "help") {
+                // Check if any option has autocomplete enabled (for backward compatibility)
+                const hasAutocomplete = localCommand.options?.some((option) => option.autocomplete === true);
+                // Prepare command creation data with appropriate options
+                commandOptions = hasAutocomplete
+                    ? [
+                        {
+                            name: "monster-name",
+                            description: "Name of monster/persona",
+                            type: ApplicationCommandOptionType.String,
+                            required: true,
+                            autocomplete: true,
+                        },
+                    ]
+                    : [
+                        {
+                            name: "message",
+                            description: "Submit feedback, suggestions, or report issues.",
+                            type: ApplicationCommandOptionType.String,
+                            required: true,
+                        },
+                    ];
+            }
             commandsToRegister.push({
                 name,
                 description,
@@ -162,13 +169,13 @@ export async function registerCommands(client, guildId) {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-consoleLog.html">consoleLog</a></li><li><a href="module-eventHandler.html">eventHandler</a></li><li><a href="module-feedbackCommand.html">feedbackCommand</a></li><li><a href="module-handleCommands.html">handleCommands</a></li><li><a href="module-registerCommands.html">registerCommands</a></li><li><a href="module-weaknessChartCommand.html">weaknessChartCommand</a></li></ul><h3>Namespaces</h3><ul><li><a href="DatabaseQueries.html">DatabaseQueries</a></li><li><a href="UtilityFunctions.html">UtilityFunctions</a></li><li><a href="WeaknessChartFunctions.html">WeaknessChartFunctions</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-consoleLog.html">consoleLog</a></li><li><a href="module-eventHandler.html">eventHandler</a></li><li><a href="module-feedbackCommand.html">feedbackCommand</a></li><li><a href="module-handleCommands.html">handleCommands</a></li><li><a href="module-helpCommand.html">helpCommand</a></li><li><a href="module-registerCommands.html">registerCommands</a></li><li><a href="module-weaknessChartCommand.html">weaknessChartCommand</a></li></ul><h3>Namespaces</h3><ul><li><a href="DatabaseQueries.html">DatabaseQueries</a></li><li><a href="UtilityFunctions.html">UtilityFunctions</a></li><li><a href="WeaknessChartFunctions.html">WeaknessChartFunctions</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Tue Apr 01 2025 11:57:10 GMT-0400 (Eastern Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Thu Apr 03 2025 15:32:47 GMT-0400 (Eastern Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

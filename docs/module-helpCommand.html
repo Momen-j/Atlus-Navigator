@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Module: weaknessChartCommand</title>
+    <title>JSDoc: Module: helpCommand</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Module: weaknessChartCommand</h1>
+    <h1 class="page-title">Module: helpCommand</h1>
 
     
 
@@ -45,7 +45,7 @@
     
 
     
-    <h4 class="name" id="module:weaknessChartCommand"><span class="type-signature"></span>module:weaknessChartCommand<span class="type-signature"> :Object</span></h4>
+    <h4 class="name" id="module:helpCommand"><span class="type-signature"></span>module:helpCommand<span class="type-signature"> :Object</span></h4>
     
 
     
@@ -53,7 +53,7 @@
 
 
 <div class="description">
-    General Slash Command structure for fetching monster weaknesses and replying to the user with a visual representation.
+    Slash command for displaying help information.
 </div>
 
 
@@ -110,7 +110,7 @@
 
             
 
-            <td class="description last">The command name for the specific game.</td>
+            <td class="description last">The command name for the help.</td>
         </tr>
 
     
@@ -156,7 +156,7 @@
 
             
 
-            <td class="description last">The available options (user types in shadow/monster they are curious about).</td>
+            <td class="description last">No options needed for help command.</td>
         </tr>
 
     
@@ -179,8 +179,7 @@
 
             
 
-            <td class="description last">The function handling the command execution.
-We call query functions to the database using the option given by the user then send that data off into the weakness chart function to then reply with a weakness chart embed.</td>
+            <td class="description last">The function handling the command execution.</td>
         </tr>
 
     
@@ -219,7 +218,7 @@ We call query functions to the database using the option given by the user then 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="commands_atlusEmbeds_metaphorEmbed.js.html">commands/atlusEmbeds/metaphorEmbed.js</a>, <a href="commands_atlusEmbeds_metaphorEmbed.js.html#line17">line 17</a>
+        <a href="commands_userFeedback_help.js.html">commands/userFeedback/help.js</a>, <a href="commands_userFeedback_help.js.html#line14">line 14</a>
     </li></ul></dd>
     
 
@@ -332,7 +331,7 @@ We call query functions to the database using the option given by the user then 
 
             
 
-            <td class="description last">Represents an instance of the Atlus Discord Bot.</td>
+            <td class="description last">Represents an instance of the Discord client.</td>
         </tr>
 
     
@@ -355,7 +354,7 @@ We call query functions to the database using the option given by the user then 
 
             
 
-            <td class="description last">Current instance of the chat input command inputted by user.</td>
+            <td class="description last">The interaction from the user.</td>
         </tr>
 
     
@@ -396,19 +395,12 @@ We call query functions to the database using the option given by the user then 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="commands_atlusEmbeds_metaphorEmbed.js.html">commands/atlusEmbeds/metaphorEmbed.js</a>, <a href="commands_atlusEmbeds_metaphorEmbed.js.html#line41">line 41</a>
+        <a href="commands_userFeedback_help.js.html">commands/userFeedback/help.js</a>, <a href="commands_userFeedback_help.js.html#line25">line 25</a>
     </li></ul></dd>
     
 
     
 
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="module-handleCommands.html">module:handleCommands</a></li>
-        </ul>
-    </dd>
     
 
     
@@ -432,7 +424,7 @@ We call query functions to the database using the option given by the user then 
 
         
 <div class="param-desc">
-    Returns nothing but calls an async callback function if it passes all checks in handleCommands function.
+    Returns a help message with command information.
 </div>
 
 
