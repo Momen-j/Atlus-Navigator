@@ -1,8 +1,11 @@
 import {
     Client,
     ChatInputCommandInteraction,
-    MessageFlags
+    MessageFlags,
+    AttachmentBuilder
   } from "discord.js";
+  import path from "path";
+  import { fileURLToPath } from "url";
   
   /**
    * @module helpCommand
@@ -33,6 +36,14 @@ import {
       interaction: ChatInputCommandInteraction
     ) => {
       try {
+        // Get the directory name for the current module
+        const __filename = fileURLToPath(import.meta.url);
+        const __dirname = path.dirname(__filename);
+
+        // create an attachment using the reactions explanation file
+        const imagePath = path.join(__dirname, "../../../assets/reactions/Reaction Explanation.jpg");
+        const attachment = new AttachmentBuilder(imagePath);
+
         // Reply with help information using markdown formatting
         await interaction.reply({
           content: `**Atlus Navigator Help**
@@ -59,6 +70,7 @@ Display a weakness chart for a monster/persona within Persona 4 Golden
 
 **/p5g**
 Display a weakness chart for a monster/persona within Persona 5 Royal`,
+files: [attachment]
         });
       } catch (error: any) {
         console.error("Error displaying help:", error);
