@@ -69,7 +69,6 @@ export default async function createP3WeaknessChart(data: P3EnemyWeaknesses): Pr
     const newHeight = img.height * heightScaleFactor;
 
     // Center image within the cell
-    //! LOOK INTO HOW THIS WORKS + HOW FORMULA DYNAMICALLY CENTERS
     const x = index * cellWidth + (cellWidth - newWidth) / 2;
     const y = (iconCellHeight - newHeight) / 2;
 
@@ -117,7 +116,6 @@ export default async function createP3WeaknessChart(data: P3EnemyWeaknesses): Pr
     const img = await loadImage(weaknessImagePath);
 
     // Center image in the cell (bottom row)
-    //! LOOK INTO HOW THIS WORKS + HOW FORMULA DYNAMICALLY CENTERS
     const x = index * cellWidth + (cellWidth - img.width) / 2;
     const y = iconCellHeight + (cellHeight - img.height) / 2; // Bottom row offset by `cellHeight`
 

@@ -103,7 +103,6 @@ export default async function createMetaphorWeaknessChart(data: MetaphorEnemyWea
     const newHeight = img.height * widthScaleFactor;
 
     // Center image within the cell
-    //! LOOK INTO HOW THIS WORKS + HOW FORMULA DYNAMICALLY CENTERS
     const x = index * cellWidth + (cellWidth - newWidth) / 2;
     const y = (cellHeight - newHeight) / 2;
 
@@ -154,7 +153,6 @@ export default async function createMetaphorWeaknessChart(data: MetaphorEnemyWea
     const img = await loadImage(weaknessImagePath);
 
     // Center image in the cell (bottom row)
-    //! LOOK INTO HOW THIS WORKS + HOW FORMULA DYNAMICALLY CENTERS
     const x = index * cellWidth + (cellWidth - img.width) / 2;
     const y = cellHeight + (cellHeight - img.height) / 2; // Bottom row offset by `cellHeight`
 
